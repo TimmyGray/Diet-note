@@ -911,6 +911,7 @@ namespace Diet_note
                 ClearFoodBut.Enabled = true;
                 Historybutton.Enabled = true;
                 Eatbutton.Enabled = true;
+                NamelistBox.Enabled = true;
                 Size = new Size(890, 430);
                 UserBut.Show();
                 FoodBut.Show();
@@ -920,7 +921,7 @@ namespace Diet_note
                 }
                 if(Controls.ContainsKey("upduserpanel"))
                 {
-                    Controls.ContainsKey("upduserpanel");
+                    Controls.RemoveByKey("upduserpanel");
                 }
 
             }
