@@ -1215,6 +1215,7 @@ namespace Diet_note
             this.FoodBut.TabIndex = 66;
             this.FoodBut.Text = "Блюдо";
             this.FoodBut.UseVisualStyleBackColor = false;
+            this.FoodBut.Click += new System.EventHandler(this.FoodBut_Click);
             // 
             // ClearFoodBut
             // 
