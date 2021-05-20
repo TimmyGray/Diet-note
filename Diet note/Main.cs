@@ -811,8 +811,6 @@ namespace Diet_note
             Size = new Size(890, 520);
             UserBut.Hide();
             FoodBut.Hide();
-            //UserBut.Dispose();
-            //FoodBut.Dispose();
             ClearFoodBut.Enabled = false;
             Eatbutton.Enabled = false;
             Historybutton.Enabled = false;
@@ -1150,6 +1148,11 @@ namespace Diet_note
             UpdateBut.Click += UpdateButClick;
             void UpdateButClick(object but,EventArgs click)
             {
+                if(NamelistBox.SelectedItem==null)
+                {
+                    MessageBox.Show("Выберете пользователя!");
+                    return;
+                }
                 if(Controls.ContainsKey("adduserpanel"))
                 {
                     Controls.RemoveByKey("adduserpanel");
@@ -1287,7 +1290,7 @@ namespace Diet_note
                 Button upduserbut = new Button
                 {
                     Location = new Point(229, 55),
-                    Text = "Добавить"
+                    Text = "Обновить"
                 };
                 upduserpanel.Controls.Add(upduserbut);
                 upduserbut.BringToFront();
@@ -1312,7 +1315,7 @@ namespace Diet_note
                 }
                 cancelbut.Click += Clickcancelbut;
 
-                //Функционал кнопки добавить
+                //Функционал кнопки обновить
 
                 void Clickbut(object button, EventArgs click)
                 {
@@ -1375,13 +1378,336 @@ namespace Diet_note
                     User seluser = (User)NamelistBox.SelectedItem;
                     using (var db = new Aplicatincontext())
                     {
+                        db.Histories.RemoveRange(seluser.Histories);
+                        db.Edges.Remove(seluser.Edges);
                         db.Users.Remove(seluser);
+                        
                         db.SaveChanges();
                     }
                     NamelistBox.Items.Remove(seluser);
                 }
+                else { MessageBox.Show("Выберите пользователя!"); }
                 return;
             }
+        }
+
+        //Функционал кнопки "Блюдо
+        private void FoodBut_Click(object sender, EventArgs e)
+        {
+            Size = new Size(890, 520);
+            UserBut.Hide();
+            FoodBut.Hide();
+            ClearFoodBut.Enabled = false;
+            Eatbutton.Enabled = false;
+            Historybutton.Enabled = false;
+
+
+            Panel UserFoodPan = new Panel
+            {
+                Size = new Size(490, 40),
+                Location = new Point(288, 10)
+
+            };
+            Controls.Add(UserFoodPan);
+
+            Button AddFoodBut = new Button
+            {
+                Size = new Size(115, 40),
+                Location = new Point(0),
+                Text = "Добавить",
+                FlatStyle = FlatStyle.Flat,
+                BackColor = SystemColors.GradientActiveCaption,
+                Cursor = Cursors.Hand,
+                Font = new Font("Segoe Script", 8F, FontStyle.Bold, GraphicsUnit.Point),
+                Margin = new Padding(0),
+            };
+            UserFoodPan.Controls.Add(AddFoodBut);
+            AddFoodBut.FlatAppearance.BorderColor = Color.Blue;
+            AddFoodBut.FlatAppearance.MouseDownBackColor = Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            AddFoodBut.FlatAppearance.MouseOverBackColor = Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+
+
+
+            Button UpdateFoodBut = new Button
+            {
+                Size = new Size(115, 40),
+                Location = new Point(120),
+                Text = "Редактировать",
+                FlatStyle = FlatStyle.Flat,
+                BackColor = SystemColors.GradientActiveCaption,
+                Cursor = Cursors.Hand,
+                Font = new Font("Segoe Script", 8F, FontStyle.Bold, GraphicsUnit.Point),
+                Margin = new Padding(0),
+            };
+            UserFoodPan.Controls.Add(UpdateFoodBut);
+            UpdateFoodBut.FlatAppearance.BorderColor = Color.Blue;
+            UpdateFoodBut.FlatAppearance.MouseDownBackColor = Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            UpdateFoodBut.FlatAppearance.MouseOverBackColor = Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+
+
+
+            Button DeleteFoodBut = new Button
+            {
+                Size = new Size(115, 40),
+                Location = new Point(240),
+                Text = "Удалить",
+                FlatStyle = FlatStyle.Flat,
+                BackColor = SystemColors.GradientActiveCaption,
+                Cursor = Cursors.Hand,
+                Font = new Font("Segoe Script", 8F, FontStyle.Bold, GraphicsUnit.Point),
+                Margin = new Padding(0),
+
+            };
+            UserFoodPan.Controls.Add(DeleteFoodBut);
+            DeleteFoodBut.FlatAppearance.BorderColor = Color.Blue;
+            DeleteFoodBut.FlatAppearance.MouseDownBackColor = Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            DeleteFoodBut.FlatAppearance.MouseOverBackColor = Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+
+
+            Button CancelBut = new Button
+            {
+                Size = new Size(115, 40),
+                Location = new Point(360),
+                Text = "Отмена",
+                FlatStyle = FlatStyle.Flat,
+                BackColor = SystemColors.GradientActiveCaption,
+                Cursor = Cursors.Hand,
+                Font = new Font("Segoe Script", 8F, FontStyle.Bold, GraphicsUnit.Point),
+                Margin = new Padding(0),
+
+
+            };
+            UserFoodPan.Controls.Add(CancelBut);
+            CancelBut.FlatAppearance.BorderColor = Color.Blue;
+            CancelBut.FlatAppearance.MouseDownBackColor = Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            CancelBut.FlatAppearance.MouseOverBackColor = Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+
+            //Функционал кнопки "Добавить"
+
+            AddFoodBut.Click += AddFoodButClick;
+            void AddFoodButClick(object but, EventArgs click)
+            {
+                if (Controls.ContainsKey("updfoodpanel"))
+                {
+                    Controls.RemoveByKey("updfoodpanel");
+
+                }
+                AddFoodBut.Enabled = false;
+                UpdateFoodBut.Enabled = true;
+                DeleteFoodBut.Enabled = true;
+
+
+
+                Panel addfoodpanel = new Panel
+                {
+                    Size = new Size(635, 95),
+                    BackColor = Color.GreenYellow,
+                    Location = new Point(11, 380),
+                    Name = "addfoodpanel"
+
+
+                };
+                Controls.Add(addfoodpanel);
+
+
+                Label addname = new Label
+                {
+
+                    Location = new Point(8, 10),
+                    Text = "Название",
+                    AutoSize = true,
+
+
+                };
+                addfoodpanel.Controls.Add(addname);
+                addname.BringToFront();
+
+                Label addcarbohyd = new Label
+                {
+                    Location = new Point(88, 10),
+                    Text = "Углеводы",
+                    AutoSize = true
+                };
+                addfoodpanel.Controls.Add(addcarbohyd);
+                addcarbohyd.BringToFront();
+
+                Label addproteins = new Label
+                {
+                    Location = new Point(203, 10),
+                    Text = "Белки",
+                    AutoSize = true
+
+                };
+                addfoodpanel.Controls.Add(addproteins);
+                addproteins.BringToFront();
+
+                Label addfats = new Label
+                {
+                    Location = new Point(312, 10),
+                    Text = "Жиры",
+                    AutoSize = true
+
+                };
+                addfoodpanel.Controls.Add(addfats);
+                addfats.BringToFront();
+
+                Label addcallories = new Label
+                {
+                    Location = new Point(407, 10),
+                    Text = "Каллории",
+                    AutoSize = true
+                };
+                addfoodpanel.Controls.Add(addcallories);
+                addcallories.BringToFront();
+
+
+                TextBox namebox = new TextBox
+                {
+                    Location = new Point(10, 30),
+                    Font = new Font(FontFamily.GenericSansSerif, 8),
+                    Size = new Size(60, 20)
+                };
+                addfoodpanel.Controls.Add(namebox);
+                namebox.BringToFront();
+
+                TextBox carbohydbox = new TextBox
+                {
+                    Location = new Point(117, 30),
+                    Font = new Font(FontFamily.GenericSansSerif, 8),
+                    Size = new Size(40, 20)
+                };
+                addfoodpanel.Controls.Add(carbohydbox);
+                carbohydbox.BringToFront();
+
+                TextBox proteinbox = new TextBox
+                {
+                    Location = new Point(230, 30),
+                    Font = new Font(FontFamily.GenericSansSerif, 8),
+                    Size = new Size(40, 20)
+                };
+                addfoodpanel.Controls.Add(proteinbox);
+                proteinbox.BringToFront();
+
+                TextBox fatsbox = new TextBox
+                {
+                    Location = new Point(337, 30),
+                    Font = new Font(FontFamily.GenericSansSerif, 8),
+                    Size = new Size(40, 20)
+                };
+                addfoodpanel.Controls.Add(fatsbox);
+                fatsbox.BringToFront();
+
+                TextBox calloriesbox = new TextBox
+                {
+                    Location = new Point(437, 30),
+                    Font = new Font(FontFamily.GenericSansSerif, 8),
+                    Size = new Size(40, 20)
+                };
+                addfoodpanel.Controls.Add(calloriesbox);
+                calloriesbox.BringToFront();
+
+
+                Button addfoodbut = new Button
+                {
+                    Location = new Point(229, 55),
+                    Text = "Добавить"
+                };
+                addfoodpanel.Controls.Add(addfoodbut);
+                addfoodbut.BringToFront();
+
+                Button cancelbut = new Button
+                {
+                    Location = new Point(336, 55),
+                    Text = "Отмена"
+                };
+                addfoodpanel.Controls.Add(cancelbut);
+                cancelbut.BringToFront();
+
+                //Функционал кнопки добавить
+
+                addfoodbut.Click += addfoodbutClick;
+                void addfoodbutClick(object but,EventArgs click)
+                {
+                    try
+                    {
+                        if (namebox.Text != "" && carbohydbox.Text != "" && proteinbox.Text != "" && fatsbox.Text != "" && calloriesbox.Text != "")
+                        {
+                            using (var db = new Aplicatincontext())
+                            {
+                                db.Elements.Add(new Energoelements { Name = namebox.Text, Carbohydrates = carbohydbox.Text, Protein = proteinbox.Text, Fats = fatsbox.Text, Callories = calloriesbox.Text });
+                                db.SaveChanges();
+
+                            }
+                            MessageBox.Show("Блюдо успешно добавлено!");
+                            addfoodpanel.Dispose();
+                            AddFoodBut.Enabled = true;
+                            DeleteFoodBut.Enabled = true;
+                            UpdateFoodBut.Enabled = true;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Введите все значения!");
+                        }
+                    }
+                    catch(Exception)
+                    {
+                        MessageBox.Show("Неправильное значение!");
+                    }
+                }
+
+                //Функционал кнопки отмена
+
+                cancelbut.Click += cancelbutClick;
+                void cancelbutClick(object but,EventArgs click)
+                {
+                    addfoodpanel.Dispose();
+                    AddFoodBut.Enabled = true;
+                    DeleteFoodBut.Enabled = true;
+                    UpdateFoodBut.Enabled = true;
+                }
+
+            }
+
+            //Функционал кнопки "Редактировать"
+
+            UpdateFoodBut.Click += UpdFoodButClick;
+            void UpdFoodButClick(object but, EventArgs click)
+            {
+
+            }
+
+            //Функционал кнопки "Удалить"
+
+            DeleteFoodBut.Click += DeleteFoodButClick;
+            void DeleteFoodButClick(object but,EventArgs click)
+            {
+
+            }
+
+            //Функционал кнопки "Отмена"
+
+            CancelBut.Click += CancelButClick;
+            void CancelButClick(object but, EventArgs click)
+            {
+                UserFoodPan.Dispose();
+                ClearFoodBut.Enabled = true;
+                Historybutton.Enabled = true;
+                Eatbutton.Enabled = true;
+                NamelistBox.Enabled = true;
+                Size = new Size(890, 430);
+                UserBut.Show();
+                FoodBut.Show();
+                if (Controls.ContainsKey("addfoodpanel"))
+                {
+                    Controls.RemoveByKey("addfoodpanel");
+                }
+                if (Controls.ContainsKey("updfoodpanel"))
+                {
+                    Controls.RemoveByKey("updfoodpanel");
+                }
+
+            }
+
         }
     }
 }
