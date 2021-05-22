@@ -177,6 +177,7 @@ namespace Diet_note
             this.EatBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.EatBox2.Name = "EatBox2";
             this.EatBox2.Size = new System.Drawing.Size(196, 21);
+            this.EatBox2.Sorted = true;
             this.EatBox2.TabIndex = 6;
             this.EatBox2.SelectedIndexChanged += new System.EventHandler(this.EatBox2_SelectedIndexChanged);
             // 
@@ -188,6 +189,7 @@ namespace Diet_note
             this.EatBox3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.EatBox3.Name = "EatBox3";
             this.EatBox3.Size = new System.Drawing.Size(196, 23);
+            this.EatBox3.Sorted = true;
             this.EatBox3.TabIndex = 8;
             this.EatBox3.SelectedIndexChanged += new System.EventHandler(this.EatBox3_SelectedIndexChanged);
             // 
@@ -199,6 +201,7 @@ namespace Diet_note
             this.EatBox4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.EatBox4.Name = "EatBox4";
             this.EatBox4.Size = new System.Drawing.Size(196, 23);
+            this.EatBox4.Sorted = true;
             this.EatBox4.TabIndex = 8;
             this.EatBox4.SelectedIndexChanged += new System.EventHandler(this.EatBox4_SelectedIndexChanged);
             // 
@@ -210,6 +213,7 @@ namespace Diet_note
             this.EatBox5.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.EatBox5.Name = "EatBox5";
             this.EatBox5.Size = new System.Drawing.Size(196, 23);
+            this.EatBox5.Sorted = true;
             this.EatBox5.TabIndex = 8;
             this.EatBox5.SelectedIndexChanged += new System.EventHandler(this.EatBox5_SelectedIndexChanged);
             // 
@@ -221,6 +225,7 @@ namespace Diet_note
             this.EatBox6.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.EatBox6.Name = "EatBox6";
             this.EatBox6.Size = new System.Drawing.Size(196, 23);
+            this.EatBox6.Sorted = true;
             this.EatBox6.TabIndex = 8;
             this.EatBox6.SelectedIndexChanged += new System.EventHandler(this.EatBox6_SelectedIndexChanged);
             // 
@@ -835,6 +840,7 @@ namespace Diet_note
             this.EatBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.EatBox1.Name = "EatBox1";
             this.EatBox1.Size = new System.Drawing.Size(196, 23);
+            this.EatBox1.Sorted = true;
             this.EatBox1.TabIndex = 0;
             this.EatBox1.SelectedIndexChanged += new System.EventHandler(this.EatBox1_SelectedIndexChanged);
             // 
@@ -848,6 +854,7 @@ namespace Diet_note
             this.NamelistBox.Name = "NamelistBox";
             this.NamelistBox.ScrollAlwaysVisible = true;
             this.NamelistBox.Size = new System.Drawing.Size(196, 35);
+            this.NamelistBox.Sorted = true;
             this.NamelistBox.TabIndex = 52;
             // 
             // AddEatpictureBox6

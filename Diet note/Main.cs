@@ -1492,6 +1492,10 @@ namespace Diet_note
                     Controls.RemoveByKey("updfoodpanel");
 
                 }
+                if(Controls.ContainsKey("delpanel"))
+                {
+                    Controls.RemoveByKey("delpanel");
+                }
                 AddFoodBut.Enabled = false;
                 UpdateFoodBut.Enabled = true;
                 DeleteFoodBut.Enabled = true;
@@ -1630,14 +1634,22 @@ namespace Diet_note
                 {
                     try
                     {
+                        Energoelements newelement = new Energoelements { Name = namebox.Text, Carbohydrates = carbohydbox.Text, Protein = proteinbox.Text, Fats = fatsbox.Text, Callories = calloriesbox.Text };
                         if (namebox.Text != "" && carbohydbox.Text != "" && proteinbox.Text != "" && fatsbox.Text != "" && calloriesbox.Text != "")
                         {
                             using (var db = new Aplicatincontext())
                             {
-                                db.Elements.Add(new Energoelements { Name = namebox.Text, Carbohydrates = carbohydbox.Text, Protein = proteinbox.Text, Fats = fatsbox.Text, Callories = calloriesbox.Text });
+                                db.Elements.Add(newelement);
                                 db.SaveChanges();
 
                             }
+                            EatBox1.Items.Add(newelement);
+                            EatBox2.Items.Add(newelement);
+                            EatBox3.Items.Add(newelement);
+                            EatBox4.Items.Add(newelement);
+                            EatBox5.Items.Add(newelement);
+                            EatBox6.Items.Add(newelement);
+
                             MessageBox.Show("Блюдо успешно добавлено!");
                             addfoodpanel.Dispose();
                             AddFoodBut.Enabled = true;
@@ -1673,6 +1685,225 @@ namespace Diet_note
             UpdateFoodBut.Click += UpdFoodButClick;
             void UpdFoodButClick(object but, EventArgs click)
             {
+                if (Controls.ContainsKey("addfoodpanel"))
+                {
+                    Controls.RemoveByKey("addfoodpanel");
+
+                }
+                if (Controls.ContainsKey("delpanel"))
+                {
+                    Controls.RemoveByKey("delpanel");
+                }
+                AddFoodBut.Enabled = true;
+                UpdateFoodBut.Enabled = false;
+                DeleteFoodBut.Enabled = true;
+
+
+
+                Panel updfoodpanel = new Panel
+                {
+                    Size = new Size(635, 95),
+                    BackColor = Color.PaleVioletRed,
+                    Location = new Point(11, 380),
+                    Name = "updfoodpanel"
+                };
+                Controls.Add(updfoodpanel);
+                Label updname = new Label
+                {
+
+                    Location = new Point(8, 10),
+                    Text = "Название",
+                    AutoSize = true,
+
+
+                };
+                updfoodpanel.Controls.Add(updname);
+                updname.BringToFront();
+
+                Label updcarbohyd = new Label
+                {
+                    Location = new Point(108, 10),
+                    Text = "Углеводы",
+                    AutoSize = true
+                };
+                updfoodpanel.Controls.Add(updcarbohyd);
+                updcarbohyd.BringToFront();
+
+                Label updproteins = new Label
+                {
+                    Location = new Point(228, 10),
+                    Text = "Белки",
+                    AutoSize = true
+
+                };
+                updfoodpanel.Controls.Add(updproteins);
+                updproteins.BringToFront();
+
+                Label updfats = new Label
+                {
+                    Location = new Point(337, 10),
+                    Text = "Жиры",
+                    AutoSize = true
+
+                };
+                updfoodpanel.Controls.Add(updfats);
+                updfats.BringToFront();
+
+                Label updcallories = new Label
+                {
+                    Location = new Point(427, 10),
+                    Text = "Каллории",
+                    AutoSize = true
+                };
+                updfoodpanel.Controls.Add(updcallories);
+                updcallories.BringToFront();
+
+
+                TextBox namebox = new TextBox
+                {
+                    Location = new Point(10, 30),
+                    Font = new Font(FontFamily.GenericSansSerif, 8),
+                    Size = new Size(60, 20)
+                };
+                updfoodpanel.Controls.Add(namebox);
+                namebox.BringToFront();
+
+                TextBox carbohydbox = new TextBox
+                {
+                    Location = new Point(117, 30),
+                    Font = new Font(FontFamily.GenericSansSerif, 8),
+                    Size = new Size(40, 20)
+                };
+                updfoodpanel.Controls.Add(carbohydbox);
+                carbohydbox.BringToFront();
+
+                TextBox proteinbox = new TextBox
+                {
+                    Location = new Point(230, 30),
+                    Font = new Font(FontFamily.GenericSansSerif, 8),
+                    Size = new Size(40, 20)
+                };
+                updfoodpanel.Controls.Add(proteinbox);
+                proteinbox.BringToFront();
+
+                TextBox fatsbox = new TextBox
+                {
+                    Location = new Point(337, 30),
+                    Font = new Font(FontFamily.GenericSansSerif, 8),
+                    Size = new Size(40, 20)
+                };
+                updfoodpanel.Controls.Add(fatsbox);
+                fatsbox.BringToFront();
+
+                TextBox calloriesbox = new TextBox
+                {
+                    Location = new Point(437, 30),
+                    Font = new Font(FontFamily.GenericSansSerif, 8),
+                    Size = new Size(40, 20)
+                };
+                updfoodpanel.Controls.Add(calloriesbox);
+                calloriesbox.BringToFront();
+
+                ComboBox updfoodcombobox = new ComboBox
+                {
+                    Size= new Size(100,20),
+                    DropDownStyle = ComboBoxStyle.DropDown,
+                    Location  =  new Point(510,30),
+                    DisplayMember = "Name"
+                };
+                updfoodpanel.Controls.Add(updfoodcombobox);
+
+                Button updfoodbut = new Button
+                {
+                    Location = new Point(229, 55),
+                    Text = "Принять"
+                };
+                updfoodpanel.Controls.Add(updfoodbut);
+                updfoodbut.BringToFront();
+
+                Button cancelbut = new Button
+                {
+                    Location = new Point(336, 55),
+                    Text = "Отмена"
+                };
+                updfoodpanel.Controls.Add(cancelbut);
+                cancelbut.BringToFront();
+
+                using(var db = new Aplicatincontext())
+                {
+                    updfoodcombobox.Items.AddRange(db.Elements.ToArray());
+
+                }
+                updfoodcombobox.SelectedIndexChanged += updfoodcomboboxchanged;
+
+                //Функционал выбора блюда
+
+                void updfoodcomboboxchanged(object box,EventArgs changed)
+                {
+                    Energoelements updelement = (Energoelements)updfoodcombobox.SelectedItem;
+                    namebox.Text = updelement.Name;
+                    carbohydbox.Text = updelement.Carbohydrates;
+                    proteinbox.Text = updelement.Protein;
+                    fatsbox.Text = updelement.Fats;
+                    calloriesbox.Text = updelement.Callories;
+
+                }
+
+                //Функционал кнопки отмена
+
+                cancelbut.Click += cancelbutClick;
+                void cancelbutClick(object but, EventArgs click)
+                {
+                    updfoodpanel.Dispose();
+                    UpdateFoodBut.Enabled = true;
+
+                }
+
+                //Функционал кнопки обновить
+
+                updfoodbut.Click += updfoodbutClick;
+                void updfoodbutClick(object but, EventArgs click)
+                {
+                    
+                    if(updfoodcombobox.SelectedItem!=null)
+                    {
+                        Energoelements updelement = (Energoelements)updfoodcombobox.SelectedItem;
+                        if (namebox.Text != "")
+                            updelement.Name = namebox.Text;
+                        if (carbohydbox.Text != "")
+                            updelement.Carbohydrates = carbohydbox.Text;                        
+                        if (proteinbox.Text!="")
+                            updelement.Protein = proteinbox.Text;                        
+                        if(fatsbox.Text!="")
+                            updelement.Fats = fatsbox.Text;                        
+                        if(calloriesbox.Text!="")
+                            updelement.Callories = calloriesbox.Text;
+                        using(var db = new Aplicatincontext())
+                        {
+                            db.Elements.Update(updelement);
+                            db.SaveChanges();
+                        }
+                        EatBox1.Items.Remove(updfoodcombobox.SelectedItem);
+                        EatBox2.Items.Remove(updfoodcombobox.SelectedItem);
+                        EatBox3.Items.Remove(updfoodcombobox.SelectedItem);
+                        EatBox4.Items.Remove(updfoodcombobox.SelectedItem);
+                        EatBox5.Items.Remove(updfoodcombobox.SelectedItem);
+                        EatBox6.Items.Remove(updfoodcombobox.SelectedItem);
+                        updfoodcombobox.Items.Remove(updfoodcombobox.SelectedItem);
+                        EatBox1.Items.Add(updelement);
+                        EatBox2.Items.Add(updelement);
+                        EatBox3.Items.Add(updelement);
+                        EatBox4.Items.Add(updelement);
+                        EatBox5.Items.Add(updelement);
+                        EatBox6.Items.Add(updelement);
+                        updfoodcombobox.Items.Add(updelement);
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Выберите блюдо!");
+                    }
+                }
 
             }
 
