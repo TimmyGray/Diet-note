@@ -8,7 +8,7 @@ namespace Diet_note
 {
     class History
     {
-        public int Id { get; set; }
+        public int Id { get; set; } 
         public DateTime Date { get; set; }
         public int Countofeat{ get; set; }
         public string CarboHydrates { get; set; }
