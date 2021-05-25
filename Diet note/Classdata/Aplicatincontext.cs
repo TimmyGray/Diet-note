@@ -37,12 +37,6 @@ namespace Diet_note
             modelBuilder.Entity<Edgeelements>()
                 .HasOne(s => s.user)
                 .WithOne(m => m.Edges);
-                
-            //modelBuilder.Entity<User>()
-            //    .HasOne(m => m.Edges)
-            //    .WithOne(m => m.user);
-                
-                
 
         }
 
