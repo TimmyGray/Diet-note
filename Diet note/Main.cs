@@ -806,7 +806,7 @@ namespace Diet_note
 
 
         //Функционал кнопки "Пользователь"
-        private void UserBut_Click(object sender, EventArgs e) 
+        private void UserBut_Click(object sender, EventArgs e)
         {
             Size = new Size(890, 520);
             UserBut.Hide();
@@ -1883,12 +1883,12 @@ namespace Diet_note
                             db.Elements.Update(updelement);
                             db.SaveChanges();
                         }
-                        EatBox1.Items.RemoveAt(updfoodcombobox.SelectedIndex);
-                        EatBox2.Items.RemoveAt(updfoodcombobox.SelectedIndex);
-                        EatBox3.Items.RemoveAt(updfoodcombobox.SelectedIndex);
-                        EatBox4.Items.RemoveAt(updfoodcombobox.SelectedIndex);
-                        EatBox5.Items.RemoveAt(updfoodcombobox.SelectedIndex);
-                        EatBox6.Items.RemoveAt(updfoodcombobox.SelectedIndex);
+                        EatBox1.Items.Remove(updfoodcombobox.SelectedItem);
+                        EatBox2.Items.Remove(updfoodcombobox.SelectedItem);
+                        EatBox3.Items.Remove(updfoodcombobox.SelectedItem);
+                        EatBox4.Items.Remove(updfoodcombobox.SelectedItem);
+                        EatBox5.Items.Remove(updfoodcombobox.SelectedItem);
+                        EatBox6.Items.Remove(updfoodcombobox.SelectedItem);
                         updfoodcombobox.Items.Remove(updfoodcombobox.SelectedItem);
                         EatBox1.Items.Add(updelement);
                         EatBox2.Items.Add(updelement);
@@ -1912,214 +1912,6 @@ namespace Diet_note
             DeleteFoodBut.Click += DeleteFoodButClick;
             void DeleteFoodButClick(object but,EventArgs click)
             {
-                DeleteFoodBut.Enabled = false;
-                if (Controls.ContainsKey("addfoodpanel"))
-                {
-                    Controls.RemoveByKey("addfoodpanel");
-
-                }
-                if (Controls.ContainsKey("updfoodpanel"))
-                {
-                    Controls.RemoveByKey("updfoodpanel");
-                }
-                AddFoodBut.Enabled = true;
-                UpdateFoodBut.Enabled = true;
-
-
-                Panel delfoodpanel = new Panel
-                {
-                    Size = new Size(635, 95),
-                    BackColor = Color.Turquoise,
-                    Location = new Point(11, 380),
-                    Name = "delfoodpanel"
-                };
-                Controls.Add(delfoodpanel);
-                Label delname = new Label
-                {
-
-                    Location = new Point(8, 10),
-                    Text = "Название",
-                    AutoSize = true,
-
-                };
-                delfoodpanel.Controls.Add(delname);
-                delname.BringToFront();
-
-                Label delcarbohyd = new Label
-                {
-                    Location = new Point(108, 10),
-                    Text = "Углеводы",
-                    AutoSize = true
-                };
-                delfoodpanel.Controls.Add(delcarbohyd);
-                delcarbohyd.BringToFront();
-
-                Label delproteins = new Label
-                {
-                    Location = new Point(228, 10),
-                    Text = "Белки",
-                    AutoSize = true
-
-                };
-                delfoodpanel.Controls.Add(delproteins);
-                delproteins.BringToFront();
-
-                Label delfats = new Label
-                {
-                    Location = new Point(337, 10),
-                    Text = "Жиры",
-                    AutoSize = true
-
-                };
-                delfoodpanel.Controls.Add(delfats);
-                delfats.BringToFront();
-
-                Label delcallories = new Label
-                {
-                    Location = new Point(427, 10),
-                    Text = "Каллории",
-                    AutoSize = true
-                };
-                delfoodpanel.Controls.Add(delcallories);
-                delcallories.BringToFront();
-
-
-                Label name = new Label
-                {
-                    Location = new Point(10, 30),
-                    Font = new Font(FontFamily.GenericSansSerif, 8),
-                    Size = new Size(60, 20)
-                };
-                delfoodpanel.Controls.Add(name);
-                name.BringToFront();
-
-                Label carbohyd = new Label
-                {
-                    Location = new Point(117, 30),
-                    Font = new Font(FontFamily.GenericSansSerif, 8),
-                    Size = new Size(40, 20)
-                };
-                delfoodpanel.Controls.Add(carbohyd);
-                carbohyd.BringToFront();
-
-                Label protein = new Label
-                {
-                    Location = new Point(230, 30),
-                    Font = new Font(FontFamily.GenericSansSerif, 8),
-                    Size = new Size(40, 20)
-                };
-                delfoodpanel.Controls.Add(protein);
-                protein.BringToFront();
-
-                Label fats = new Label
-                {
-                    Location = new Point(337, 30),
-                    Font = new Font(FontFamily.GenericSansSerif, 8),
-                    Size = new Size(40, 20)
-                };
-                delfoodpanel.Controls.Add(fats);
-                fats.BringToFront();
-
-                Label callories = new Label
-                {
-                    Location = new Point(437, 30),
-                    Font = new Font(FontFamily.GenericSansSerif, 8),
-                    Size = new Size(40, 20)
-                };
-                delfoodpanel.Controls.Add(callories);
-                callories.BringToFront();
-
-                ComboBox delfoodcombobox = new ComboBox
-                {
-                    Size = new Size(100, 20),
-                    DropDownStyle = ComboBoxStyle.DropDown,
-                    Location = new Point(510, 30),
-                    DisplayMember = "Name"
-                };
-                delfoodpanel.Controls.Add(delfoodcombobox);
-
-                Button delfoodbut = new Button
-                {
-                    Location = new Point(229, 55),
-                    Text = "Удалить"
-                };
-                delfoodpanel.Controls.Add(delfoodbut);
-                delfoodbut.BringToFront();
-
-                Button cancelbut = new Button
-                {
-                    Location = new Point(336, 55),
-                    Text = "Отмена"
-                };
-                delfoodpanel.Controls.Add(cancelbut);
-                cancelbut.BringToFront();
-
-                using (var db = new Aplicatincontext())
-                {
-                    delfoodcombobox.Items.AddRange(db.Elements.ToArray());
-
-                }
-                delfoodcombobox.SelectedIndexChanged += delfoodcomboboxchanged;
-
-                //Функционал выбора блюда
-
-                void delfoodcomboboxchanged(object box, EventArgs changed)
-                {
-                    Energoelements delelement = (Energoelements)delfoodcombobox.SelectedItem;
-                    name.Text = delelement.Name;
-                    carbohyd.Text = delelement.Carbohydrates;
-                    protein.Text = delelement.Protein;
-                    fats.Text = delelement.Fats;
-                    callories.Text = delelement.Callories;
-
-                }
-
-                //Функционал кнопки удалить
-
-                delfoodbut.Click += delfoodbutClick;
-                void delfoodbutClick(object but,EventArgs click)
-                {
-                    if(delfoodcombobox.SelectedItem!=null)
-                    {
-                        Energoelements delelement = (Energoelements)delfoodcombobox.SelectedItem;
-                        using (var db = new Aplicatincontext())
-                        {
-                            db.Elements.Remove(delelement);
-                            db.SaveChanges();
-                        }
-
-                       
-                        EatBox1.Items.RemoveAt(delfoodcombobox.SelectedIndex);
-                        EatBox2.Items.RemoveAt(delfoodcombobox.SelectedIndex);
-                        EatBox3.Items.RemoveAt(delfoodcombobox.SelectedIndex);
-                        EatBox4.Items.RemoveAt(delfoodcombobox.SelectedIndex);
-                        EatBox5.Items.RemoveAt(delfoodcombobox.SelectedIndex);
-                        EatBox6.Items.RemoveAt(delfoodcombobox.SelectedIndex);
-                        delfoodcombobox.Items.Remove(delelement);
-                        delfoodcombobox.Text = "";
-                        name.Text = "";
-                        carbohyd.Text = "";
-                        protein.Text = "";
-                        fats.Text = "";
-                        callories.Text = "";
-                        MessageBox.Show("Блюдо удалено!");
-                        
-
-                    }
-                    else
-                    {
-                        MessageBox.Show("Выберите блюдо!");
-                    }
-                }
-
-                //Функционал кнопки отмена
-
-                cancelbut.Click += cancelbutClick;
-                void cancelbutClick(object but,EventArgs click)
-                {
-                    delfoodpanel.Dispose();
-                    DeleteFoodBut.Enabled = true;
-                }
 
             }
 
@@ -2144,65 +1936,9 @@ namespace Diet_note
                 {
                     Controls.RemoveByKey("updfoodpanel");
                 }
-                if(Controls.ContainsKey("delfoodpanel"))
-                {
-                    Controls.RemoveByKey("delfoodpanel");
-                }    
 
             }
 
         }
-
-        private void ClearFoodBut_Click(object sender, EventArgs e)
-        {
-            EatBox1.Text = "";
-            EatBox2.Text = "";
-            EatBox3.Text = "";
-            EatBox4.Text = "";
-            EatBox5.Text = "";
-            EatBox6.Text = "";
-            AllUgllabel.Text = "0";
-            AllBellabel.Text = "0";
-            AllJirlabel.Text = "0";
-            AllCallabel.Text = "0";
-            Ugllabel1.Text = "0";
-            Bellabel1.Text = "0";
-            Jirlabel1.Text = "0";
-            Callabel1.Text = "0";
-            Ugllabel2.Text = "0";
-            Bellabel2.Text = "0";
-            Jirlabel2.Text = "0";
-            Callabel2.Text = "0";
-            Ugllabel3.Text = "0";
-            Bellabel3.Text = "0";
-            Jirlabel3.Text = "0";
-            Callabel3.Text = "0";
-            Ugllabel4.Text = "0";
-            Bellabel4.Text = "0";
-            Jirlabel4.Text = "0";
-            Callabel4.Text = "0";
-            Ugllabel5.Text = "0";
-            Bellabel5.Text = "0";
-            Jirlabel5.Text = "0";
-            Callabel5.Text = "0";
-            Ugllabel6.Text = "0";
-            Bellabel6.Text = "0";
-            Jirlabel6.Text = "0";
-            Callabel6.Text = "0";
-        }
-
-
-        private void Multipicture1_Click(object sender, EventArgs e)
-        {
-            if (!MultiBox1.Enabled)
-                MultiBox1.Enabled = true;
-            else
-            { 
-                MultiBox1.Text = "";
-                MultiBox1.Enabled = false;
-            }
-
-        }
-
     }
 }
