@@ -277,6 +277,7 @@ namespace Diet_note
             this.Ugllabel1.Size = new System.Drawing.Size(20, 21);
             this.Ugllabel1.TabIndex = 0;
             this.Ugllabel1.Text = "0";
+            this.Ugllabel1.TextChanged += new System.EventHandler(this.Ugllabel1_TextChanged);
             // 
             // Uglpanel2
             // 
@@ -299,6 +300,7 @@ namespace Diet_note
             this.Ugllabel2.Size = new System.Drawing.Size(20, 21);
             this.Ugllabel2.TabIndex = 1;
             this.Ugllabel2.Text = "0";
+            this.Ugllabel2.TextChanged += new System.EventHandler(this.Ugllabel2_TextChanged);
             // 
             // Uglpanel3
             // 
@@ -321,6 +323,7 @@ namespace Diet_note
             this.Ugllabel3.Size = new System.Drawing.Size(20, 21);
             this.Ugllabel3.TabIndex = 27;
             this.Ugllabel3.Text = "0";
+            this.Ugllabel3.TextChanged += new System.EventHandler(this.Ugllabel3_TextChanged);
             // 
             // Uglpanel4
             // 
@@ -343,6 +346,7 @@ namespace Diet_note
             this.Ugllabel4.Size = new System.Drawing.Size(20, 21);
             this.Ugllabel4.TabIndex = 27;
             this.Ugllabel4.Text = "0";
+            this.Ugllabel4.TextChanged += new System.EventHandler(this.Ugllabel4_TextChanged);
             // 
             // Uglpanel5
             // 
@@ -365,6 +369,7 @@ namespace Diet_note
             this.Ugllabel5.Size = new System.Drawing.Size(20, 21);
             this.Ugllabel5.TabIndex = 27;
             this.Ugllabel5.Text = "0";
+            this.Ugllabel5.TextChanged += new System.EventHandler(this.Ugllabel5_TextChanged);
             // 
             // Uglpanel6
             // 
@@ -387,6 +392,7 @@ namespace Diet_note
             this.Ugllabel6.Size = new System.Drawing.Size(20, 21);
             this.Ugllabel6.TabIndex = 27;
             this.Ugllabel6.Text = "0";
+            this.Ugllabel6.TextChanged += new System.EventHandler(this.Ugllabel6_TextChanged);
             // 
             // Belpanel6
             // 
@@ -409,6 +415,7 @@ namespace Diet_note
             this.Bellabel6.Size = new System.Drawing.Size(20, 21);
             this.Bellabel6.TabIndex = 27;
             this.Bellabel6.Text = "0";
+            this.Bellabel6.TextChanged += new System.EventHandler(this.Bellabel6_TextChanged);
             // 
             // Belpanel5
             // 
@@ -431,6 +438,7 @@ namespace Diet_note
             this.Bellabel5.Size = new System.Drawing.Size(20, 21);
             this.Bellabel5.TabIndex = 27;
             this.Bellabel5.Text = "0";
+            this.Bellabel5.TextChanged += new System.EventHandler(this.Bellabel5_TextChanged);
             // 
             // Belpanel4
             // 
@@ -453,6 +461,7 @@ namespace Diet_note
             this.Bellabel4.Size = new System.Drawing.Size(20, 21);
             this.Bellabel4.TabIndex = 27;
             this.Bellabel4.Text = "0";
+            this.Bellabel4.TextChanged += new System.EventHandler(this.Bellabel4_TextChanged);
             // 
             // Belpanel3
             // 
@@ -475,6 +484,7 @@ namespace Diet_note
             this.Bellabel3.Size = new System.Drawing.Size(20, 21);
             this.Bellabel3.TabIndex = 27;
             this.Bellabel3.Text = "0";
+            this.Bellabel3.TextChanged += new System.EventHandler(this.Bellabel3_TextChanged);
             // 
             // Belpanel2
             // 
@@ -497,6 +507,7 @@ namespace Diet_note
             this.Bellabel2.Size = new System.Drawing.Size(20, 21);
             this.Bellabel2.TabIndex = 27;
             this.Bellabel2.Text = "0";
+            this.Bellabel2.TextChanged += new System.EventHandler(this.Bellabel2_TextChanged);
             // 
             // Belpanel1
             // 
@@ -519,6 +530,7 @@ namespace Diet_note
             this.Bellabel1.Size = new System.Drawing.Size(20, 21);
             this.Bellabel1.TabIndex = 27;
             this.Bellabel1.Text = "0";
+            this.Bellabel1.TextChanged += new System.EventHandler(this.Bellabel1_TextChanged);
             // 
             // Jirpanel6
             // 
@@ -541,6 +553,7 @@ namespace Diet_note
             this.Jirlabel6.Size = new System.Drawing.Size(20, 21);
             this.Jirlabel6.TabIndex = 27;
             this.Jirlabel6.Text = "0";
+            this.Jirlabel6.TextChanged += new System.EventHandler(this.Jirlabel6_TextChanged);
             // 
             // Jirpanel5
             // 
@@ -563,6 +576,7 @@ namespace Diet_note
             this.Jirlabel5.Size = new System.Drawing.Size(20, 21);
             this.Jirlabel5.TabIndex = 27;
             this.Jirlabel5.Text = "0";
+            this.Jirlabel5.TextChanged += new System.EventHandler(this.Jirlabel5_TextChanged);
             // 
             // Jirpanel4
             // 
@@ -585,6 +599,7 @@ namespace Diet_note
             this.Jirlabel4.Size = new System.Drawing.Size(20, 21);
             this.Jirlabel4.TabIndex = 27;
             this.Jirlabel4.Text = "0";
+            this.Jirlabel4.TextChanged += new System.EventHandler(this.Jirlabel4_TextChanged);
             // 
             // Jirpanel3
             // 
@@ -607,6 +622,7 @@ namespace Diet_note
             this.Jirlabel3.Size = new System.Drawing.Size(20, 21);
             this.Jirlabel3.TabIndex = 27;
             this.Jirlabel3.Text = "0";
+            this.Jirlabel3.TextChanged += new System.EventHandler(this.Jirlabel3_TextChanged);
             // 
             // Jirpanel2
             // 
@@ -629,6 +645,7 @@ namespace Diet_note
             this.Jirlabel2.Size = new System.Drawing.Size(20, 21);
             this.Jirlabel2.TabIndex = 27;
             this.Jirlabel2.Text = "0";
+            this.Jirlabel2.TextChanged += new System.EventHandler(this.Jirlabel2_TextChanged);
             // 
             // Jirpanel1
             // 
@@ -651,6 +668,7 @@ namespace Diet_note
             this.Jirlabel1.Size = new System.Drawing.Size(20, 21);
             this.Jirlabel1.TabIndex = 27;
             this.Jirlabel1.Text = "0";
+            this.Jirlabel1.TextChanged += new System.EventHandler(this.Jirlabel1_TextChanged);
             // 
             // AllJirpanel
             // 
@@ -1082,6 +1100,7 @@ namespace Diet_note
             this.Callabel6.Size = new System.Drawing.Size(20, 21);
             this.Callabel6.TabIndex = 27;
             this.Callabel6.Text = "0";
+            this.Callabel6.TextChanged += new System.EventHandler(this.Callabel6_TextChanged);
             // 
             // Calpanel5
             // 
@@ -1104,6 +1123,7 @@ namespace Diet_note
             this.Callabel5.Size = new System.Drawing.Size(20, 21);
             this.Callabel5.TabIndex = 27;
             this.Callabel5.Text = "0";
+            this.Callabel5.TextChanged += new System.EventHandler(this.Callabel5_TextChanged);
             // 
             // Calpanel4
             // 
@@ -1126,6 +1146,7 @@ namespace Diet_note
             this.Callabel4.Size = new System.Drawing.Size(20, 21);
             this.Callabel4.TabIndex = 27;
             this.Callabel4.Text = "0";
+            this.Callabel4.TextChanged += new System.EventHandler(this.Callabel4_TextChanged);
             // 
             // Calpanel3
             // 
@@ -1148,6 +1169,7 @@ namespace Diet_note
             this.Callabel3.Size = new System.Drawing.Size(20, 21);
             this.Callabel3.TabIndex = 27;
             this.Callabel3.Text = "0";
+            this.Callabel3.TextChanged += new System.EventHandler(this.Callabel3_TextChanged);
             // 
             // Calpanel2
             // 
@@ -1170,6 +1192,7 @@ namespace Diet_note
             this.Callabel2.Size = new System.Drawing.Size(20, 21);
             this.Callabel2.TabIndex = 27;
             this.Callabel2.Text = "0";
+            this.Callabel2.TextChanged += new System.EventHandler(this.Callabel2_TextChanged);
             // 
             // Calpanel1
             // 
@@ -1192,6 +1215,7 @@ namespace Diet_note
             this.Callabel1.Size = new System.Drawing.Size(20, 21);
             this.Callabel1.TabIndex = 27;
             this.Callabel1.Text = "0";
+            this.Callabel1.TextChanged += new System.EventHandler(this.Callabel1_TextChanged);
             // 
             // AllCalPanel
             // 
@@ -1307,6 +1331,7 @@ namespace Diet_note
             // 
             // Multipicture5
             // 
+            this.Multipicture5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Multipicture5.Image = global::Diet_note.Properties.Resources.pen;
             this.Multipicture5.Location = new System.Drawing.Point(0, 0);
             this.Multipicture5.Name = "Multipicture5";
@@ -1314,6 +1339,7 @@ namespace Diet_note
             this.Multipicture5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Multipicture5.TabIndex = 0;
             this.Multipicture5.TabStop = false;
+            this.Multipicture5.Click += new System.EventHandler(this.Multipicture5_Click);
             // 
             // panel7
             // 
@@ -1324,6 +1350,7 @@ namespace Diet_note
             // 
             // Multipicture1
             // 
+            this.Multipicture1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Multipicture1.Image = global::Diet_note.Properties.Resources.pen;
             this.Multipicture1.Location = new System.Drawing.Point(202, 99);
             this.Multipicture1.Name = "Multipicture1";
@@ -1335,6 +1362,7 @@ namespace Diet_note
             // 
             // Multipicture2
             // 
+            this.Multipicture2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Multipicture2.Image = global::Diet_note.Properties.Resources.pen;
             this.Multipicture2.Location = new System.Drawing.Point(202, 136);
             this.Multipicture2.Name = "Multipicture2";
@@ -1342,9 +1370,11 @@ namespace Diet_note
             this.Multipicture2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Multipicture2.TabIndex = 75;
             this.Multipicture2.TabStop = false;
+            this.Multipicture2.Click += new System.EventHandler(this.Multipicture2_Click);
             // 
             // Multipicture3
             // 
+            this.Multipicture3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Multipicture3.Image = global::Diet_note.Properties.Resources.pen;
             this.Multipicture3.Location = new System.Drawing.Point(202, 173);
             this.Multipicture3.Name = "Multipicture3";
@@ -1352,6 +1382,7 @@ namespace Diet_note
             this.Multipicture3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Multipicture3.TabIndex = 76;
             this.Multipicture3.TabStop = false;
+            this.Multipicture3.Click += new System.EventHandler(this.Multipicture3_Click);
             // 
             // pictureBox4
             // 
@@ -1363,6 +1394,7 @@ namespace Diet_note
             // 
             // Multipicture4
             // 
+            this.Multipicture4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Multipicture4.Image = global::Diet_note.Properties.Resources.pen;
             this.Multipicture4.Location = new System.Drawing.Point(202, 210);
             this.Multipicture4.Name = "Multipicture4";
@@ -1370,9 +1402,11 @@ namespace Diet_note
             this.Multipicture4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Multipicture4.TabIndex = 78;
             this.Multipicture4.TabStop = false;
+            this.Multipicture4.Click += new System.EventHandler(this.Multipicture4_Click);
             // 
             // Multipicture6
             // 
+            this.Multipicture6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Multipicture6.Image = global::Diet_note.Properties.Resources.pen;
             this.Multipicture6.Location = new System.Drawing.Point(202, 283);
             this.Multipicture6.Name = "Multipicture6";
@@ -1380,6 +1414,7 @@ namespace Diet_note
             this.Multipicture6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Multipicture6.TabIndex = 79;
             this.Multipicture6.TabStop = false;
+            this.Multipicture6.Click += new System.EventHandler(this.Multipicture6_Click);
             // 
             // MultiBox1
             // 
@@ -1389,6 +1424,8 @@ namespace Diet_note
             this.MultiBox1.Name = "MultiBox1";
             this.MultiBox1.Size = new System.Drawing.Size(23, 22);
             this.MultiBox1.TabIndex = 80;
+            this.MultiBox1.Text = "1";
+            this.MultiBox1.TextChanged += new System.EventHandler(this.MultiBox1_TextChanged);
             // 
             // MultiBox2
             // 
@@ -1398,6 +1435,8 @@ namespace Diet_note
             this.MultiBox2.Name = "MultiBox2";
             this.MultiBox2.Size = new System.Drawing.Size(23, 22);
             this.MultiBox2.TabIndex = 81;
+            this.MultiBox2.Text = "1";
+            this.MultiBox2.TextChanged += new System.EventHandler(this.MultiBox2_TextChanged);
             // 
             // MultiBox3
             // 
@@ -1407,6 +1446,8 @@ namespace Diet_note
             this.MultiBox3.Name = "MultiBox3";
             this.MultiBox3.Size = new System.Drawing.Size(23, 22);
             this.MultiBox3.TabIndex = 82;
+            this.MultiBox3.Text = "1";
+            this.MultiBox3.TextChanged += new System.EventHandler(this.MultiBox3_TextChanged);
             // 
             // MultiBox4
             // 
@@ -1416,6 +1457,8 @@ namespace Diet_note
             this.MultiBox4.Name = "MultiBox4";
             this.MultiBox4.Size = new System.Drawing.Size(23, 22);
             this.MultiBox4.TabIndex = 83;
+            this.MultiBox4.Text = "1";
+            this.MultiBox4.TextChanged += new System.EventHandler(this.MultiBox4_TextChanged);
             // 
             // MultiBox5
             // 
@@ -1425,6 +1468,8 @@ namespace Diet_note
             this.MultiBox5.Name = "MultiBox5";
             this.MultiBox5.Size = new System.Drawing.Size(23, 22);
             this.MultiBox5.TabIndex = 84;
+            this.MultiBox5.Text = "1";
+            this.MultiBox5.TextChanged += new System.EventHandler(this.MultiBox5_TextChanged);
             // 
             // MultiBox6
             // 
@@ -1434,6 +1479,8 @@ namespace Diet_note
             this.MultiBox6.Name = "MultiBox6";
             this.MultiBox6.Size = new System.Drawing.Size(23, 22);
             this.MultiBox6.TabIndex = 85;
+            this.MultiBox6.Text = "1";
+            this.MultiBox6.TextChanged += new System.EventHandler(this.MultiBox6_TextChanged);
             // 
             // Main
             // 
@@ -1719,7 +1766,6 @@ namespace Diet_note
         private System.Windows.Forms.PictureBox Multipicture5;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox Multipicture4;
-        private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.TextBox MultiBox1;
         private System.Windows.Forms.TextBox MultiBox2;
         private System.Windows.Forms.TextBox MultiBox3;

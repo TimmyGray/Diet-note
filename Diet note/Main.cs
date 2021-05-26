@@ -23,11 +23,11 @@ namespace Diet_note
 
 
             InitializeComponent();
- 
-            using(var db = new Aplicatincontext())
+
+            using (var db = new Aplicatincontext())
             {
-              
-                NamelistBox.Items.AddRange(db.Users.Include(e => e.Edges).Include(h => h.Histories).ToArray()); 
+
+                NamelistBox.Items.AddRange(db.Users.Include(e => e.Edges).Include(h => h.Histories).ToArray());
                 EatBox1.Items.AddRange(db.Elements.ToArray());
                 EatBox2.Items.AddRange(db.Elements.ToArray());
                 EatBox3.Items.AddRange(db.Elements.ToArray());
@@ -37,15 +37,15 @@ namespace Diet_note
                 _elements = db.Elements.ToList();
 
             }
-           
-                NamelistBox.DisplayMember = "Name";
-                EatBox1.DisplayMember = "Name";
-                EatBox2.DisplayMember = "Name";
-                EatBox3.DisplayMember = "Name";
-                EatBox4.DisplayMember = "Name";
-                EatBox5.DisplayMember = "Name";
-                EatBox6.DisplayMember = "Name";
-                
+
+            NamelistBox.DisplayMember = "Name";
+            EatBox1.DisplayMember = "Name";
+            EatBox2.DisplayMember = "Name";
+            EatBox3.DisplayMember = "Name";
+            EatBox4.DisplayMember = "Name";
+            EatBox5.DisplayMember = "Name";
+            EatBox6.DisplayMember = "Name";
+
 
         }
 
@@ -57,11 +57,11 @@ namespace Diet_note
                 MessageBox.Show("Выберите пользователя!");
                 return;
             }
-            
+
             Size = new Size(276, 267);
             Panel historypanel = new Panel
             {
-                Size = new Size(262,230),
+                Size = new Size(262, 230),
                 Location = new Point(0)
             };
             Controls.Add(historypanel);
@@ -69,17 +69,17 @@ namespace Diet_note
 
             Button historybutton = new Button
             {
-                Size = new Size(262,30),
-                Location = new Point(-1,198),
+                Size = new Size(262, 30),
+                Location = new Point(-1, 198),
                 Text = "Закрыть историю"
 
             };
             historypanel.Controls.Add(historybutton);
-            
+
             ListBox historylistbox = new ListBox
             {
                 DisplayMember = "h.Key",
-                Size = new Size (62,200),
+                Size = new Size(62, 200),
                 Location = new Point(0)
 
             };
@@ -94,18 +94,18 @@ namespace Diet_note
                 TextAlign = HorizontalAlignment.Left,
                 ReadOnly = true,
                 BorderStyle = BorderStyle.Fixed3D
-                
-                
+
+
             };
             historypanel.Controls.Add(historytextbox);
-           
+
             User seluser = (User)NamelistBox.SelectedItem;
             var Grouped = from history in seluser.Histories
                           group history by history.Date;
-            foreach(IGrouping<DateTime,History> h in Grouped)
+            foreach (IGrouping<DateTime, History> h in Grouped)
             {
                 historylistbox.Items.Add(h);
-   
+
             }
             List<string> lines = new List<string>();
             historybutton.Click += Closeclick;
@@ -113,35 +113,36 @@ namespace Diet_note
             {
                 Size = new Size(890, 430);
                 historypanel.Dispose();
-       
+
             }
             historylistbox.SelectedIndexChanged += SelectDate;
             void SelectDate(object history, EventArgs click)
             {
                 lines.Clear();
-               
-                foreach (IGrouping<DateTime,History> h in Grouped)
+
+                foreach (IGrouping<DateTime, History> h in Grouped)
                 {
-                    if(h.Key.ToString()==historylistbox.Text)
+                    if (h.Key.ToString() == historylistbox.Text)
                     {
-                       
+
                         foreach (var t in h)
                         {
-                            lines.AddRange(new string[] { $"Прием пищи: {t.Countofeat} из {seluser.Edges.Numbereats}", $"Что покушали: { t.Foodname}", $"Углеводы: { t.CarboHydrates}  из { seluser.Edges.Carbohydrates}", $"Белки: {t.Proteins} из {seluser.Edges.Proteins}", $"Жиры: {t.Fats} из {seluser.Edges.Fats}", $"Каллории: {t.Callories} из {seluser.Edges.Calloriesedge}","","" });
-                            
+                            lines.AddRange(new string[] { $"Прием пищи: {t.Countofeat} из {seluser.Edges.Numbereats}", $"Что покушали: { t.Foodname}", $"Углеводы: { t.CarboHydrates}  из { seluser.Edges.Carbohydrates}", $"Белки: {t.Proteins} из {seluser.Edges.Proteins}", $"Жиры: {t.Fats} из {seluser.Edges.Fats}", $"Каллории: {t.Callories} из {seluser.Edges.Calloriesedge}", "", "" });
+
                             historytextbox.Lines = lines.ToArray();
                         }
                     }
 
                 }
-                
+
             }
-           
+
         }
 
         private void EatBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             EatBox1.Focus();
+
             try
             {
                 Energoelements element = (Energoelements)EatBox1.SelectedItem;
@@ -149,12 +150,8 @@ namespace Diet_note
                 Bellabel1.Text = element.Protein;
                 Jirlabel1.Text = element.Fats;
                 Callabel1.Text = element.Callories;
-                AllUgllabel.Text = (Convert.ToDecimal(Ugllabel1.Text) + Convert.ToDecimal(Ugllabel2.Text) + Convert.ToDecimal(Ugllabel3.Text) + Convert.ToDecimal(Ugllabel4.Text) + Convert.ToDecimal(Ugllabel5.Text) + Convert.ToDecimal(Ugllabel6.Text)).ToString();
-                AllBellabel.Text = (Convert.ToDecimal(Bellabel1.Text) + Convert.ToDecimal(Bellabel2.Text) + Convert.ToDecimal(Bellabel3.Text) + Convert.ToDecimal(Bellabel4.Text) + Convert.ToDecimal(Bellabel5.Text) + Convert.ToDecimal(Bellabel6.Text)).ToString();
-                AllJirlabel.Text = (Convert.ToDecimal(Jirlabel1.Text) + Convert.ToDecimal(Jirlabel2.Text) + Convert.ToDecimal(Jirlabel3.Text) + Convert.ToDecimal(Jirlabel4.Text) + Convert.ToDecimal(Jirlabel5.Text) + Convert.ToDecimal(Jirlabel6.Text)).ToString();
-                AllCallabel.Text = (Convert.ToDecimal(Callabel1.Text) + Convert.ToDecimal(Callabel2.Text) + Convert.ToDecimal(Callabel3.Text) + Convert.ToDecimal(Callabel4.Text) + Convert.ToDecimal(Callabel5.Text) + Convert.ToDecimal(Callabel6.Text)).ToString();
             }
-            catch(Exception)
+            catch (Exception)
             {
                 MessageBox.Show("Ошибка в данных блюда! Проверьте правильность информации!");
             }
@@ -170,10 +167,6 @@ namespace Diet_note
                 Bellabel2.Text = element.Protein;
                 Jirlabel2.Text = element.Fats;
                 Callabel2.Text = element.Callories;
-                AllUgllabel.Text = (Convert.ToDecimal(Ugllabel1.Text) + Convert.ToDecimal(Ugllabel2.Text) + Convert.ToDecimal(Ugllabel3.Text) + Convert.ToDecimal(Ugllabel4.Text) + Convert.ToDecimal(Ugllabel5.Text) + Convert.ToDecimal(Ugllabel6.Text)).ToString();
-                AllBellabel.Text = (Convert.ToDecimal(Bellabel1.Text) + Convert.ToDecimal(Bellabel2.Text) + Convert.ToDecimal(Bellabel3.Text) + Convert.ToDecimal(Bellabel4.Text) + Convert.ToDecimal(Bellabel5.Text) + Convert.ToDecimal(Bellabel6.Text)).ToString();
-                AllJirlabel.Text = (Convert.ToDecimal(Jirlabel1.Text) + Convert.ToDecimal(Jirlabel2.Text) + Convert.ToDecimal(Jirlabel3.Text) + Convert.ToDecimal(Jirlabel4.Text) + Convert.ToDecimal(Jirlabel5.Text) + Convert.ToDecimal(Jirlabel6.Text)).ToString();
-                AllCallabel.Text = (Convert.ToDecimal(Callabel1.Text) + Convert.ToDecimal(Callabel2.Text) + Convert.ToDecimal(Callabel3.Text) + Convert.ToDecimal(Callabel4.Text) + Convert.ToDecimal(Callabel5.Text) + Convert.ToDecimal(Callabel6.Text)).ToString();
             }
             catch (Exception)
             {
@@ -191,10 +184,6 @@ namespace Diet_note
                 Bellabel3.Text = element.Protein;
                 Jirlabel3.Text = element.Fats;
                 Callabel3.Text = element.Callories;
-                AllUgllabel.Text = (Convert.ToDecimal(Ugllabel1.Text) + Convert.ToDecimal(Ugllabel2.Text) + Convert.ToDecimal(Ugllabel3.Text) + Convert.ToDecimal(Ugllabel4.Text) + Convert.ToDecimal(Ugllabel5.Text) + Convert.ToDecimal(Ugllabel6.Text)).ToString();
-                AllBellabel.Text = (Convert.ToDecimal(Bellabel1.Text) + Convert.ToDecimal(Bellabel2.Text) + Convert.ToDecimal(Bellabel3.Text) + Convert.ToDecimal(Bellabel4.Text) + Convert.ToDecimal(Bellabel5.Text) + Convert.ToDecimal(Bellabel6.Text)).ToString();
-                AllJirlabel.Text = (Convert.ToDecimal(Jirlabel1.Text) + Convert.ToDecimal(Jirlabel2.Text) + Convert.ToDecimal(Jirlabel3.Text) + Convert.ToDecimal(Jirlabel4.Text) + Convert.ToDecimal(Jirlabel5.Text) + Convert.ToDecimal(Jirlabel6.Text)).ToString();
-                AllCallabel.Text = (Convert.ToDecimal(Callabel1.Text) + Convert.ToDecimal(Callabel2.Text) + Convert.ToDecimal(Callabel3.Text) + Convert.ToDecimal(Callabel4.Text) + Convert.ToDecimal(Callabel5.Text) + Convert.ToDecimal(Callabel6.Text)).ToString();
             }
             catch (Exception)
             {
@@ -212,10 +201,6 @@ namespace Diet_note
                 Bellabel4.Text = element.Protein;
                 Jirlabel4.Text = element.Fats;
                 Callabel4.Text = element.Callories;
-                AllUgllabel.Text = (Convert.ToDecimal(Ugllabel1.Text) + Convert.ToDecimal(Ugllabel2.Text) + Convert.ToDecimal(Ugllabel3.Text) + Convert.ToDecimal(Ugllabel4.Text) + Convert.ToDecimal(Ugllabel5.Text) + Convert.ToDecimal(Ugllabel6.Text)).ToString();
-                AllBellabel.Text = (Convert.ToDecimal(Bellabel1.Text) + Convert.ToDecimal(Bellabel2.Text) + Convert.ToDecimal(Bellabel3.Text) + Convert.ToDecimal(Bellabel4.Text) + Convert.ToDecimal(Bellabel5.Text) + Convert.ToDecimal(Bellabel6.Text)).ToString();
-                AllJirlabel.Text = (Convert.ToDecimal(Jirlabel1.Text) + Convert.ToDecimal(Jirlabel2.Text) + Convert.ToDecimal(Jirlabel3.Text) + Convert.ToDecimal(Jirlabel4.Text) + Convert.ToDecimal(Jirlabel5.Text) + Convert.ToDecimal(Jirlabel6.Text)).ToString();
-                AllCallabel.Text = (Convert.ToDecimal(Callabel1.Text) + Convert.ToDecimal(Callabel2.Text) + Convert.ToDecimal(Callabel3.Text) + Convert.ToDecimal(Callabel4.Text) + Convert.ToDecimal(Callabel5.Text) + Convert.ToDecimal(Callabel6.Text)).ToString();
             }
             catch (Exception)
             {
@@ -233,10 +218,6 @@ namespace Diet_note
                 Bellabel5.Text = element.Protein;
                 Jirlabel5.Text = element.Fats;
                 Callabel5.Text = element.Callories;
-                AllUgllabel.Text = (Convert.ToDecimal(Ugllabel1.Text) + Convert.ToDecimal(Ugllabel2.Text) + Convert.ToDecimal(Ugllabel3.Text) + Convert.ToDecimal(Ugllabel4.Text) + Convert.ToDecimal(Ugllabel5.Text) + Convert.ToDecimal(Ugllabel6.Text)).ToString();
-                AllBellabel.Text = (Convert.ToDecimal(Bellabel1.Text) + Convert.ToDecimal(Bellabel2.Text) + Convert.ToDecimal(Bellabel3.Text) + Convert.ToDecimal(Bellabel4.Text) + Convert.ToDecimal(Bellabel5.Text) + Convert.ToDecimal(Bellabel6.Text)).ToString();
-                AllJirlabel.Text = (Convert.ToDecimal(Jirlabel1.Text) + Convert.ToDecimal(Jirlabel2.Text) + Convert.ToDecimal(Jirlabel3.Text) + Convert.ToDecimal(Jirlabel4.Text) + Convert.ToDecimal(Jirlabel5.Text) + Convert.ToDecimal(Jirlabel6.Text)).ToString();
-                AllCallabel.Text = (Convert.ToDecimal(Callabel1.Text) + Convert.ToDecimal(Callabel2.Text) + Convert.ToDecimal(Callabel3.Text) + Convert.ToDecimal(Callabel4.Text) + Convert.ToDecimal(Callabel5.Text) + Convert.ToDecimal(Callabel6.Text)).ToString();
             }
             catch (Exception)
             {
@@ -246,6 +227,7 @@ namespace Diet_note
 
         private void EatBox6_SelectedIndexChanged(object sender, EventArgs e)
         {
+
             EatBox6.Focus();
             try
             {
@@ -254,10 +236,6 @@ namespace Diet_note
                 Bellabel6.Text = element.Protein;
                 Jirlabel6.Text = element.Fats;
                 Callabel6.Text = element.Callories;
-                AllUgllabel.Text = (Convert.ToDecimal(Ugllabel1.Text) + Convert.ToDecimal(Ugllabel2.Text) + Convert.ToDecimal(Ugllabel3.Text) + Convert.ToDecimal(Ugllabel4.Text) + Convert.ToDecimal(Ugllabel5.Text) + Convert.ToDecimal(Ugllabel6.Text)).ToString();
-                AllBellabel.Text = (Convert.ToDecimal(Bellabel1.Text) + Convert.ToDecimal(Bellabel2.Text) + Convert.ToDecimal(Bellabel3.Text) + Convert.ToDecimal(Bellabel4.Text) + Convert.ToDecimal(Bellabel5.Text) + Convert.ToDecimal(Bellabel6.Text)).ToString();
-                AllJirlabel.Text = (Convert.ToDecimal(Jirlabel1.Text) + Convert.ToDecimal(Jirlabel2.Text) + Convert.ToDecimal(Jirlabel3.Text) + Convert.ToDecimal(Jirlabel4.Text) + Convert.ToDecimal(Jirlabel5.Text) + Convert.ToDecimal(Jirlabel6.Text)).ToString();
-                AllCallabel.Text = (Convert.ToDecimal(Callabel1.Text) + Convert.ToDecimal(Callabel2.Text) + Convert.ToDecimal(Callabel3.Text) + Convert.ToDecimal(Callabel4.Text) + Convert.ToDecimal(Callabel5.Text) + Convert.ToDecimal(Callabel6.Text)).ToString();
             }
             catch (Exception)
             {
@@ -276,79 +254,79 @@ namespace Diet_note
             {
                 if (AllUgllabel.Text != "0" || AllBellabel.Text != "0" || AllJirlabel.Text != "0" || AllCallabel.Text != "0")
                 {
-                   User seluser = (User)NamelistBox.SelectedItem;
+                    User seluser = (User)NamelistBox.SelectedItem;
 
 
-                        if (DateTime.Now.Date != seluser.Histories.Last().Date && seluser.Histories.Last().firsttime == false)
+                    if (DateTime.Now.Date != seluser.Histories.Last().Date && seluser.Histories.Last().firsttime == false)
+                    {
+
+                        History newhistory = new History { Date = DateTime.Now.Date, Countofeat = 1, UserId = seluser.Id, firsttime = false };
+                        if (Convert.ToDecimal(AllUgllabel.Text) > Convert.ToDecimal(seluser.Edges.Carbohydrates))
                         {
-                        
-                            History newhistory = new History { Date = DateTime.Now.Date, Countofeat = 1, UserId = seluser.Id, firsttime = false };
-                            if (Convert.ToDecimal(AllUgllabel.Text) > Convert.ToDecimal(seluser.Edges.Carbohydrates))
+                            MessageBox.Show("Вы превысили суточное потребление углеводов!");
+                            return;
+                        }
+                        if (Convert.ToDecimal(AllBellabel.Text) > Convert.ToDecimal(seluser.Edges.Proteins))
+                        {
+                            MessageBox.Show("Вы превысили суточное протребление протеинов!");
+                            return;
+                        }
+                        if (Convert.ToDecimal(AllJirlabel.Text) > Convert.ToDecimal(seluser.Edges.Fats))
+                        {
+                            MessageBox.Show("Вы превысили суточное потребление жиров!");
+                            return;
+                        }
+                        if (Convert.ToDecimal(AllCallabel.Text) > Convert.ToDecimal(seluser.Edges.Calloriesedge))
+                        {
+                            MessageBox.Show("Вы превысили суточное потребление каллорий!");
+                            return;
+                        }
+                        newhistory.CarboHydrates = AllUgllabel.Text;
+                        newhistory.Proteins = AllBellabel.Text;
+                        newhistory.Fats = AllJirlabel.Text;
+                        newhistory.Callories = AllCallabel.Text;
+                        if (EatBox1.SelectedItem != null)
+                        {
+                            newhistory.Foodname = EatBox1.Text;
+                            if (EatBox2.SelectedItem != null || EatBox3.SelectedItem != null || EatBox4.SelectedItem != null || EatBox5.SelectedItem != null || EatBox6.SelectedItem != null)
+                                newhistory.Foodname += ",";
+                        }
+                        if (EatBox2.SelectedItem != null)
+                        {
+                            newhistory.Foodname += EatBox2.Text;
+                            if (EatBox3.SelectedItem != null || EatBox4.SelectedItem != null || EatBox5.SelectedItem != null || EatBox6.SelectedItem != null)
+                                newhistory.Foodname += ",";
+
+                        }
+                        if (EatBox3.SelectedItem != null)
+                        {
+                            newhistory.Foodname += EatBox3.Text;
+                            if (EatBox4.SelectedItem != null || EatBox5.SelectedItem != null || EatBox6.SelectedItem != null)
+                                newhistory.Foodname += ",";
+
+                        }
+                        if (EatBox4.SelectedItem != null)
+                        {
+                            newhistory.Foodname += EatBox4.Text;
+                            if (EatBox5.SelectedItem != null || EatBox6.SelectedItem != null)
+                                newhistory.Foodname += ",";
+
+                        }
+                        if (EatBox5.SelectedItem != null)
+                        {
+                            newhistory.Foodname += EatBox5.Text;
+                            if (EatBox6.SelectedItem != null)
                             {
-                                MessageBox.Show("Вы превысили суточное потребление углеводов!");
-                                return;
-                            }
-                            if (Convert.ToDecimal(AllBellabel.Text) > Convert.ToDecimal(seluser.Edges.Proteins))
-                            {
-                                MessageBox.Show("Вы превысили суточное протребление протеинов!");
-                                return;
-                            }
-                            if (Convert.ToDecimal(AllJirlabel.Text) > Convert.ToDecimal(seluser.Edges.Fats))
-                            {
-                                MessageBox.Show("Вы превысили суточное потребление жиров!");
-                                return;
-                            }
-                            if (Convert.ToDecimal(AllCallabel.Text) > Convert.ToDecimal(seluser.Edges.Calloriesedge))
-                            {
-                                MessageBox.Show("Вы превысили суточное потребление каллорий!");
-                                return;
-                            }
-                            newhistory.CarboHydrates = AllUgllabel.Text;
-                            newhistory.Proteins = AllBellabel.Text;
-                            newhistory.Fats = AllJirlabel.Text;
-                            newhistory.Callories = AllCallabel.Text;
-                            if (EatBox1.SelectedItem != null)
-                            {
-                                newhistory.Foodname = EatBox1.Text;
-                                if (EatBox2.SelectedItem != null || EatBox3.SelectedItem != null || EatBox4.SelectedItem != null || EatBox5.SelectedItem != null || EatBox6.SelectedItem != null)
-                                    newhistory.Foodname += ",";
-                            }
-                            if (EatBox2.SelectedItem != null)
-                            {
-                                newhistory.Foodname += EatBox2.Text;
-                                if (EatBox3.SelectedItem != null || EatBox4.SelectedItem != null || EatBox5.SelectedItem != null || EatBox6.SelectedItem != null)
-                                    newhistory.Foodname += ",";
+                                newhistory.Foodname += ",";
+                                newhistory.Foodname += EatBox6.Text;
 
                             }
-                            if (EatBox3.SelectedItem != null)
-                            {
-                                newhistory.Foodname += EatBox3.Text;
-                                if (EatBox4.SelectedItem != null || EatBox5.SelectedItem != null || EatBox6.SelectedItem != null)
-                                    newhistory.Foodname += ",";
 
-                            }
-                            if (EatBox4.SelectedItem != null)
-                            {
-                                newhistory.Foodname += EatBox4.Text;
-                                if (EatBox5.SelectedItem != null || EatBox6.SelectedItem != null)
-                                    newhistory.Foodname += ",";
-
-                            }
-                            if (EatBox5.SelectedItem != null)
-                            {
-                                newhistory.Foodname += EatBox5.Text;
-                                if (EatBox6.SelectedItem != null)
-                                {
-                                    newhistory.Foodname += ",";
-                                    newhistory.Foodname += EatBox6.Text;
-
-                                }
-
-                            }
+                        }
                         using (var db = new Aplicatincontext())
                         {
                             var checkid = db.Histories.ToList();
-                            newhistory.Id = checkid.Last().Id+1;
+                            newhistory.Id = checkid.Last().Id + 1;
 
                             db.Histories.Add(newhistory);
                             db.SaveChanges();
@@ -356,122 +334,115 @@ namespace Diet_note
                         seluser.Histories.Add(newhistory);
                         MessageBox.Show("Ням - Ням!");
 
-                        }
-                        else
+                    }
+                    else
+                    {
+                        History newhistory = new History { UserId = seluser.Id, Date = DateTime.Now.Date };
+
+                        if (!seluser.Histories.Last().firsttime)
                         {
-                            History newhistory = new History { UserId = seluser.Id,Date = DateTime.Now.Date};
-                            
-                            if (!seluser.Histories.Last().firsttime)
+                            newhistory.Countofeat = seluser.Histories.Last().Countofeat + 1;
+                            if (newhistory.Countofeat > seluser.Edges.Numbereats)
                             {
-                                newhistory.Countofeat = seluser.Histories.Last().Countofeat + 1;
-                                if (newhistory.Countofeat > seluser.Edges.Numbereats)
-                                {
-                                    MessageBox.Show("Вы привысили количество приемов пищи!");
-                                    return;
-                                }
-
-                            }
-
-                            decimal edgecarbo = Convert.ToDecimal(seluser.Histories.Last().CarboHydrates) + Convert.ToDecimal(AllUgllabel.Text);
-                            if (edgecarbo > Convert.ToDecimal(seluser.Edges.Carbohydrates))
-                            {
-                                MessageBox.Show("Вы превысили суточное потребление углеводов!");
+                                MessageBox.Show("Вы привысили количество приемов пищи!");
                                 return;
                             }
-                            decimal edgeprot = Convert.ToDecimal(seluser.Histories.Last().Proteins) + Convert.ToDecimal(AllBellabel.Text);
-                            if (edgeprot > Convert.ToDecimal(seluser.Edges.Proteins))
-                            {
-                                MessageBox.Show("Вы превысили суточное протребление протеинов!");
-                                return;
-                            }
-                            decimal edgefat = Convert.ToDecimal(seluser.Histories.Last().Fats) + Convert.ToDecimal(AllJirlabel.Text);
-                            if (edgefat > Convert.ToDecimal(seluser.Edges.Fats))
-                            {
-                                MessageBox.Show("Вы превысили суточное потребление жиров!");
-                                return;
-                            }
-                            decimal edgecall = Convert.ToDecimal(seluser.Histories.Last().Callories) + Convert.ToDecimal(AllCallabel.Text);
-                            if (edgecall > Convert.ToDecimal(seluser.Edges.Calloriesedge))
-                            {
-                                MessageBox.Show("Вы превысили суточное потребление каллорий!");
-                                return;
-                            }
-                            newhistory.CarboHydrates = $"{edgecarbo}";
-                            newhistory.Proteins = $"{edgeprot}";
-                            newhistory.Fats = $"{edgefat}";
-                            newhistory.Callories = $"{edgecall}";
 
-                            if (EatBox1.SelectedItem != null)
+                        }
+
+                        decimal edgecarbo = Convert.ToDecimal(seluser.Histories.Last().CarboHydrates) + Convert.ToDecimal(AllUgllabel.Text);
+                        if (edgecarbo > Convert.ToDecimal(seluser.Edges.Carbohydrates))
+                        {
+                            MessageBox.Show("Вы превысили суточное потребление углеводов!");
+                            return;
+                        }
+                        decimal edgeprot = Convert.ToDecimal(seluser.Histories.Last().Proteins) + Convert.ToDecimal(AllBellabel.Text);
+                        if (edgeprot > Convert.ToDecimal(seluser.Edges.Proteins))
+                        {
+                            MessageBox.Show("Вы превысили суточное протребление протеинов!");
+                            return;
+                        }
+                        decimal edgefat = Convert.ToDecimal(seluser.Histories.Last().Fats) + Convert.ToDecimal(AllJirlabel.Text);
+                        if (edgefat > Convert.ToDecimal(seluser.Edges.Fats))
+                        {
+                            MessageBox.Show("Вы превысили суточное потребление жиров!");
+                            return;
+                        }
+                        decimal edgecall = Convert.ToDecimal(seluser.Histories.Last().Callories) + Convert.ToDecimal(AllCallabel.Text);
+                        if (edgecall > Convert.ToDecimal(seluser.Edges.Calloriesedge))
+                        {
+                            MessageBox.Show("Вы превысили суточное потребление каллорий!");
+                            return;
+                        }
+                        newhistory.CarboHydrates = $"{edgecarbo}";
+                        newhistory.Proteins = $"{edgeprot}";
+                        newhistory.Fats = $"{edgefat}";
+                        newhistory.Callories = $"{edgecall}";
+
+                        if (EatBox1.SelectedItem != null)
+                        {
+                            newhistory.Foodname = EatBox1.Text;
+                            if (EatBox2.SelectedItem != null || EatBox3.SelectedItem != null || EatBox4.SelectedItem != null || EatBox5.SelectedItem != null || EatBox6.SelectedItem != null)
+                                newhistory.Foodname += ",";
+                        }
+                        if (EatBox2.SelectedItem != null)
+                        {
+                            newhistory.Foodname += EatBox2.Text;
+                            if (EatBox3.SelectedItem != null || EatBox4.SelectedItem != null || EatBox5.SelectedItem != null || EatBox6.SelectedItem != null)
+                                newhistory.Foodname += ",";
+
+                        }
+                        if (EatBox3.SelectedItem != null)
+                        {
+                            newhistory.Foodname += EatBox3.Text;
+                            if (EatBox4.SelectedItem != null || EatBox5.SelectedItem != null || EatBox6.SelectedItem != null)
+                                newhistory.Foodname += ",";
+
+                        }
+                        if (EatBox4.SelectedItem != null)
+                        {
+                            newhistory.Foodname += EatBox4.Text;
+                            if (EatBox5.SelectedItem != null || EatBox6.SelectedItem != null)
+                                newhistory.Foodname += ",";
+
+                        }
+                        if (EatBox5.SelectedItem != null)
+                        {
+                            newhistory.Foodname += EatBox5.Text;
+                            if (EatBox6.SelectedItem != null)
                             {
-                                newhistory.Foodname = EatBox1.Text;
-                                if (EatBox2.SelectedItem != null || EatBox3.SelectedItem != null || EatBox4.SelectedItem != null || EatBox5.SelectedItem != null || EatBox6.SelectedItem != null)
-                                    newhistory.Foodname += ",";
-                            }
-                            if (EatBox2.SelectedItem != null)
-                            {
-                                newhistory.Foodname += EatBox2.Text;
-                                if (EatBox3.SelectedItem != null || EatBox4.SelectedItem != null || EatBox5.SelectedItem != null || EatBox6.SelectedItem != null)
-                                    newhistory.Foodname += ",";
+                                newhistory.Foodname += ",";
+                                newhistory.Foodname += EatBox6.Text;
 
                             }
-                            if (EatBox3.SelectedItem != null)
-                            {
-                                newhistory.Foodname += EatBox3.Text;
-                                if (EatBox4.SelectedItem != null || EatBox5.SelectedItem != null || EatBox6.SelectedItem != null)
-                                    newhistory.Foodname += ",";
 
-                            }
-                            if (EatBox4.SelectedItem != null)
-                            {
-                                newhistory.Foodname += EatBox4.Text;
-                                if (EatBox5.SelectedItem != null || EatBox6.SelectedItem != null)
-                                    newhistory.Foodname += ",";
-
-                            }
-                            if (EatBox5.SelectedItem != null)
-                            {
-                                newhistory.Foodname += EatBox5.Text;
-                                if (EatBox6.SelectedItem != null)
-                                {
-                                    newhistory.Foodname += ",";
-                                    newhistory.Foodname += EatBox6.Text;
-
-                                }
-
-                            }
+                        }
                         using (var db = new Aplicatincontext())
                         {
                             if (!seluser.Histories.Last().firsttime)
                             {
                                 var checkid = db.Histories.ToList();
-                                newhistory.Id = checkid.Last().Id+1;
+                                newhistory.Id = checkid.Last().Id + 1;
                             }
                             if (seluser.Histories.Last().firsttime)
                             {
                                 newhistory.Countofeat = 1;
                                 newhistory.firsttime = false;
                                 newhistory.Id = seluser.Histories[0].Id;
-                                //db.Histories.Remove(seluser.Histories.First());
-                                seluser.Histories[0]=newhistory;
+                                seluser.Histories[0] = newhistory;
                                 db.Histories.Update(newhistory);
                                 db.SaveChanges();
                                 MessageBox.Show("Ням - Ням!");
                                 return;
 
                             }
-                           
+
                             db.Histories.Add(newhistory);
                             db.SaveChanges();
-                            
-
-                            //NamelistBox.Items.Clear();
-                            //NamelistBox.Items.AddRange(db.Users.Include(h=>h.Histories).Include(e=>e.Edges).ToArray());
-
                         }
                         seluser.Histories.Add(newhistory);
-                        //NamelistBox.DisplayMember = "Name";
                         MessageBox.Show("Ням - Ням!");
-                        }
+                    }
 
                 }
                 else
@@ -479,94 +450,83 @@ namespace Diet_note
                     MessageBox.Show("Выберите хотя бы одно блюдо!");
                     return;
                 }
-                
-                
+
+
             }
-           
+
         }
 
-            private void ClearEatpictureBox1_Click(object sender, EventArgs e)
+        private void ClearEatpictureBox1_Click(object sender, EventArgs e)
         {
-            AllUgllabel.Text = (Convert.ToDecimal(AllUgllabel.Text) - Convert.ToDecimal(Ugllabel1.Text)).ToString();
-            AllBellabel.Text = (Convert.ToDecimal(AllBellabel.Text) - Convert.ToDecimal(Bellabel1.Text)).ToString();
-            AllJirlabel.Text = (Convert.ToDecimal(AllJirlabel.Text) - Convert.ToDecimal(Jirlabel1.Text)).ToString();
-            AllCallabel.Text = (Convert.ToDecimal(AllCallabel.Text) - Convert.ToDecimal(Callabel1.Text)).ToString();
             Ugllabel1.Text = "0";
             Bellabel1.Text = "0";
             Jirlabel1.Text = "0";
             Callabel1.Text = "0";
             EatBox1.Focus();
             EatBox1.SelectedText = "";
+            MultiBox1.Text = "1";
+            MultiBox1.Enabled = false;
         }
 
         private void ClearEatpictureBox2_Click(object sender, EventArgs e)
         {
-            AllUgllabel.Text = (Convert.ToDecimal(AllUgllabel.Text) - Convert.ToDecimal(Ugllabel2.Text)).ToString();
-            AllBellabel.Text = (Convert.ToDecimal(AllBellabel.Text) - Convert.ToDecimal(Bellabel2.Text)).ToString();
-            AllJirlabel.Text = (Convert.ToDecimal(AllJirlabel.Text) - Convert.ToDecimal(Jirlabel2.Text)).ToString();
-            AllCallabel.Text = (Convert.ToDecimal(AllCallabel.Text) - Convert.ToDecimal(Callabel2.Text)).ToString();
             Ugllabel2.Text = "0";
             Bellabel2.Text = "0";
             Jirlabel2.Text = "0";
             Callabel2.Text = "0";
             EatBox2.Focus();
             EatBox2.SelectedText = "";
+            MultiBox2.Text = "1";
+            MultiBox2.Enabled = false;
+
         }
 
         private void ClearEatpictureBox3_Click(object sender, EventArgs e)
         {
-            AllUgllabel.Text = (Convert.ToDecimal(AllUgllabel.Text) - Convert.ToDecimal(Ugllabel3.Text)).ToString();
-            AllBellabel.Text = (Convert.ToDecimal(AllBellabel.Text) - Convert.ToDecimal(Bellabel3.Text)).ToString();
-            AllJirlabel.Text = (Convert.ToDecimal(AllJirlabel.Text) - Convert.ToDecimal(Jirlabel3.Text)).ToString();
-            AllCallabel.Text = (Convert.ToDecimal(AllCallabel.Text) - Convert.ToDecimal(Callabel3.Text)).ToString();
             Ugllabel3.Text = "0";
             Bellabel3.Text = "0";
             Jirlabel3.Text = "0";
             Callabel3.Text = "0";
             EatBox3.Focus();
             EatBox3.SelectedText = "";
+            MultiBox3.Text = "1";
+            MultiBox3.Enabled = false;
         }
 
         private void ClearEatpictureBox4_Click(object sender, EventArgs e)
         {
-            AllUgllabel.Text = (Convert.ToDecimal(AllUgllabel.Text) - Convert.ToDecimal(Ugllabel4.Text)).ToString();
-            AllBellabel.Text = (Convert.ToDecimal(AllBellabel.Text) - Convert.ToDecimal(Bellabel4.Text)).ToString();
-            AllJirlabel.Text = (Convert.ToDecimal(AllJirlabel.Text) - Convert.ToDecimal(Jirlabel4.Text)).ToString();
-            AllCallabel.Text = (Convert.ToDecimal(AllCallabel.Text) - Convert.ToDecimal(Callabel4.Text)).ToString();
             Ugllabel4.Text = "0";
             Bellabel4.Text = "0";
             Jirlabel4.Text = "0";
             Callabel4.Text = "0";
             EatBox4.Focus();
             EatBox4.SelectedText = "";
+            MultiBox4.Text = "1";
+            MultiBox4.Enabled = false;
         }
 
         private void ClearEatpictureBox5_Click(object sender, EventArgs e)
         {
-            AllUgllabel.Text = (Convert.ToDecimal(AllUgllabel.Text) - (Convert.ToDecimal(Ugllabel5.Text))).ToString();
-            AllBellabel.Text = (Convert.ToDecimal(AllBellabel.Text) - (Convert.ToDecimal(Bellabel5.Text))).ToString();
-            AllJirlabel.Text = (Convert.ToDecimal(AllJirlabel.Text) - (Convert.ToDecimal(Jirlabel5.Text))).ToString();
-            AllCallabel.Text = (Convert.ToDecimal(AllCallabel.Text) - (Convert.ToDecimal(Callabel5.Text))).ToString();
             Ugllabel5.Text = "0";
             Bellabel5.Text = "0";
             Jirlabel5.Text = "0";
             Callabel5.Text = "0";
             EatBox5.Focus();
             EatBox5.SelectedText = "";
+            MultiBox5.Text = "1";
+            MultiBox5.Enabled = false;
         }
 
         private void ClearEatpictureBox6_Click(object sender, EventArgs e)
         {
-            AllUgllabel.Text = (Convert.ToDecimal(AllUgllabel.Text) - (Convert.ToDecimal(Ugllabel6.Text))).ToString();
-            AllBellabel.Text = (Convert.ToDecimal(AllBellabel.Text) - (Convert.ToDecimal(Bellabel6.Text))).ToString();
-            AllJirlabel.Text = (Convert.ToDecimal(AllJirlabel.Text) - (Convert.ToDecimal(Jirlabel6.Text))).ToString();
-            AllCallabel.Text = (Convert.ToDecimal(AllCallabel.Text) - (Convert.ToDecimal(Callabel6.Text))).ToString();
             Ugllabel6.Text = "0";
             Bellabel6.Text = "0";
             Jirlabel6.Text = "0";
             Callabel6.Text = "0";
             EatBox6.Focus();
             EatBox6.SelectedText = "";
+            MultiBox6.Text = "1";
+            MultiBox6.Enabled = false;
         }
 
         private void AddEatpictureBox1_Click(object sender, EventArgs e)
@@ -575,14 +535,10 @@ namespace Diet_note
             Energoelements setel = (Energoelements)EatBox1.SelectedItem;
             if (EatBox1.SelectedItem == null)
                 return;
-                    Ugllabel1.Text = (Convert.ToDecimal(Ugllabel1.Text) + Convert.ToDecimal(setel.Carbohydrates)).ToString();
-                    Bellabel1.Text = (Convert.ToDecimal(Bellabel1.Text) + Convert.ToDecimal(setel.Protein)).ToString();
-                    Jirlabel1.Text = (Convert.ToDecimal(Jirlabel1.Text) + Convert.ToDecimal(setel.Fats)).ToString();
-                    Callabel1.Text = (Convert.ToDecimal(Callabel1.Text) + Convert.ToDecimal(setel.Callories)).ToString();
-                    AllUgllabel.Text = (Convert.ToDecimal(AllUgllabel.Text) + Convert.ToDecimal(setel.Carbohydrates)).ToString();
-                    AllBellabel.Text = (Convert.ToDecimal(AllBellabel.Text) + Convert.ToDecimal(setel.Protein)).ToString();
-                    AllJirlabel.Text = (Convert.ToDecimal(AllJirlabel.Text) + Convert.ToDecimal(setel.Fats)).ToString();
-                    AllCallabel.Text = (Convert.ToDecimal(AllCallabel.Text) + Convert.ToDecimal(setel.Callories)).ToString();
+            Ugllabel1.Text = (Convert.ToDecimal(Ugllabel1.Text) + Convert.ToDecimal(setel.Carbohydrates)).ToString();
+            Bellabel1.Text = (Convert.ToDecimal(Bellabel1.Text) + Convert.ToDecimal(setel.Protein)).ToString();
+            Jirlabel1.Text = (Convert.ToDecimal(Jirlabel1.Text) + Convert.ToDecimal(setel.Fats)).ToString();
+            Callabel1.Text = (Convert.ToDecimal(Callabel1.Text) + Convert.ToDecimal(setel.Callories)).ToString();
         }
 
         private void AddEatpictureBox2_Click(object sender, EventArgs e)
@@ -596,11 +552,6 @@ namespace Diet_note
             Bellabel2.Text = (Convert.ToDecimal(Bellabel2.Text) + Convert.ToDecimal(setel.Protein)).ToString();
             Jirlabel2.Text = (Convert.ToDecimal(Jirlabel2.Text) + Convert.ToDecimal(setel.Fats)).ToString();
             Callabel2.Text = (Convert.ToDecimal(Callabel2.Text) + Convert.ToDecimal(setel.Callories)).ToString();
-            AllUgllabel.Text = (Convert.ToDecimal(AllUgllabel.Text) + Convert.ToDecimal(setel.Carbohydrates)).ToString();
-            AllBellabel.Text = (Convert.ToDecimal(AllBellabel.Text) + Convert.ToDecimal(setel.Protein)).ToString();
-            AllJirlabel.Text = (Convert.ToDecimal(AllJirlabel.Text) + Convert.ToDecimal(setel.Fats)).ToString();
-            AllCallabel.Text = (Convert.ToDecimal(AllCallabel.Text) + Convert.ToDecimal(setel.Callories)).ToString();
-
         }
 
         private void AddEatpictureBox3_Click(object sender, EventArgs e)
@@ -614,10 +565,6 @@ namespace Diet_note
             Bellabel3.Text = (Convert.ToDecimal(Bellabel3.Text) + Convert.ToDecimal(setel.Protein)).ToString();
             Jirlabel3.Text = (Convert.ToDecimal(Jirlabel3.Text) + Convert.ToDecimal(setel.Fats)).ToString();
             Callabel3.Text = (Convert.ToDecimal(Callabel3.Text) + Convert.ToDecimal(setel.Callories)).ToString();
-            AllUgllabel.Text = (Convert.ToDecimal(AllUgllabel.Text) + Convert.ToDecimal(setel.Carbohydrates)).ToString();
-            AllBellabel.Text = (Convert.ToDecimal(AllBellabel.Text) + Convert.ToDecimal(setel.Protein)).ToString();
-            AllJirlabel.Text = (Convert.ToDecimal(AllJirlabel.Text) + Convert.ToDecimal(setel.Fats)).ToString();
-            AllCallabel.Text = (Convert.ToDecimal(AllCallabel.Text) + Convert.ToDecimal(setel.Callories)).ToString();
         }
 
         private void AddEatpictureBox4_Click(object sender, EventArgs e)
@@ -631,10 +578,6 @@ namespace Diet_note
             Bellabel4.Text = (Convert.ToDecimal(Bellabel4.Text) + Convert.ToDecimal(setel.Protein)).ToString();
             Jirlabel4.Text = (Convert.ToDecimal(Jirlabel4.Text) + Convert.ToDecimal(setel.Fats)).ToString();
             Callabel4.Text = (Convert.ToDecimal(Callabel4.Text) + Convert.ToDecimal(setel.Callories)).ToString();
-            AllUgllabel.Text = (Convert.ToDecimal(AllUgllabel.Text) + Convert.ToDecimal(setel.Carbohydrates)).ToString();
-            AllBellabel.Text = (Convert.ToDecimal(AllBellabel.Text) + Convert.ToDecimal(setel.Protein)).ToString();
-            AllJirlabel.Text = (Convert.ToDecimal(AllJirlabel.Text) + Convert.ToDecimal(setel.Fats)).ToString();
-            AllCallabel.Text = (Convert.ToDecimal(AllCallabel.Text) + Convert.ToDecimal(setel.Callories)).ToString();
 
         }
 
@@ -649,10 +592,6 @@ namespace Diet_note
             Bellabel5.Text = (Convert.ToDecimal(Bellabel5.Text) + Convert.ToDecimal(setel.Protein)).ToString();
             Jirlabel5.Text = (Convert.ToDecimal(Jirlabel5.Text) + Convert.ToDecimal(setel.Fats)).ToString();
             Callabel5.Text = (Convert.ToDecimal(Callabel5.Text) + Convert.ToDecimal(setel.Callories)).ToString();
-            AllUgllabel.Text = (Convert.ToDecimal(AllUgllabel.Text) + Convert.ToDecimal(setel.Carbohydrates)).ToString();
-            AllBellabel.Text = (Convert.ToDecimal(AllBellabel.Text) + Convert.ToDecimal(setel.Protein)).ToString();
-            AllJirlabel.Text = (Convert.ToDecimal(AllJirlabel.Text) + Convert.ToDecimal(setel.Fats)).ToString();
-            AllCallabel.Text = (Convert.ToDecimal(AllCallabel.Text) + Convert.ToDecimal(setel.Callories)).ToString();
         }
 
         private void AddEatpictureBox6_Click(object sender, EventArgs e)
@@ -666,147 +605,11 @@ namespace Diet_note
             Bellabel6.Text = (Convert.ToDecimal(Bellabel6.Text) + Convert.ToDecimal(setel.Protein)).ToString();
             Jirlabel6.Text = (Convert.ToDecimal(Jirlabel6.Text) + Convert.ToDecimal(setel.Fats)).ToString();
             Callabel6.Text = (Convert.ToDecimal(Callabel6.Text) + Convert.ToDecimal(setel.Callories)).ToString();
-            AllUgllabel.Text = (Convert.ToDecimal(AllUgllabel.Text) + Convert.ToDecimal(setel.Carbohydrates)).ToString();
-            AllBellabel.Text = (Convert.ToDecimal(AllBellabel.Text) + Convert.ToDecimal(setel.Protein)).ToString();
-            AllJirlabel.Text = (Convert.ToDecimal(AllJirlabel.Text) + Convert.ToDecimal(setel.Fats)).ToString();
-            AllCallabel.Text = (Convert.ToDecimal(AllCallabel.Text) + Convert.ToDecimal(setel.Callories)).ToString();
-        }
-
-
-        private void DeleteFoodBut_Click(object sender, EventArgs e)
-        {
-            Size = new Size(276, 267);
-            Panel deletefoodpanel = new Panel
-            {
-                Size = new Size(262, 230),
-                Location = new Point(0)
-            };
-            Controls.Add(deletefoodpanel);
-            deletefoodpanel.BringToFront();
-            Button deletefoodbutton = new Button
-            {
-                Size = new Size(131, 30),
-                Location = new Point(-1, 198),
-                Text = "Удалить"
-            };
-            deletefoodpanel.Controls.Add(deletefoodbutton);
-            Button Cancelfoodbutton = new Button
-            {
-                Size = new Size(131, 30),
-                Location = new Point(130, 198),
-                Text = "Отмена"
-            };
-            deletefoodpanel.Controls.Add(Cancelfoodbutton);
-
-            ListBox deletefoodlistbox = new ListBox
-            {
-                Size = new Size(276, 200),
-                Location = new Point(0)
-            };
-            deletefoodpanel.Controls.Add(deletefoodlistbox);
-            deletefoodlistbox.Items.AddRange(_elements.ToArray());
-            deletefoodlistbox.DisplayMember = "Name";
-            deletefoodbutton.Click += DeleteClick;
-            void DeleteClick(object but,EventArgs click)
-            {
-                if (deletefoodlistbox.SelectedItem != null)
-                {
-                    Energoelements setel = (Energoelements)deletefoodlistbox.SelectedItem;
-                    using (var db = new Aplicatincontext())
-                    {
-                        db.Elements.Remove(setel);
-                        db.SaveChanges();
-                    }
-                    if (EatBox1.Items.Contains(setel)&&EatBox2.Items.Contains(setel)&&EatBox3.Items.Contains(setel)&&EatBox4.Items.Contains(setel)&&EatBox5.Items.Contains(setel)&&EatBox6.Items.Contains(setel))
-                    {
-                        if (EatBox1.SelectedItem == setel)
-                        {
-                            AllUgllabel.Text = (Convert.ToDecimal(AllUgllabel.Text) - Convert.ToDecimal(Ugllabel1.Text)).ToString();
-                            AllBellabel.Text = (Convert.ToDecimal(AllBellabel.Text) - Convert.ToDecimal(Bellabel1.Text)).ToString();
-                            AllJirlabel.Text = (Convert.ToDecimal(AllJirlabel.Text) - Convert.ToDecimal(Jirlabel1.Text)).ToString();
-                            AllCallabel.Text = (Convert.ToDecimal(AllCallabel.Text) - Convert.ToDecimal(Callabel1.Text)).ToString();
-                            Ugllabel1.Text = "0";
-                            Bellabel1.Text = "0";
-                            Jirlabel1.Text = "0";
-                            Callabel1.Text = "0";
-                        }
-                        EatBox1.Items.Remove(setel);
-                        if(EatBox2.SelectedItem==setel)
-                        {
-                            AllUgllabel.Text = (Convert.ToDecimal(AllUgllabel.Text) - Convert.ToDecimal(Ugllabel2.Text)).ToString();
-                            AllBellabel.Text = (Convert.ToDecimal(AllBellabel.Text) - Convert.ToDecimal(Bellabel2.Text)).ToString();
-                            AllJirlabel.Text = (Convert.ToDecimal(AllJirlabel.Text) - Convert.ToDecimal(Jirlabel2.Text)).ToString();
-                            AllCallabel.Text = (Convert.ToDecimal(AllCallabel.Text) - Convert.ToDecimal(Callabel2.Text)).ToString();
-                            Ugllabel2.Text = "0";
-                            Bellabel2.Text = "0";
-                            Jirlabel2.Text = "0";
-                            Callabel2.Text = "0";
-                        }
-                        EatBox2.Items.Remove(setel);
-                        if(EatBox3.SelectedItem==setel)
-                        {
-                            AllUgllabel.Text = (Convert.ToDecimal(AllUgllabel.Text) - Convert.ToDecimal(Ugllabel3.Text)).ToString();
-                            AllBellabel.Text = (Convert.ToDecimal(AllBellabel.Text) - Convert.ToDecimal(Bellabel3.Text)).ToString();
-                            AllJirlabel.Text = (Convert.ToDecimal(AllJirlabel.Text) - Convert.ToDecimal(Jirlabel3.Text)).ToString();
-                            AllCallabel.Text = (Convert.ToDecimal(AllCallabel.Text) - Convert.ToDecimal(Callabel3.Text)).ToString();
-                            Ugllabel3.Text = "0";
-                            Bellabel3.Text = "0";
-                            Jirlabel3.Text = "0";
-                            Callabel3.Text = "0";
-                        }
-                        EatBox3.Items.Remove(setel);
-                        if(EatBox4.SelectedItem==setel)
-                        {
-                            AllUgllabel.Text = (Convert.ToDecimal(AllUgllabel.Text) - Convert.ToDecimal(Ugllabel4.Text)).ToString();
-                            AllBellabel.Text = (Convert.ToDecimal(AllBellabel.Text) - Convert.ToDecimal(Bellabel4.Text)).ToString();
-                            AllJirlabel.Text = (Convert.ToDecimal(AllJirlabel.Text) - Convert.ToDecimal(Jirlabel4.Text)).ToString();
-                            AllCallabel.Text = (Convert.ToDecimal(AllCallabel.Text) - Convert.ToDecimal(Callabel4.Text)).ToString();
-                            Ugllabel4.Text = "0";
-                            Bellabel4.Text = "0";
-                            Jirlabel4.Text = "0";
-                            Callabel4.Text = "0";
-                        }
-                        EatBox4.Items.Remove(setel);
-                        if(EatBox5.SelectedItem == setel)
-                        {
-                            AllUgllabel.Text = (Convert.ToDecimal(AllUgllabel.Text) - (Convert.ToDecimal(Ugllabel5.Text))).ToString();
-                            AllBellabel.Text = (Convert.ToDecimal(AllBellabel.Text) - (Convert.ToDecimal(Bellabel5.Text))).ToString();
-                            AllJirlabel.Text = (Convert.ToDecimal(AllJirlabel.Text) - (Convert.ToDecimal(Jirlabel5.Text))).ToString();
-                            AllCallabel.Text = (Convert.ToDecimal(AllCallabel.Text) - (Convert.ToDecimal(Callabel5.Text))).ToString();
-                            Ugllabel5.Text = "0";
-                            Bellabel5.Text = "0";
-                            Jirlabel5.Text = "0";
-                            Callabel5.Text = "0";
-                        }
-                        EatBox5.Items.Remove(setel);
-                        if(EatBox6.SelectedItem == setel)
-                        {
-                            AllUgllabel.Text = (Convert.ToDecimal(AllUgllabel.Text) - (Convert.ToDecimal(Ugllabel6.Text))).ToString();
-                            AllBellabel.Text = (Convert.ToDecimal(AllBellabel.Text) - (Convert.ToDecimal(Bellabel6.Text))).ToString();
-                            AllJirlabel.Text = (Convert.ToDecimal(AllJirlabel.Text) - (Convert.ToDecimal(Jirlabel6.Text))).ToString();
-                            AllCallabel.Text = (Convert.ToDecimal(AllCallabel.Text) - (Convert.ToDecimal(Callabel6.Text))).ToString();
-                            Ugllabel6.Text = "0";
-                            Bellabel6.Text = "0";
-                            Jirlabel6.Text = "0";
-                            Callabel6.Text = "0";
-                        }
-                        EatBox6.Items.Remove(setel);
-                    }
-                    deletefoodlistbox.Items.Remove(setel);
-                }
-               
-            }
-            Cancelfoodbutton.Click += CancelClick;
-            void CancelClick(object but,EventArgs click)
-            {
-                deletefoodpanel.Dispose();
-                Size = new Size(890, 430);
-            }
         }
 
 
         //Функционал кнопки "Пользователь"
-        private void UserBut_Click(object sender, EventArgs e) 
+        private void UserBut_Click(object sender, EventArgs e)
         {
             Size = new Size(890, 520);
             UserBut.Hide();
@@ -814,12 +617,12 @@ namespace Diet_note
             ClearFoodBut.Enabled = false;
             Eatbutton.Enabled = false;
             Historybutton.Enabled = false;
-            
+
 
             Panel UserFoodPan = new Panel
             {
-                Size = new Size(490,40),
-                Location = new Point(288,10)
+                Size = new Size(490, 40),
+                Location = new Point(288, 10)
 
             };
             Controls.Add(UserFoodPan);
@@ -913,11 +716,11 @@ namespace Diet_note
                 Size = new Size(890, 430);
                 UserBut.Show();
                 FoodBut.Show();
-                if(Controls.ContainsKey("adduserpanel"))
+                if (Controls.ContainsKey("adduserpanel"))
                 {
                     Controls.RemoveByKey("adduserpanel");
                 }
-                if(Controls.ContainsKey("upduserpanel"))
+                if (Controls.ContainsKey("upduserpanel"))
                 {
                     Controls.RemoveByKey("upduserpanel");
                 }
@@ -938,8 +741,8 @@ namespace Diet_note
                 UpdateBut.Enabled = true;
                 DeleteUserBut.Enabled = true;
                 NamelistBox.Enabled = false;
-                
-               
+
+
 
                 Panel adduserpanel = new Panel
                 {
@@ -947,7 +750,7 @@ namespace Diet_note
                     BackColor = Color.Aquamarine,
                     Location = new Point(11, 380),
                     Name = "adduserpanel"
-                    
+
 
                 };
                 Controls.Add(adduserpanel);
@@ -1124,20 +927,20 @@ namespace Diet_note
                     DeleteUserBut.Enabled = true;
                     UpdateBut.Enabled = true;
                     NamelistBox.Enabled = true;
-                   
+
                 }
 
                 //Функционал кнопки отмены
 
                 cancelbut.Click += CancelAddUserClick;
-                void CancelAddUserClick(object but,EventArgs click)
+                void CancelAddUserClick(object but, EventArgs click)
                 {
                     adduserpanel.Dispose();
                     Addbutton.Enabled = true;
                     DeleteUserBut.Enabled = true;
                     UpdateBut.Enabled = true;
                     NamelistBox.Enabled = true;
-      
+
                 }
 
 
@@ -1146,19 +949,19 @@ namespace Diet_note
             //Функционал кнопки "Редактировать"
 
             UpdateBut.Click += UpdateButClick;
-            void UpdateButClick(object but,EventArgs click)
+            void UpdateButClick(object but, EventArgs click)
             {
-                if(NamelistBox.SelectedItem==null)
+                if (NamelistBox.SelectedItem == null)
                 {
                     MessageBox.Show("Выберете пользователя!");
                     return;
                 }
-                if(Controls.ContainsKey("adduserpanel"))
+                if (Controls.ContainsKey("adduserpanel"))
                 {
                     Controls.RemoveByKey("adduserpanel");
-                    
+
                 }
-                
+
                 Addbutton.Enabled = true;
                 UpdateBut.Enabled = false;
                 DeleteUserBut.Enabled = true;
@@ -1367,7 +1170,7 @@ namespace Diet_note
             //Функционал кнопки "Удалить"
 
             DeleteUserBut.Click += DeleteUserButClick;
-            void DeleteUserButClick(object but,EventArgs click)
+            void DeleteUserButClick(object but, EventArgs click)
             {
                 DeleteUserBut.Enabled = true;
                 Addbutton.Enabled = true;
@@ -1381,7 +1184,7 @@ namespace Diet_note
                         db.Histories.RemoveRange(seluser.Histories);
                         db.Edges.Remove(seluser.Edges);
                         db.Users.Remove(seluser);
-                        
+
                         db.SaveChanges();
                     }
                     NamelistBox.Items.Remove(seluser);
@@ -1492,7 +1295,7 @@ namespace Diet_note
                     Controls.RemoveByKey("updfoodpanel");
 
                 }
-                if(Controls.ContainsKey("delpanel"))
+                if (Controls.ContainsKey("delpanel"))
                 {
                     Controls.RemoveByKey("delpanel");
                 }
@@ -1630,7 +1433,7 @@ namespace Diet_note
                 //Функционал кнопки добавить
 
                 addfoodbut.Click += addfoodbutClick;
-                void addfoodbutClick(object but,EventArgs click)
+                void addfoodbutClick(object but, EventArgs click)
                 {
                     try
                     {
@@ -1661,7 +1464,7 @@ namespace Diet_note
                             MessageBox.Show("Введите все значения!");
                         }
                     }
-                    catch(Exception)
+                    catch (Exception)
                     {
                         MessageBox.Show("Неправильное значение!");
                     }
@@ -1670,7 +1473,7 @@ namespace Diet_note
                 //Функционал кнопки отмена
 
                 cancelbut.Click += cancelbutClick;
-                void cancelbutClick(object but,EventArgs click)
+                void cancelbutClick(object but, EventArgs click)
                 {
                     addfoodpanel.Dispose();
                     AddFoodBut.Enabled = true;
@@ -1806,9 +1609,9 @@ namespace Diet_note
 
                 ComboBox updfoodcombobox = new ComboBox
                 {
-                    Size= new Size(100,20),
+                    Size = new Size(100, 20),
                     DropDownStyle = ComboBoxStyle.DropDown,
-                    Location  =  new Point(510,30),
+                    Location = new Point(510, 30),
                     DisplayMember = "Name"
                 };
                 updfoodpanel.Controls.Add(updfoodcombobox);
@@ -1829,7 +1632,7 @@ namespace Diet_note
                 updfoodpanel.Controls.Add(cancelbut);
                 cancelbut.BringToFront();
 
-                using(var db = new Aplicatincontext())
+                using (var db = new Aplicatincontext())
                 {
                     updfoodcombobox.Items.AddRange(db.Elements.ToArray());
 
@@ -1838,7 +1641,7 @@ namespace Diet_note
 
                 //Функционал выбора блюда
 
-                void updfoodcomboboxchanged(object box,EventArgs changed)
+                void updfoodcomboboxchanged(object box, EventArgs changed)
                 {
                     Energoelements updelement = (Energoelements)updfoodcombobox.SelectedItem;
                     namebox.Text = updelement.Name;
@@ -1864,21 +1667,21 @@ namespace Diet_note
                 updfoodbut.Click += updfoodbutClick;
                 void updfoodbutClick(object but, EventArgs click)
                 {
-                    
-                    if(updfoodcombobox.SelectedItem!=null)
+
+                    if (updfoodcombobox.SelectedItem != null)
                     {
                         Energoelements updelement = (Energoelements)updfoodcombobox.SelectedItem;
                         if (namebox.Text != "")
                             updelement.Name = namebox.Text;
                         if (carbohydbox.Text != "")
-                            updelement.Carbohydrates = carbohydbox.Text;                        
-                        if (proteinbox.Text!="")
-                            updelement.Protein = proteinbox.Text;                        
-                        if(fatsbox.Text!="")
-                            updelement.Fats = fatsbox.Text;                        
-                        if(calloriesbox.Text!="")
+                            updelement.Carbohydrates = carbohydbox.Text;
+                        if (proteinbox.Text != "")
+                            updelement.Protein = proteinbox.Text;
+                        if (fatsbox.Text != "")
+                            updelement.Fats = fatsbox.Text;
+                        if (calloriesbox.Text != "")
                             updelement.Callories = calloriesbox.Text;
-                        using(var db = new Aplicatincontext())
+                        using (var db = new Aplicatincontext())
                         {
                             db.Elements.Update(updelement);
                             db.SaveChanges();
@@ -1910,7 +1713,7 @@ namespace Diet_note
             //Функционал кнопки "Удалить"
 
             DeleteFoodBut.Click += DeleteFoodButClick;
-            void DeleteFoodButClick(object but,EventArgs click)
+            void DeleteFoodButClick(object but, EventArgs click)
             {
                 DeleteFoodBut.Enabled = false;
                 if (Controls.ContainsKey("addfoodpanel"))
@@ -2077,9 +1880,9 @@ namespace Diet_note
                 //Функционал кнопки удалить
 
                 delfoodbut.Click += delfoodbutClick;
-                void delfoodbutClick(object but,EventArgs click)
+                void delfoodbutClick(object but, EventArgs click)
                 {
-                    if(delfoodcombobox.SelectedItem!=null)
+                    if (delfoodcombobox.SelectedItem != null)
                     {
                         Energoelements delelement = (Energoelements)delfoodcombobox.SelectedItem;
                         using (var db = new Aplicatincontext())
@@ -2088,7 +1891,7 @@ namespace Diet_note
                             db.SaveChanges();
                         }
 
-                       
+
                         EatBox1.Items.RemoveAt(delfoodcombobox.SelectedIndex);
                         EatBox2.Items.RemoveAt(delfoodcombobox.SelectedIndex);
                         EatBox3.Items.RemoveAt(delfoodcombobox.SelectedIndex);
@@ -2103,7 +1906,7 @@ namespace Diet_note
                         fats.Text = "";
                         callories.Text = "";
                         MessageBox.Show("Блюдо удалено!");
-                        
+
 
                     }
                     else
@@ -2115,7 +1918,7 @@ namespace Diet_note
                 //Функционал кнопки отмена
 
                 cancelbut.Click += cancelbutClick;
-                void cancelbutClick(object but,EventArgs click)
+                void cancelbutClick(object but, EventArgs click)
                 {
                     delfoodpanel.Dispose();
                     DeleteFoodBut.Enabled = true;
@@ -2144,15 +1947,16 @@ namespace Diet_note
                 {
                     Controls.RemoveByKey("updfoodpanel");
                 }
-                if(Controls.ContainsKey("delfoodpanel"))
+                if (Controls.ContainsKey("delfoodpanel"))
                 {
                     Controls.RemoveByKey("delfoodpanel");
-                }    
+                }
 
             }
 
         }
 
+        //Функционал кнопки "Удалить вообще все"
         private void ClearFoodBut_Click(object sender, EventArgs e)
         {
             EatBox1.Text = "";
@@ -2161,10 +1965,6 @@ namespace Diet_note
             EatBox4.Text = "";
             EatBox5.Text = "";
             EatBox6.Text = "";
-            AllUgllabel.Text = "0";
-            AllBellabel.Text = "0";
-            AllJirlabel.Text = "0";
-            AllCallabel.Text = "0";
             Ugllabel1.Text = "0";
             Bellabel1.Text = "0";
             Jirlabel1.Text = "0";
@@ -2189,20 +1989,392 @@ namespace Diet_note
             Bellabel6.Text = "0";
             Jirlabel6.Text = "0";
             Callabel6.Text = "0";
+            MultiBox1.Text = "1";
+            MultiBox2.Text = "1";
+            MultiBox3.Text = "1";
+            MultiBox4.Text = "1";
+            MultiBox5.Text = "1";
+            MultiBox6.Text = "1";
+            MultiBox1.Enabled = false;
+            MultiBox2.Enabled = false;
+            MultiBox3.Enabled = false;
+            MultiBox4.Enabled = false;
+            MultiBox5.Enabled = false;
+            MultiBox6.Enabled = false;
         }
 
-
+        //Функионалы кнопок Кратности
         private void Multipicture1_Click(object sender, EventArgs e)
         {
-            if (!MultiBox1.Enabled)
-                MultiBox1.Enabled = true;
-            else
-            { 
-                MultiBox1.Text = "";
-                MultiBox1.Enabled = false;
+            if (EatBox1.SelectedItem != null)
+            {
+                if (!MultiBox1.Enabled)
+                {
+
+                    MultiBox1.Enabled = true;
+                }
+
+                else
+                {
+                    MultiBox1.Text = "1";
+                    MultiBox1.Enabled = false;
+                }
             }
 
         }
 
+        private void Multipicture2_Click(object sender, EventArgs e)
+        {
+            if (!MultiBox2.Enabled)
+                MultiBox2.Enabled = true;
+            else
+            {
+                MultiBox2.Text = "1";
+                MultiBox2.Enabled = false;
+            }
+        }
+
+        private void Multipicture3_Click(object sender, EventArgs e)
+        {
+            if (!MultiBox3.Enabled)
+                MultiBox3.Enabled = true;
+            else
+            {
+                MultiBox3.Text = "1";
+                MultiBox3.Enabled = false;
+            }
+        }
+
+        private void Multipicture4_Click(object sender, EventArgs e)
+        {
+            if (!MultiBox4.Enabled)
+                MultiBox4.Enabled = true;
+            else
+            {
+                MultiBox4.Text = "1";
+                MultiBox4.Enabled = false;
+            }
+        }
+
+        private void Multipicture5_Click(object sender, EventArgs e)
+        {
+            if (!MultiBox5.Enabled)
+                MultiBox5.Enabled = true;
+            else
+            {
+                MultiBox5.Text = "1";
+                MultiBox5.Enabled = false;
+            }
+        }
+
+        private void Multipicture6_Click(object sender, EventArgs e)
+        {
+            if (!MultiBox6.Enabled)
+                MultiBox6.Enabled = true;
+            else
+            {
+                MultiBox6.Text = "1";
+                MultiBox6.Enabled = false;
+            }
+        }
+
+        //Функционалы текстбоксов кратности
+        private void MultiBox1_TextChanged(object sender, EventArgs e)
+        {
+            Energoelements setel = (Energoelements)(EatBox1.SelectedItem);
+            if(EatBox1.Text=="")
+            {
+                return;
+            }
+            try
+            {
+                if (Convert.ToDecimal(MultiBox1.Text) >= 0)
+                {
+                    Ugllabel1.Text = (Convert.ToDecimal(setel.Carbohydrates) * Convert.ToDecimal(MultiBox1.Text)).ToString();
+                    Bellabel1.Text = (Convert.ToDecimal(setel.Protein) * Convert.ToDecimal(MultiBox1.Text)).ToString();
+                    Jirlabel1.Text = (Convert.ToDecimal(setel.Fats) * Convert.ToDecimal(MultiBox1.Text)).ToString();
+                    Callabel1.Text = (Convert.ToDecimal(setel.Callories) * Convert.ToDecimal(MultiBox1.Text)).ToString();
+                }
+            }
+            catch (Exception)
+            {
+                if (MultiBox1.Text == "")
+                {
+                    Ugllabel1.Text = setel.Carbohydrates;
+                    Bellabel1.Text = setel.Protein;
+                    Jirlabel1.Text = setel.Fats;
+                    Callabel1.Text = setel.Callories;
+
+                }
+            }
+        }
+        private void MultiBox2_TextChanged(object sender, EventArgs e)
+        {
+            Energoelements setel = (Energoelements)(EatBox2.SelectedItem);
+            if (EatBox2.Text == "")
+            {
+                return;
+            }
+            try
+            {
+                if (Convert.ToDecimal(MultiBox2.Text) >= 0)
+                {
+                    Ugllabel2.Text = (Convert.ToDecimal(setel.Carbohydrates) * Convert.ToDecimal(MultiBox2.Text)).ToString();
+                    Bellabel2.Text = (Convert.ToDecimal(setel.Protein) * Convert.ToDecimal(MultiBox2.Text)).ToString();
+                    Jirlabel2.Text = (Convert.ToDecimal(setel.Fats) * Convert.ToDecimal(MultiBox2.Text)).ToString();
+                    Callabel2.Text = (Convert.ToDecimal(setel.Callories) * Convert.ToDecimal(MultiBox2.Text)).ToString();
+                }
+            }
+            catch (Exception)
+            {
+                if (MultiBox2.Text == "")
+                {
+                    Ugllabel2.Text = setel.Carbohydrates;
+                    Bellabel2.Text = setel.Protein;
+                    Jirlabel2.Text = setel.Fats;
+                    Callabel2.Text = setel.Callories;
+
+                }
+            }
+        }
+        private void MultiBox3_TextChanged(object sender, EventArgs e)
+        {
+            Energoelements setel = (Energoelements)(EatBox3.SelectedItem);
+            if (EatBox3.Text == "")
+            {
+                return;
+            }
+            try
+            {
+                if (Convert.ToDecimal(MultiBox3.Text) >= 0)
+                {
+                    Ugllabel3.Text = (Convert.ToDecimal(setel.Carbohydrates) * Convert.ToDecimal(MultiBox3.Text)).ToString();
+                    Bellabel3.Text = (Convert.ToDecimal(setel.Protein) * Convert.ToDecimal(MultiBox3.Text)).ToString();
+                    Jirlabel3.Text = (Convert.ToDecimal(setel.Fats) * Convert.ToDecimal(MultiBox3.Text)).ToString();
+                    Callabel3.Text = (Convert.ToDecimal(setel.Callories) * Convert.ToDecimal(MultiBox3.Text)).ToString();
+                }
+            }
+            catch (Exception)
+            {
+                if (MultiBox3.Text == "")
+                {
+                    Ugllabel3.Text = setel.Carbohydrates;
+                    Bellabel3.Text = setel.Protein;
+                    Jirlabel3.Text = setel.Fats;
+                    Callabel3.Text = setel.Callories;
+
+                }
+            }
+        }
+        private void MultiBox4_TextChanged(object sender, EventArgs e)
+        {
+            Energoelements setel = (Energoelements)(EatBox4.SelectedItem);
+            if (EatBox4.Text == "")
+            {
+                return;
+            }
+            try
+            {
+                if (Convert.ToDecimal(MultiBox4.Text) >= 0)
+                {
+                    Ugllabel4.Text = (Convert.ToDecimal(setel.Carbohydrates) * Convert.ToDecimal(MultiBox4.Text)).ToString();
+                    Bellabel4.Text = (Convert.ToDecimal(setel.Protein) * Convert.ToDecimal(MultiBox4.Text)).ToString();
+                    Jirlabel4.Text = (Convert.ToDecimal(setel.Fats) * Convert.ToDecimal(MultiBox4.Text)).ToString();
+                    Callabel4.Text = (Convert.ToDecimal(setel.Callories) * Convert.ToDecimal(MultiBox4.Text)).ToString();
+                }
+            }
+            catch (Exception)
+            {
+                if (MultiBox4.Text == "")
+                {
+                    Ugllabel4.Text = setel.Carbohydrates;
+                    Bellabel4.Text = setel.Protein;
+                    Jirlabel4.Text = setel.Fats;
+                    Callabel4.Text = setel.Callories;
+
+                }
+            }
+        }
+        private void MultiBox5_TextChanged(object sender, EventArgs e)
+        {
+            Energoelements setel = (Energoelements)(EatBox5.SelectedItem);
+            if (EatBox5.Text == "")
+            {
+                return;
+            }
+            try
+            {
+                if (Convert.ToDecimal(MultiBox5.Text) >= 0)
+                {
+                    Ugllabel5.Text = (Convert.ToDecimal(setel.Carbohydrates) * Convert.ToDecimal(MultiBox5.Text)).ToString();
+                    Bellabel5.Text = (Convert.ToDecimal(setel.Protein) * Convert.ToDecimal(MultiBox5.Text)).ToString();
+                    Jirlabel5.Text = (Convert.ToDecimal(setel.Fats) * Convert.ToDecimal(MultiBox5.Text)).ToString();
+                    Callabel5.Text = (Convert.ToDecimal(setel.Callories) * Convert.ToDecimal(MultiBox5.Text)).ToString();
+                }
+            }
+            catch (Exception)
+            {
+                if (MultiBox5.Text == "")
+                {
+                    Ugllabel5.Text = setel.Carbohydrates;
+                    Bellabel5.Text = setel.Protein;
+                    Jirlabel5.Text = setel.Fats;
+                    Callabel5.Text = setel.Callories;
+
+                }
+            }
+        }
+        private void MultiBox6_TextChanged(object sender, EventArgs e)
+        {
+            Energoelements setel = (Energoelements)(EatBox6.SelectedItem);
+            if (EatBox6.Text == "")
+            {
+                return;
+            }
+            try
+            {
+                if (Convert.ToDecimal(MultiBox6.Text) >= 0)
+                {
+                    Ugllabel6.Text = (Convert.ToDecimal(setel.Carbohydrates) * Convert.ToDecimal(MultiBox6.Text)).ToString();
+                    Bellabel6.Text = (Convert.ToDecimal(setel.Protein) * Convert.ToDecimal(MultiBox6.Text)).ToString();
+                    Jirlabel6.Text = (Convert.ToDecimal(setel.Fats) * Convert.ToDecimal(MultiBox6.Text)).ToString();
+                    Callabel6.Text = (Convert.ToDecimal(setel.Callories) * Convert.ToDecimal(MultiBox6.Text)).ToString();
+                }
+            }
+            catch (Exception)
+            {
+                if (MultiBox6.Text == "")
+                {
+                    Ugllabel6.Text = setel.Carbohydrates;
+                    Bellabel6.Text = setel.Protein;
+                    Jirlabel6.Text = setel.Fats;
+                    Callabel6.Text = setel.Callories;
+
+                }
+            }
+        }
+
+        //Функционалы изменения значения элементов
+        private void Ugllabel1_TextChanged(object sender, EventArgs e)
+        {
+            AllUgllabel.Text = (Convert.ToDecimal(Ugllabel1.Text) + Convert.ToDecimal(Ugllabel2.Text) + Convert.ToDecimal(Ugllabel3.Text) + Convert.ToDecimal(Ugllabel4.Text) + Convert.ToDecimal(Ugllabel5.Text) + Convert.ToDecimal(Ugllabel6.Text)).ToString();
+
+        }
+        private void Ugllabel2_TextChanged(object sender, EventArgs e)
+        {
+            AllUgllabel.Text = (Convert.ToDecimal(Ugllabel1.Text) + Convert.ToDecimal(Ugllabel2.Text) + Convert.ToDecimal(Ugllabel3.Text) + Convert.ToDecimal(Ugllabel4.Text) + Convert.ToDecimal(Ugllabel5.Text) + Convert.ToDecimal(Ugllabel6.Text)).ToString();
+
+        }
+        private void Ugllabel3_TextChanged(object sender, EventArgs e)
+        {
+            AllUgllabel.Text = (Convert.ToDecimal(Ugllabel1.Text) + Convert.ToDecimal(Ugllabel2.Text) + Convert.ToDecimal(Ugllabel3.Text) + Convert.ToDecimal(Ugllabel4.Text) + Convert.ToDecimal(Ugllabel5.Text) + Convert.ToDecimal(Ugllabel6.Text)).ToString();
+
+        }
+        private void Ugllabel4_TextChanged(object sender, EventArgs e)
+        {
+            AllUgllabel.Text = (Convert.ToDecimal(Ugllabel1.Text) + Convert.ToDecimal(Ugllabel2.Text) + Convert.ToDecimal(Ugllabel3.Text) + Convert.ToDecimal(Ugllabel4.Text) + Convert.ToDecimal(Ugllabel5.Text) + Convert.ToDecimal(Ugllabel6.Text)).ToString();
+
+        }
+        private void Ugllabel5_TextChanged(object sender, EventArgs e)
+        {
+            AllUgllabel.Text = (Convert.ToDecimal(Ugllabel1.Text) + Convert.ToDecimal(Ugllabel2.Text) + Convert.ToDecimal(Ugllabel3.Text) + Convert.ToDecimal(Ugllabel4.Text) + Convert.ToDecimal(Ugllabel5.Text) + Convert.ToDecimal(Ugllabel6.Text)).ToString();
+
+        }
+        private void Ugllabel6_TextChanged(object sender, EventArgs e)
+        {
+            AllUgllabel.Text = (Convert.ToDecimal(Ugllabel1.Text) + Convert.ToDecimal(Ugllabel2.Text) + Convert.ToDecimal(Ugllabel3.Text) + Convert.ToDecimal(Ugllabel4.Text) + Convert.ToDecimal(Ugllabel5.Text) + Convert.ToDecimal(Ugllabel6.Text)).ToString();
+
+        }
+        private void Bellabel1_TextChanged(object sender, EventArgs e)
+        {
+            AllBellabel.Text = (Convert.ToDecimal(Bellabel1.Text) + Convert.ToDecimal(Bellabel2.Text) + Convert.ToDecimal(Bellabel3.Text) + Convert.ToDecimal(Bellabel4.Text) + Convert.ToDecimal(Bellabel5.Text) + Convert.ToDecimal(Bellabel6.Text)).ToString();
+
+        }
+        private void Bellabel2_TextChanged(object sender, EventArgs e)
+        {
+            AllBellabel.Text = (Convert.ToDecimal(Bellabel1.Text) + Convert.ToDecimal(Bellabel2.Text) + Convert.ToDecimal(Bellabel3.Text) + Convert.ToDecimal(Bellabel4.Text) + Convert.ToDecimal(Bellabel5.Text) + Convert.ToDecimal(Bellabel6.Text)).ToString();
+
+        }
+        private void Bellabel3_TextChanged(object sender, EventArgs e)
+        {
+            AllBellabel.Text = (Convert.ToDecimal(Bellabel1.Text) + Convert.ToDecimal(Bellabel2.Text) + Convert.ToDecimal(Bellabel3.Text) + Convert.ToDecimal(Bellabel4.Text) + Convert.ToDecimal(Bellabel5.Text) + Convert.ToDecimal(Bellabel6.Text)).ToString();
+
+        }
+        private void Bellabel4_TextChanged(object sender, EventArgs e)
+        {
+            AllBellabel.Text = (Convert.ToDecimal(Bellabel1.Text) + Convert.ToDecimal(Bellabel2.Text) + Convert.ToDecimal(Bellabel3.Text) + Convert.ToDecimal(Bellabel4.Text) + Convert.ToDecimal(Bellabel5.Text) + Convert.ToDecimal(Bellabel6.Text)).ToString();
+
+        }
+        private void Bellabel5_TextChanged(object sender, EventArgs e)
+        {
+            AllBellabel.Text = (Convert.ToDecimal(Bellabel1.Text) + Convert.ToDecimal(Bellabel2.Text) + Convert.ToDecimal(Bellabel3.Text) + Convert.ToDecimal(Bellabel4.Text) + Convert.ToDecimal(Bellabel5.Text) + Convert.ToDecimal(Bellabel6.Text)).ToString();
+
+        }
+        private void Bellabel6_TextChanged(object sender, EventArgs e)
+        {
+            AllBellabel.Text = (Convert.ToDecimal(Bellabel1.Text) + Convert.ToDecimal(Bellabel2.Text) + Convert.ToDecimal(Bellabel3.Text) + Convert.ToDecimal(Bellabel4.Text) + Convert.ToDecimal(Bellabel5.Text) + Convert.ToDecimal(Bellabel6.Text)).ToString();
+
+        }
+        private void Jirlabel1_TextChanged(object sender, EventArgs e)
+        {
+            AllJirlabel.Text = (Convert.ToDecimal(Jirlabel1.Text) + Convert.ToDecimal(Jirlabel2.Text) + Convert.ToDecimal(Jirlabel3.Text) + Convert.ToDecimal(Jirlabel4.Text) + Convert.ToDecimal(Jirlabel5.Text) + Convert.ToDecimal(Jirlabel6.Text)).ToString();
+
+        }
+        private void Jirlabel2_TextChanged(object sender, EventArgs e)
+        {
+            AllJirlabel.Text = (Convert.ToDecimal(Jirlabel1.Text) + Convert.ToDecimal(Jirlabel2.Text) + Convert.ToDecimal(Jirlabel3.Text) + Convert.ToDecimal(Jirlabel4.Text) + Convert.ToDecimal(Jirlabel5.Text) + Convert.ToDecimal(Jirlabel6.Text)).ToString();
+
+        }
+        private void Jirlabel3_TextChanged(object sender, EventArgs e)
+        {
+            AllJirlabel.Text = (Convert.ToDecimal(Jirlabel1.Text) + Convert.ToDecimal(Jirlabel2.Text) + Convert.ToDecimal(Jirlabel3.Text) + Convert.ToDecimal(Jirlabel4.Text) + Convert.ToDecimal(Jirlabel5.Text) + Convert.ToDecimal(Jirlabel6.Text)).ToString();
+
+        }
+        private void Jirlabel4_TextChanged(object sender, EventArgs e)
+        {
+            AllJirlabel.Text = (Convert.ToDecimal(Jirlabel1.Text) + Convert.ToDecimal(Jirlabel2.Text) + Convert.ToDecimal(Jirlabel3.Text) + Convert.ToDecimal(Jirlabel4.Text) + Convert.ToDecimal(Jirlabel5.Text) + Convert.ToDecimal(Jirlabel6.Text)).ToString();
+
+        }
+        private void Jirlabel5_TextChanged(object sender, EventArgs e)
+        {
+            AllJirlabel.Text = (Convert.ToDecimal(Jirlabel1.Text) + Convert.ToDecimal(Jirlabel2.Text) + Convert.ToDecimal(Jirlabel3.Text) + Convert.ToDecimal(Jirlabel4.Text) + Convert.ToDecimal(Jirlabel5.Text) + Convert.ToDecimal(Jirlabel6.Text)).ToString();
+
+        }
+        private void Jirlabel6_TextChanged(object sender, EventArgs e)
+        {
+            AllJirlabel.Text = (Convert.ToDecimal(Jirlabel1.Text) + Convert.ToDecimal(Jirlabel2.Text) + Convert.ToDecimal(Jirlabel3.Text) + Convert.ToDecimal(Jirlabel4.Text) + Convert.ToDecimal(Jirlabel5.Text) + Convert.ToDecimal(Jirlabel6.Text)).ToString();
+
+        }
+        private void Callabel1_TextChanged(object sender, EventArgs e)
+        {
+            AllCallabel.Text = (Convert.ToDecimal(Callabel1.Text) + Convert.ToDecimal(Callabel2.Text) + Convert.ToDecimal(Callabel3.Text) + Convert.ToDecimal(Callabel4.Text) + Convert.ToDecimal(Callabel5.Text) + Convert.ToDecimal(Callabel6.Text)).ToString();
+
+        }
+        private void Callabel2_TextChanged(object sender, EventArgs e)
+        {
+            AllCallabel.Text = (Convert.ToDecimal(Callabel1.Text) + Convert.ToDecimal(Callabel2.Text) + Convert.ToDecimal(Callabel3.Text) + Convert.ToDecimal(Callabel4.Text) + Convert.ToDecimal(Callabel5.Text) + Convert.ToDecimal(Callabel6.Text)).ToString();
+
+        }
+        private void Callabel3_TextChanged(object sender, EventArgs e)
+        {
+            AllCallabel.Text = (Convert.ToDecimal(Callabel1.Text) + Convert.ToDecimal(Callabel2.Text) + Convert.ToDecimal(Callabel3.Text) + Convert.ToDecimal(Callabel4.Text) + Convert.ToDecimal(Callabel5.Text) + Convert.ToDecimal(Callabel6.Text)).ToString();
+
+        }
+        private void Callabel4_TextChanged(object sender, EventArgs e)
+        {
+            AllCallabel.Text = (Convert.ToDecimal(Callabel1.Text) + Convert.ToDecimal(Callabel2.Text) + Convert.ToDecimal(Callabel3.Text) + Convert.ToDecimal(Callabel4.Text) + Convert.ToDecimal(Callabel5.Text) + Convert.ToDecimal(Callabel6.Text)).ToString();
+
+        }
+        private void Callabel5_TextChanged(object sender, EventArgs e)
+        {
+            AllCallabel.Text = (Convert.ToDecimal(Callabel1.Text) + Convert.ToDecimal(Callabel2.Text) + Convert.ToDecimal(Callabel3.Text) + Convert.ToDecimal(Callabel4.Text) + Convert.ToDecimal(Callabel5.Text) + Convert.ToDecimal(Callabel6.Text)).ToString();
+
+        }
+        private void Callabel6_TextChanged(object sender, EventArgs e)
+        {
+            AllCallabel.Text = (Convert.ToDecimal(Callabel1.Text) + Convert.ToDecimal(Callabel2.Text) + Convert.ToDecimal(Callabel3.Text) + Convert.ToDecimal(Callabel4.Text) + Convert.ToDecimal(Callabel5.Text) + Convert.ToDecimal(Callabel6.Text)).ToString();
+
+        }
+       
     }
 }
