@@ -528,7 +528,7 @@ namespace Diet_note
             MultiBox6.Text = "1";
             MultiBox6.Enabled = false;
         }
-
+        //Функционал прибавления блюда
         private void AddEatpictureBox1_Click(object sender, EventArgs e)
         {
             EatBox1.Focus();
@@ -539,6 +539,7 @@ namespace Diet_note
             Bellabel1.Text = (Convert.ToDecimal(Bellabel1.Text) + Convert.ToDecimal(setel.Protein)).ToString();
             Jirlabel1.Text = (Convert.ToDecimal(Jirlabel1.Text) + Convert.ToDecimal(setel.Fats)).ToString();
             Callabel1.Text = (Convert.ToDecimal(Callabel1.Text) + Convert.ToDecimal(setel.Callories)).ToString();
+            MultiBox1.Text = (Convert.ToDecimal(MultiBox1.Text) + 1).ToString();
         }
 
         private void AddEatpictureBox2_Click(object sender, EventArgs e)
@@ -552,6 +553,8 @@ namespace Diet_note
             Bellabel2.Text = (Convert.ToDecimal(Bellabel2.Text) + Convert.ToDecimal(setel.Protein)).ToString();
             Jirlabel2.Text = (Convert.ToDecimal(Jirlabel2.Text) + Convert.ToDecimal(setel.Fats)).ToString();
             Callabel2.Text = (Convert.ToDecimal(Callabel2.Text) + Convert.ToDecimal(setel.Callories)).ToString();
+            MultiBox2.Text = (Convert.ToDecimal(MultiBox2.Text) + 1).ToString();
+
         }
 
         private void AddEatpictureBox3_Click(object sender, EventArgs e)
@@ -565,6 +568,8 @@ namespace Diet_note
             Bellabel3.Text = (Convert.ToDecimal(Bellabel3.Text) + Convert.ToDecimal(setel.Protein)).ToString();
             Jirlabel3.Text = (Convert.ToDecimal(Jirlabel3.Text) + Convert.ToDecimal(setel.Fats)).ToString();
             Callabel3.Text = (Convert.ToDecimal(Callabel3.Text) + Convert.ToDecimal(setel.Callories)).ToString();
+            MultiBox3.Text = (Convert.ToDecimal(MultiBox3.Text) + 1).ToString();
+
         }
 
         private void AddEatpictureBox4_Click(object sender, EventArgs e)
@@ -578,6 +583,8 @@ namespace Diet_note
             Bellabel4.Text = (Convert.ToDecimal(Bellabel4.Text) + Convert.ToDecimal(setel.Protein)).ToString();
             Jirlabel4.Text = (Convert.ToDecimal(Jirlabel4.Text) + Convert.ToDecimal(setel.Fats)).ToString();
             Callabel4.Text = (Convert.ToDecimal(Callabel4.Text) + Convert.ToDecimal(setel.Callories)).ToString();
+            MultiBox4.Text = (Convert.ToDecimal(MultiBox4.Text) + 1).ToString();
+
 
         }
 
@@ -592,6 +599,8 @@ namespace Diet_note
             Bellabel5.Text = (Convert.ToDecimal(Bellabel5.Text) + Convert.ToDecimal(setel.Protein)).ToString();
             Jirlabel5.Text = (Convert.ToDecimal(Jirlabel5.Text) + Convert.ToDecimal(setel.Fats)).ToString();
             Callabel5.Text = (Convert.ToDecimal(Callabel5.Text) + Convert.ToDecimal(setel.Callories)).ToString();
+            MultiBox5.Text = (Convert.ToDecimal(MultiBox5.Text) + 1).ToString();
+
         }
 
         private void AddEatpictureBox6_Click(object sender, EventArgs e)
@@ -605,6 +614,8 @@ namespace Diet_note
             Bellabel6.Text = (Convert.ToDecimal(Bellabel6.Text) + Convert.ToDecimal(setel.Protein)).ToString();
             Jirlabel6.Text = (Convert.ToDecimal(Jirlabel6.Text) + Convert.ToDecimal(setel.Fats)).ToString();
             Callabel6.Text = (Convert.ToDecimal(Callabel6.Text) + Convert.ToDecimal(setel.Callories)).ToString();
+            MultiBox6.Text = (Convert.ToDecimal(MultiBox6.Text) + 1).ToString();
+
         }
 
 
