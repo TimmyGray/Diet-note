@@ -1147,13 +1147,12 @@ namespace Diet_note
 
                             using (var db = new Aplicatincontext())
                             {
-
                                 db.Users.Update(newuser);
                                 db.Edges.Update(newuser.Edges);
                                 db.SaveChanges();
-
-
                             }
+                            NamelistBox.Items.Remove(NamelistBox.SelectedItem);
+                            NamelistBox.Items.Add(newuser);
 
 
                         }
@@ -1306,9 +1305,9 @@ namespace Diet_note
                     Controls.RemoveByKey("updfoodpanel");
 
                 }
-                if (Controls.ContainsKey("delpanel"))
+                if (Controls.ContainsKey("delfoodpanel"))
                 {
-                    Controls.RemoveByKey("delpanel");
+                    Controls.RemoveByKey("delfoodpanel");
                 }
                 AddFoodBut.Enabled = false;
                 UpdateFoodBut.Enabled = true;
@@ -1504,9 +1503,9 @@ namespace Diet_note
                     Controls.RemoveByKey("addfoodpanel");
 
                 }
-                if (Controls.ContainsKey("delpanel"))
+                if (Controls.ContainsKey("delfoodpanel"))
                 {
-                    Controls.RemoveByKey("delpanel");
+                    Controls.RemoveByKey("delfoodpanel");
                 }
                 AddFoodBut.Enabled = true;
                 UpdateFoodBut.Enabled = false;
