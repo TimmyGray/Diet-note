@@ -34,7 +34,6 @@ namespace Diet_note
                 EatBox4.Items.AddRange(db.Elements.ToArray());
                 EatBox5.Items.AddRange(db.Elements.ToArray());
                 EatBox6.Items.AddRange(db.Elements.ToArray());
-                _elements = db.Elements.ToList();
 
             }
 
@@ -48,8 +47,7 @@ namespace Diet_note
 
 
         }
-
-        readonly List<Energoelements> _elements = new List<Energoelements>();
+        #region History Button
         private void Historybutton_Click(object sender, EventArgs e)
         {
             if (NamelistBox.SelectedItem == null)
@@ -57,13 +55,24 @@ namespace Diet_note
                 MessageBox.Show("Выберите пользователя!");
                 return;
             }
-
-            Size = new Size(276, 267);
+            User seluser = (User)NamelistBox.SelectedItem;
+            if (seluser.Histories[0].firsttime)
+            {
+                MessageBox.Show("Покушайте хотя бы один раз!");
+                return;
+            }
+            
+           Size = new Size(276, 267);
+            Top = 250;
+            Left = 500;
+            
             Panel historypanel = new Panel
             {
                 Size = new Size(262, 230),
                 Location = new Point(0)
+                
             };
+            
             Controls.Add(historypanel);
             historypanel.BringToFront();
 
@@ -99,7 +108,7 @@ namespace Diet_note
             };
             historypanel.Controls.Add(historytextbox);
 
-            User seluser = (User)NamelistBox.SelectedItem;
+            
             var Grouped = from history in seluser.Histories
                           group history by history.Date;
             foreach (IGrouping<DateTime, History> h in Grouped)
@@ -139,6 +148,9 @@ namespace Diet_note
 
         }
 
+        #endregion
+
+        #region Food Selected
         private void EatBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             EatBox1.Focus();
@@ -242,7 +254,9 @@ namespace Diet_note
                 MessageBox.Show("Ошибка в данных блюда! Проверьте правильность информации!");
             }
         }
+        #endregion
 
+        #region Eatclick
         private void Eatbutton_Click(object sender, EventArgs e)
         {
             if (NamelistBox.SelectedItem == null)
@@ -455,7 +469,9 @@ namespace Diet_note
             }
 
         }
+        #endregion
 
+        #region Clear food
         private void ClearEatpictureBox1_Click(object sender, EventArgs e)
         {
             Ugllabel1.Text = "0";
@@ -528,7 +544,9 @@ namespace Diet_note
             MultiBox6.Text = "1";
             MultiBox6.Enabled = false;
         }
-        //Функционал прибавления блюда
+        #endregion
+
+        #region Add Fodd
         private void AddEatpictureBox1_Click(object sender, EventArgs e)
         {
             EatBox1.Focus();
@@ -617,9 +635,9 @@ namespace Diet_note
             MultiBox6.Text = (Convert.ToDecimal(MultiBox6.Text) + 1).ToString();
 
         }
+        #endregion
 
-
-        //Функционал кнопки "Пользователь"
+        #region User Button
         private void UserBut_Click(object sender, EventArgs e)
         {
             Size = new Size(890, 520);
@@ -713,9 +731,7 @@ namespace Diet_note
             CancelBut.FlatAppearance.MouseDownBackColor = Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             CancelBut.FlatAppearance.MouseOverBackColor = Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
 
-
-            //Функционал кнопки "Отмена"
-
+            #region Cancel Button
             CancelBut.Click += CancelButClick;
             void CancelButClick(object but, EventArgs click)
             {
@@ -737,9 +753,8 @@ namespace Diet_note
                 }
 
             }
-
-            //Функционал Кнопки "Добавить"
-
+            #endregion
+            #region Add Click
             Addbutton.Click += AddClick;
             void AddClick(object but, EventArgs click)
             {
@@ -895,8 +910,9 @@ namespace Diet_note
                 };
                 adduserpanel.Controls.Add(cancelbut);
                 cancelbut.BringToFront();
+                
 
-                //Функционал кнопки добавления
+                #region Add User Click
 
                 adduserbut.Click += AddUserClick;
                 void AddUserClick(object but, EventArgs click)
@@ -940,8 +956,8 @@ namespace Diet_note
                     NamelistBox.Enabled = true;
 
                 }
-
-                //Функционал кнопки отмены
+                #endregion
+                #region Cancel But
 
                 cancelbut.Click += CancelAddUserClick;
                 void CancelAddUserClick(object but, EventArgs click)
@@ -953,11 +969,11 @@ namespace Diet_note
                     NamelistBox.Enabled = true;
 
                 }
-
+                #endregion
 
             }
-
-            //Функционал кнопки "Редактировать"
+            #endregion
+            #region UpdateUser
 
             UpdateBut.Click += UpdateButClick;
             void UpdateButClick(object but, EventArgs click)
@@ -1063,7 +1079,7 @@ namespace Diet_note
                     Size = new Size(40, 20)
                 };
                 upduserpanel.Controls.Add(carbohydbox);
-                carbohydbox.BringToFront();
+                carbohydbox.BringToFront(); 
 
                 TextBox proteinbox = new TextBox
                 {
@@ -1117,7 +1133,7 @@ namespace Diet_note
                 upduserpanel.Controls.Add(cancelbut);
                 cancelbut.BringToFront();
 
-                //фуекционал кнопки отмены
+                #region Cancel But
 
                 void Clickcancelbut(object cancel, EventArgs cliclcancel)
                 {
@@ -1128,8 +1144,8 @@ namespace Diet_note
                     NamelistBox.Enabled = true;
                 }
                 cancelbut.Click += Clickcancelbut;
-
-                //Функционал кнопки обновить
+                #endregion
+                #region Update Click
 
                 void Clickbut(object button, EventArgs click)
                 {
@@ -1153,7 +1169,10 @@ namespace Diet_note
                             }
                             NamelistBox.Items.Remove(NamelistBox.SelectedItem);
                             NamelistBox.Items.Add(newuser);
-
+                            upduserpanel.Dispose();
+                            Addbutton.Enabled = true;
+                            DeleteUserBut.Enabled = true;
+                            UpdateBut.Enabled = true;
 
                         }
                         catch (Exception)
@@ -1167,17 +1186,16 @@ namespace Diet_note
                         MessageBox.Show("Заполните все поля!");
 
                     }
-                    upduserpanel.Dispose();
-                    Addbutton.Enabled = true;
-                    DeleteUserBut.Enabled = true;
-                    UpdateBut.Enabled = true;
+                    
 
 
                 }
-                upduserbut.Click += new EventHandler(Clickbut);
-            }
 
-            //Функционал кнопки "Удалить"
+                upduserbut.Click += new EventHandler(Clickbut);
+                #endregion
+            }
+            #endregion
+            #region Delete But
 
             DeleteUserBut.Click += DeleteUserButClick;
             void DeleteUserButClick(object but, EventArgs click)
@@ -1202,9 +1220,11 @@ namespace Diet_note
                 else { MessageBox.Show("Выберите пользователя!"); }
                 return;
             }
+            #endregion
         }
+        #endregion
 
-        //Функционал кнопки "Блюдо
+        #region Food Button
         private void FoodBut_Click(object sender, EventArgs e)
         {
             Size = new Size(890, 520);
@@ -1295,7 +1315,7 @@ namespace Diet_note
             CancelBut.FlatAppearance.MouseDownBackColor = Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             CancelBut.FlatAppearance.MouseOverBackColor = Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
 
-            //Функционал кнопки "Добавить"
+            #region Add Food Click
 
             AddFoodBut.Click += AddFoodButClick;
             void AddFoodButClick(object but, EventArgs click)
@@ -1439,8 +1459,9 @@ namespace Diet_note
                 };
                 addfoodpanel.Controls.Add(cancelbut);
                 cancelbut.BringToFront();
+                
 
-                //Функционал кнопки добавить
+                #region Add Click
 
                 addfoodbut.Click += addfoodbutClick;
                 void addfoodbutClick(object but, EventArgs click)
@@ -1480,7 +1501,8 @@ namespace Diet_note
                     }
                 }
 
-                //Функционал кнопки отмена
+                #endregion
+                #region Cancel But
 
                 cancelbut.Click += cancelbutClick;
                 void cancelbutClick(object but, EventArgs click)
@@ -1490,10 +1512,10 @@ namespace Diet_note
                     DeleteFoodBut.Enabled = true;
                     UpdateFoodBut.Enabled = true;
                 }
-
+                #endregion
             }
-
-            //Функционал кнопки "Редактировать"
+            #endregion
+            #region Update Button
 
             UpdateFoodBut.Click += UpdFoodButClick;
             void UpdFoodButClick(object but, EventArgs click)
@@ -1649,7 +1671,7 @@ namespace Diet_note
                 }
                 updfoodcombobox.SelectedIndexChanged += updfoodcomboboxchanged;
 
-                //Функционал выбора блюда
+                #region Select Food
 
                 void updfoodcomboboxchanged(object box, EventArgs changed)
                 {
@@ -1661,8 +1683,9 @@ namespace Diet_note
                     calloriesbox.Text = updelement.Callories;
 
                 }
+                #endregion
 
-                //Функционал кнопки отмена
+                #region Cancel But
 
                 cancelbut.Click += cancelbutClick;
                 void cancelbutClick(object but, EventArgs click)
@@ -1671,8 +1694,8 @@ namespace Diet_note
                     UpdateFoodBut.Enabled = true;
 
                 }
-
-                //Функционал кнопки обновить
+                #endregion
+                #region Update Click Button
 
                 updfoodbut.Click += updfoodbutClick;
                 void updfoodbutClick(object but, EventArgs click)
@@ -1717,10 +1740,11 @@ namespace Diet_note
                         MessageBox.Show("Выберите блюдо!");
                     }
                 }
+                #endregion
 
             }
-
-            //Функционал кнопки "Удалить"
+            #endregion
+            #region Delete Food Click
 
             DeleteFoodBut.Click += DeleteFoodButClick;
             void DeleteFoodButClick(object but, EventArgs click)
@@ -1935,8 +1959,8 @@ namespace Diet_note
                 }
 
             }
-
-            //Функционал кнопки "Отмена"
+            #endregion
+            #region Cancel But
 
             CancelBut.Click += CancelButClick;
             void CancelButClick(object but, EventArgs click)
@@ -1963,10 +1987,12 @@ namespace Diet_note
                 }
 
             }
+            #endregion
 
         }
+        #endregion
 
-        //Функционал кнопки "Удалить вообще все"
+        #region ClearAll Button
         private void ClearFoodBut_Click(object sender, EventArgs e)
         {
             EatBox1.Text = "";
@@ -2012,8 +2038,9 @@ namespace Diet_note
             MultiBox5.Enabled = false;
             MultiBox6.Enabled = false;
         }
+        #endregion
 
-        //Функионалы кнопок Кратности
+        #region Multiply Buttons
         private void Multipicture1_Click(object sender, EventArgs e)
         {
             if (EatBox1.SelectedItem != null)
@@ -2087,8 +2114,9 @@ namespace Diet_note
                 MultiBox6.Enabled = false;
             }
         }
+        #endregion
 
-        //Функционалы текстбоксов кратности
+        #region Multiply TextBox
         private void MultiBox1_TextChanged(object sender, EventArgs e)
         {
             Energoelements setel = (Energoelements)(EatBox1.SelectedItem);
@@ -2263,8 +2291,9 @@ namespace Diet_note
                 }
             }
         }
+        #endregion
 
-        //Функционалы изменения значения элементов
+        #region ChangeValue Logic
         private void Ugllabel1_TextChanged(object sender, EventArgs e)
         {
             AllUgllabel.Text = (Convert.ToDecimal(Ugllabel1.Text) + Convert.ToDecimal(Ugllabel2.Text) + Convert.ToDecimal(Ugllabel3.Text) + Convert.ToDecimal(Ugllabel4.Text) + Convert.ToDecimal(Ugllabel5.Text) + Convert.ToDecimal(Ugllabel6.Text)).ToString();
@@ -2387,4 +2416,5 @@ namespace Diet_note
         }
        
     }
+    #endregion
 }

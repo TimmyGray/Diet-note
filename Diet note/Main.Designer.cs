@@ -198,12 +198,12 @@ namespace Diet_note
             // 
             // EatBox2
             // 
-            this.EatBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.EatBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.EatBox2.FormattingEnabled = true;
             this.EatBox2.Location = new System.Drawing.Point(22, 136);
             this.EatBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.EatBox2.Name = "EatBox2";
-            this.EatBox2.Size = new System.Drawing.Size(142, 21);
+            this.EatBox2.Size = new System.Drawing.Size(142, 23);
             this.EatBox2.Sorted = true;
             this.EatBox2.TabIndex = 6;
             this.EatBox2.SelectedIndexChanged += new System.EventHandler(this.EatBox2_SelectedIndexChanged);
@@ -259,10 +259,10 @@ namespace Diet_note
             // Uglpanel1
             // 
             this.Uglpanel1.Controls.Add(this.Ugllabel1);
-            this.Uglpanel1.Location = new System.Drawing.Point(288, 99);
+            this.Uglpanel1.Location = new System.Drawing.Point(288, 100);
             this.Uglpanel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Uglpanel1.Name = "Uglpanel1";
-            this.Uglpanel1.Size = new System.Drawing.Size(100, 23);
+            this.Uglpanel1.Size = new System.Drawing.Size(100, 22);
             this.Uglpanel1.TabIndex = 6;
             // 
             // Ugllabel1
@@ -271,7 +271,7 @@ namespace Diet_note
             this.Ugllabel1.AutoSize = true;
             this.Ugllabel1.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Ugllabel1.ForeColor = System.Drawing.Color.Brown;
-            this.Ugllabel1.Location = new System.Drawing.Point(0, -1);
+            this.Ugllabel1.Location = new System.Drawing.Point(39, 0);
             this.Ugllabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Ugllabel1.Name = "Ugllabel1";
             this.Ugllabel1.Size = new System.Drawing.Size(20, 21);
@@ -294,7 +294,7 @@ namespace Diet_note
             this.Ugllabel2.AutoSize = true;
             this.Ugllabel2.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Ugllabel2.ForeColor = System.Drawing.Color.Brown;
-            this.Ugllabel2.Location = new System.Drawing.Point(0, -2);
+            this.Ugllabel2.Location = new System.Drawing.Point(39, -3);
             this.Ugllabel2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Ugllabel2.Name = "Ugllabel2";
             this.Ugllabel2.Size = new System.Drawing.Size(20, 21);
@@ -317,7 +317,7 @@ namespace Diet_note
             this.Ugllabel3.AutoSize = true;
             this.Ugllabel3.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Ugllabel3.ForeColor = System.Drawing.Color.Brown;
-            this.Ugllabel3.Location = new System.Drawing.Point(0, 1);
+            this.Ugllabel3.Location = new System.Drawing.Point(39, 0);
             this.Ugllabel3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Ugllabel3.Name = "Ugllabel3";
             this.Ugllabel3.Size = new System.Drawing.Size(20, 21);
@@ -340,7 +340,7 @@ namespace Diet_note
             this.Ugllabel4.AutoSize = true;
             this.Ugllabel4.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Ugllabel4.ForeColor = System.Drawing.Color.Brown;
-            this.Ugllabel4.Location = new System.Drawing.Point(0, 2);
+            this.Ugllabel4.Location = new System.Drawing.Point(39, 0);
             this.Ugllabel4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Ugllabel4.Name = "Ugllabel4";
             this.Ugllabel4.Size = new System.Drawing.Size(20, 21);
@@ -363,7 +363,7 @@ namespace Diet_note
             this.Ugllabel5.AutoSize = true;
             this.Ugllabel5.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Ugllabel5.ForeColor = System.Drawing.Color.Brown;
-            this.Ugllabel5.Location = new System.Drawing.Point(0, -1);
+            this.Ugllabel5.Location = new System.Drawing.Point(39, 0);
             this.Ugllabel5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Ugllabel5.Name = "Ugllabel5";
             this.Ugllabel5.Size = new System.Drawing.Size(20, 21);
@@ -386,7 +386,7 @@ namespace Diet_note
             this.Ugllabel6.AutoSize = true;
             this.Ugllabel6.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Ugllabel6.ForeColor = System.Drawing.Color.Brown;
-            this.Ugllabel6.Location = new System.Drawing.Point(0, -1);
+            this.Ugllabel6.Location = new System.Drawing.Point(39, 0);
             this.Ugllabel6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Ugllabel6.Name = "Ugllabel6";
             this.Ugllabel6.Size = new System.Drawing.Size(20, 21);
@@ -397,10 +397,10 @@ namespace Diet_note
             // Belpanel6
             // 
             this.Belpanel6.Controls.Add(this.Bellabel6);
-            this.Belpanel6.Location = new System.Drawing.Point(408, 280);
+            this.Belpanel6.Location = new System.Drawing.Point(408, 283);
             this.Belpanel6.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Belpanel6.Name = "Belpanel6";
-            this.Belpanel6.Size = new System.Drawing.Size(100, 26);
+            this.Belpanel6.Size = new System.Drawing.Size(100, 23);
             this.Belpanel6.TabIndex = 17;
             // 
             // Bellabel6
@@ -409,7 +409,7 @@ namespace Diet_note
             this.Bellabel6.AutoSize = true;
             this.Bellabel6.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Bellabel6.ForeColor = System.Drawing.Color.Brown;
-            this.Bellabel6.Location = new System.Drawing.Point(0, 1);
+            this.Bellabel6.Location = new System.Drawing.Point(38, 0);
             this.Bellabel6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Bellabel6.Name = "Bellabel6";
             this.Bellabel6.Size = new System.Drawing.Size(20, 21);
@@ -420,10 +420,10 @@ namespace Diet_note
             // Belpanel5
             // 
             this.Belpanel5.Controls.Add(this.Bellabel5);
-            this.Belpanel5.Location = new System.Drawing.Point(408, 245);
+            this.Belpanel5.Location = new System.Drawing.Point(408, 246);
             this.Belpanel5.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Belpanel5.Name = "Belpanel5";
-            this.Belpanel5.Size = new System.Drawing.Size(100, 24);
+            this.Belpanel5.Size = new System.Drawing.Size(100, 23);
             this.Belpanel5.TabIndex = 16;
             // 
             // Bellabel5
@@ -432,7 +432,7 @@ namespace Diet_note
             this.Bellabel5.AutoSize = true;
             this.Bellabel5.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Bellabel5.ForeColor = System.Drawing.Color.Brown;
-            this.Bellabel5.Location = new System.Drawing.Point(0, 0);
+            this.Bellabel5.Location = new System.Drawing.Point(38, -1);
             this.Bellabel5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Bellabel5.Name = "Bellabel5";
             this.Bellabel5.Size = new System.Drawing.Size(20, 21);
@@ -443,10 +443,10 @@ namespace Diet_note
             // Belpanel4
             // 
             this.Belpanel4.Controls.Add(this.Bellabel4);
-            this.Belpanel4.Location = new System.Drawing.Point(408, 208);
+            this.Belpanel4.Location = new System.Drawing.Point(408, 210);
             this.Belpanel4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Belpanel4.Name = "Belpanel4";
-            this.Belpanel4.Size = new System.Drawing.Size(100, 25);
+            this.Belpanel4.Size = new System.Drawing.Size(100, 23);
             this.Belpanel4.TabIndex = 15;
             // 
             // Bellabel4
@@ -455,7 +455,7 @@ namespace Diet_note
             this.Bellabel4.AutoSize = true;
             this.Bellabel4.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Bellabel4.ForeColor = System.Drawing.Color.Brown;
-            this.Bellabel4.Location = new System.Drawing.Point(0, 3);
+            this.Bellabel4.Location = new System.Drawing.Point(38, -1);
             this.Bellabel4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Bellabel4.Name = "Bellabel4";
             this.Bellabel4.Size = new System.Drawing.Size(20, 21);
@@ -466,10 +466,10 @@ namespace Diet_note
             // Belpanel3
             // 
             this.Belpanel3.Controls.Add(this.Bellabel3);
-            this.Belpanel3.Location = new System.Drawing.Point(408, 171);
+            this.Belpanel3.Location = new System.Drawing.Point(408, 173);
             this.Belpanel3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Belpanel3.Name = "Belpanel3";
-            this.Belpanel3.Size = new System.Drawing.Size(100, 25);
+            this.Belpanel3.Size = new System.Drawing.Size(100, 23);
             this.Belpanel3.TabIndex = 14;
             // 
             // Bellabel3
@@ -478,7 +478,7 @@ namespace Diet_note
             this.Bellabel3.AutoSize = true;
             this.Bellabel3.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Bellabel3.ForeColor = System.Drawing.Color.Brown;
-            this.Bellabel3.Location = new System.Drawing.Point(0, 2);
+            this.Bellabel3.Location = new System.Drawing.Point(38, -1);
             this.Bellabel3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Bellabel3.Name = "Bellabel3";
             this.Bellabel3.Size = new System.Drawing.Size(20, 21);
@@ -489,10 +489,10 @@ namespace Diet_note
             // Belpanel2
             // 
             this.Belpanel2.Controls.Add(this.Bellabel2);
-            this.Belpanel2.Location = new System.Drawing.Point(408, 134);
+            this.Belpanel2.Location = new System.Drawing.Point(408, 135);
             this.Belpanel2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Belpanel2.Name = "Belpanel2";
-            this.Belpanel2.Size = new System.Drawing.Size(100, 23);
+            this.Belpanel2.Size = new System.Drawing.Size(100, 22);
             this.Belpanel2.TabIndex = 13;
             // 
             // Bellabel2
@@ -501,7 +501,7 @@ namespace Diet_note
             this.Bellabel2.AutoSize = true;
             this.Bellabel2.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Bellabel2.ForeColor = System.Drawing.Color.Brown;
-            this.Bellabel2.Location = new System.Drawing.Point(0, -1);
+            this.Bellabel2.Location = new System.Drawing.Point(38, -2);
             this.Bellabel2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Bellabel2.Name = "Bellabel2";
             this.Bellabel2.Size = new System.Drawing.Size(20, 21);
@@ -524,7 +524,7 @@ namespace Diet_note
             this.Bellabel1.AutoSize = true;
             this.Bellabel1.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Bellabel1.ForeColor = System.Drawing.Color.Brown;
-            this.Bellabel1.Location = new System.Drawing.Point(0, 0);
+            this.Bellabel1.Location = new System.Drawing.Point(38, 0);
             this.Bellabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Bellabel1.Name = "Bellabel1";
             this.Bellabel1.Size = new System.Drawing.Size(20, 21);
@@ -547,7 +547,7 @@ namespace Diet_note
             this.Jirlabel6.AutoSize = true;
             this.Jirlabel6.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Jirlabel6.ForeColor = System.Drawing.Color.Brown;
-            this.Jirlabel6.Location = new System.Drawing.Point(0, 1);
+            this.Jirlabel6.Location = new System.Drawing.Point(41, 1);
             this.Jirlabel6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Jirlabel6.Name = "Jirlabel6";
             this.Jirlabel6.Size = new System.Drawing.Size(20, 21);
@@ -570,7 +570,7 @@ namespace Diet_note
             this.Jirlabel5.AutoSize = true;
             this.Jirlabel5.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Jirlabel5.ForeColor = System.Drawing.Color.Brown;
-            this.Jirlabel5.Location = new System.Drawing.Point(0, 0);
+            this.Jirlabel5.Location = new System.Drawing.Point(41, -1);
             this.Jirlabel5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Jirlabel5.Name = "Jirlabel5";
             this.Jirlabel5.Size = new System.Drawing.Size(20, 21);
@@ -593,7 +593,7 @@ namespace Diet_note
             this.Jirlabel4.AutoSize = true;
             this.Jirlabel4.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Jirlabel4.ForeColor = System.Drawing.Color.Brown;
-            this.Jirlabel4.Location = new System.Drawing.Point(0, 3);
+            this.Jirlabel4.Location = new System.Drawing.Point(41, 0);
             this.Jirlabel4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Jirlabel4.Name = "Jirlabel4";
             this.Jirlabel4.Size = new System.Drawing.Size(20, 21);
@@ -616,7 +616,7 @@ namespace Diet_note
             this.Jirlabel3.AutoSize = true;
             this.Jirlabel3.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Jirlabel3.ForeColor = System.Drawing.Color.Brown;
-            this.Jirlabel3.Location = new System.Drawing.Point(0, 2);
+            this.Jirlabel3.Location = new System.Drawing.Point(41, 0);
             this.Jirlabel3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Jirlabel3.Name = "Jirlabel3";
             this.Jirlabel3.Size = new System.Drawing.Size(20, 21);
@@ -639,7 +639,7 @@ namespace Diet_note
             this.Jirlabel2.AutoSize = true;
             this.Jirlabel2.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Jirlabel2.ForeColor = System.Drawing.Color.Brown;
-            this.Jirlabel2.Location = new System.Drawing.Point(0, -1);
+            this.Jirlabel2.Location = new System.Drawing.Point(41, -1);
             this.Jirlabel2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Jirlabel2.Name = "Jirlabel2";
             this.Jirlabel2.Size = new System.Drawing.Size(20, 21);
@@ -662,7 +662,7 @@ namespace Diet_note
             this.Jirlabel1.AutoSize = true;
             this.Jirlabel1.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Jirlabel1.ForeColor = System.Drawing.Color.Brown;
-            this.Jirlabel1.Location = new System.Drawing.Point(0, 0);
+            this.Jirlabel1.Location = new System.Drawing.Point(41, 0);
             this.Jirlabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Jirlabel1.Name = "Jirlabel1";
             this.Jirlabel1.Size = new System.Drawing.Size(20, 21);
@@ -673,7 +673,7 @@ namespace Diet_note
             // AllJirpanel
             // 
             this.AllJirpanel.Controls.Add(this.AllJirlabel);
-            this.AllJirpanel.Location = new System.Drawing.Point(803, 207);
+            this.AllJirpanel.Location = new System.Drawing.Point(789, 207);
             this.AllJirpanel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.AllJirpanel.Name = "AllJirpanel";
             this.AllJirpanel.Size = new System.Drawing.Size(49, 30);
@@ -695,7 +695,7 @@ namespace Diet_note
             // AllBelpanel
             // 
             this.AllBelpanel.Controls.Add(this.AllBellabel);
-            this.AllBelpanel.Location = new System.Drawing.Point(803, 170);
+            this.AllBelpanel.Location = new System.Drawing.Point(789, 170);
             this.AllBelpanel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.AllBelpanel.Name = "AllBelpanel";
             this.AllBelpanel.Size = new System.Drawing.Size(49, 30);
@@ -717,7 +717,7 @@ namespace Diet_note
             // AllUglpanel
             // 
             this.AllUglpanel.Controls.Add(this.AllUgllabel);
-            this.AllUglpanel.Location = new System.Drawing.Point(803, 133);
+            this.AllUglpanel.Location = new System.Drawing.Point(789, 133);
             this.AllUglpanel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.AllUglpanel.Name = "AllUglpanel";
             this.AllUglpanel.Size = new System.Drawing.Size(49, 30);
@@ -771,7 +771,7 @@ namespace Diet_note
             this.Bellabel.AutoSize = true;
             this.Bellabel.Font = new System.Drawing.Font("Impact", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Bellabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.Bellabel.Location = new System.Drawing.Point(0, 5);
+            this.Bellabel.Location = new System.Drawing.Point(19, 5);
             this.Bellabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Bellabel.Name = "Bellabel";
             this.Bellabel.Size = new System.Drawing.Size(58, 22);
@@ -792,7 +792,7 @@ namespace Diet_note
             this.Jirlabel.AutoSize = true;
             this.Jirlabel.Font = new System.Drawing.Font("Impact", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Jirlabel.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.Jirlabel.Location = new System.Drawing.Point(0, 5);
+            this.Jirlabel.Location = new System.Drawing.Point(24, 5);
             this.Jirlabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Jirlabel.Name = "Jirlabel";
             this.Jirlabel.Size = new System.Drawing.Size(56, 22);
@@ -802,7 +802,7 @@ namespace Diet_note
             // Allpanel
             // 
             this.Allpanel.Controls.Add(this.Alllabel);
-            this.Allpanel.Location = new System.Drawing.Point(803, 60);
+            this.Allpanel.Location = new System.Drawing.Point(789, 60);
             this.Allpanel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Allpanel.Name = "Allpanel";
             this.Allpanel.Size = new System.Drawing.Size(49, 30);
@@ -958,7 +958,7 @@ namespace Diet_note
             // 
             this.AddEatpictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.AddEatpictureBox2.Image = global::Diet_note.Properties.Resources.Без_имени2;
-            this.AddEatpictureBox2.Location = new System.Drawing.Point(253, 136);
+            this.AddEatpictureBox2.Location = new System.Drawing.Point(253, 138);
             this.AddEatpictureBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.AddEatpictureBox2.Name = "AddEatpictureBox2";
             this.AddEatpictureBox2.Size = new System.Drawing.Size(18, 21);
@@ -1023,7 +1023,7 @@ namespace Diet_note
             // 
             this.ClearEatpictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ClearEatpictureBox2.Image = global::Diet_note.Properties.Resources.Без_имени;
-            this.ClearEatpictureBox2.Location = new System.Drawing.Point(229, 136);
+            this.ClearEatpictureBox2.Location = new System.Drawing.Point(229, 138);
             this.ClearEatpictureBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ClearEatpictureBox2.Name = "ClearEatpictureBox2";
             this.ClearEatpictureBox2.Size = new System.Drawing.Size(13, 21);
@@ -1072,7 +1072,7 @@ namespace Diet_note
             this.CalLabel.AutoSize = true;
             this.CalLabel.Font = new System.Drawing.Font("Impact", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.CalLabel.ForeColor = System.Drawing.Color.Black;
-            this.CalLabel.Location = new System.Drawing.Point(0, 5);
+            this.CalLabel.Location = new System.Drawing.Point(4, 5);
             this.CalLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.CalLabel.Name = "CalLabel";
             this.CalLabel.Size = new System.Drawing.Size(87, 22);
@@ -1220,7 +1220,7 @@ namespace Diet_note
             // AllCalPanel
             // 
             this.AllCalPanel.Controls.Add(this.AllCallabel);
-            this.AllCalPanel.Location = new System.Drawing.Point(803, 248);
+            this.AllCalPanel.Location = new System.Drawing.Point(789, 248);
             this.AllCalPanel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.AllCalPanel.Name = "AllCalPanel";
             this.AllCalPanel.Size = new System.Drawing.Size(49, 27);
@@ -1302,7 +1302,7 @@ namespace Diet_note
             // 
             // panel3
             // 
-            this.panel3.Location = new System.Drawing.Point(202, 136);
+            this.panel3.Location = new System.Drawing.Point(202, 138);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(20, 21);
             this.panel3.TabIndex = 69;
@@ -1364,7 +1364,7 @@ namespace Diet_note
             // 
             this.Multipicture2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Multipicture2.Image = global::Diet_note.Properties.Resources.pen;
-            this.Multipicture2.Location = new System.Drawing.Point(202, 136);
+            this.Multipicture2.Location = new System.Drawing.Point(202, 138);
             this.Multipicture2.Name = "Multipicture2";
             this.Multipicture2.Size = new System.Drawing.Size(20, 21);
             this.Multipicture2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1431,7 +1431,7 @@ namespace Diet_note
             // 
             this.MultiBox2.Enabled = false;
             this.MultiBox2.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.MultiBox2.Location = new System.Drawing.Point(171, 135);
+            this.MultiBox2.Location = new System.Drawing.Point(171, 137);
             this.MultiBox2.Name = "MultiBox2";
             this.MultiBox2.Size = new System.Drawing.Size(23, 22);
             this.MultiBox2.TabIndex = 81;
