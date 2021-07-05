@@ -259,10 +259,10 @@ namespace Diet_note
             // Uglpanel1
             // 
             this.Uglpanel1.Controls.Add(this.Ugllabel1);
-            this.Uglpanel1.Location = new System.Drawing.Point(288, 100);
+            this.Uglpanel1.Location = new System.Drawing.Point(288, 99);
             this.Uglpanel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Uglpanel1.Name = "Uglpanel1";
-            this.Uglpanel1.Size = new System.Drawing.Size(100, 22);
+            this.Uglpanel1.Size = new System.Drawing.Size(100, 23);
             this.Uglpanel1.TabIndex = 6;
             // 
             // Ugllabel1
@@ -285,7 +285,7 @@ namespace Diet_note
             this.Uglpanel2.Location = new System.Drawing.Point(288, 136);
             this.Uglpanel2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Uglpanel2.Name = "Uglpanel2";
-            this.Uglpanel2.Size = new System.Drawing.Size(100, 21);
+            this.Uglpanel2.Size = new System.Drawing.Size(100, 23);
             this.Uglpanel2.TabIndex = 7;
             // 
             // Ugllabel2
@@ -294,7 +294,7 @@ namespace Diet_note
             this.Ugllabel2.AutoSize = true;
             this.Ugllabel2.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Ugllabel2.ForeColor = System.Drawing.Color.Brown;
-            this.Ugllabel2.Location = new System.Drawing.Point(39, -3);
+            this.Ugllabel2.Location = new System.Drawing.Point(39, -2);
             this.Ugllabel2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Ugllabel2.Name = "Ugllabel2";
             this.Ugllabel2.Size = new System.Drawing.Size(20, 21);
@@ -489,10 +489,10 @@ namespace Diet_note
             // Belpanel2
             // 
             this.Belpanel2.Controls.Add(this.Bellabel2);
-            this.Belpanel2.Location = new System.Drawing.Point(408, 135);
+            this.Belpanel2.Location = new System.Drawing.Point(408, 136);
             this.Belpanel2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Belpanel2.Name = "Belpanel2";
-            this.Belpanel2.Size = new System.Drawing.Size(100, 22);
+            this.Belpanel2.Size = new System.Drawing.Size(100, 23);
             this.Belpanel2.TabIndex = 13;
             // 
             // Bellabel2
@@ -512,10 +512,10 @@ namespace Diet_note
             // Belpanel1
             // 
             this.Belpanel1.Controls.Add(this.Bellabel1);
-            this.Belpanel1.Location = new System.Drawing.Point(408, 97);
+            this.Belpanel1.Location = new System.Drawing.Point(408, 99);
             this.Belpanel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Belpanel1.Name = "Belpanel1";
-            this.Belpanel1.Size = new System.Drawing.Size(100, 25);
+            this.Belpanel1.Size = new System.Drawing.Size(100, 23);
             this.Belpanel1.TabIndex = 12;
             // 
             // Bellabel1
@@ -535,10 +535,10 @@ namespace Diet_note
             // Jirpanel6
             // 
             this.Jirpanel6.Controls.Add(this.Jirlabel6);
-            this.Jirpanel6.Location = new System.Drawing.Point(531, 280);
+            this.Jirpanel6.Location = new System.Drawing.Point(531, 283);
             this.Jirpanel6.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Jirpanel6.Name = "Jirpanel6";
-            this.Jirpanel6.Size = new System.Drawing.Size(100, 26);
+            this.Jirpanel6.Size = new System.Drawing.Size(100, 23);
             this.Jirpanel6.TabIndex = 23;
             // 
             // Jirlabel6
@@ -547,7 +547,7 @@ namespace Diet_note
             this.Jirlabel6.AutoSize = true;
             this.Jirlabel6.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Jirlabel6.ForeColor = System.Drawing.Color.Brown;
-            this.Jirlabel6.Location = new System.Drawing.Point(41, 1);
+            this.Jirlabel6.Location = new System.Drawing.Point(41, -1);
             this.Jirlabel6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Jirlabel6.Name = "Jirlabel6";
             this.Jirlabel6.Size = new System.Drawing.Size(20, 21);
@@ -558,10 +558,10 @@ namespace Diet_note
             // Jirpanel5
             // 
             this.Jirpanel5.Controls.Add(this.Jirlabel5);
-            this.Jirpanel5.Location = new System.Drawing.Point(531, 245);
+            this.Jirpanel5.Location = new System.Drawing.Point(531, 246);
             this.Jirpanel5.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Jirpanel5.Name = "Jirpanel5";
-            this.Jirpanel5.Size = new System.Drawing.Size(100, 24);
+            this.Jirpanel5.Size = new System.Drawing.Size(100, 23);
             this.Jirpanel5.TabIndex = 22;
             // 
             // Jirlabel5
@@ -570,7 +570,7 @@ namespace Diet_note
             this.Jirlabel5.AutoSize = true;
             this.Jirlabel5.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Jirlabel5.ForeColor = System.Drawing.Color.Brown;
-            this.Jirlabel5.Location = new System.Drawing.Point(41, -1);
+            this.Jirlabel5.Location = new System.Drawing.Point(41, -2);
             this.Jirlabel5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Jirlabel5.Name = "Jirlabel5";
             this.Jirlabel5.Size = new System.Drawing.Size(20, 21);
@@ -581,10 +581,10 @@ namespace Diet_note
             // Jirpanel4
             // 
             this.Jirpanel4.Controls.Add(this.Jirlabel4);
-            this.Jirpanel4.Location = new System.Drawing.Point(531, 208);
+            this.Jirpanel4.Location = new System.Drawing.Point(531, 210);
             this.Jirpanel4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Jirpanel4.Name = "Jirpanel4";
-            this.Jirpanel4.Size = new System.Drawing.Size(100, 25);
+            this.Jirpanel4.Size = new System.Drawing.Size(100, 23);
             this.Jirpanel4.TabIndex = 21;
             // 
             // Jirlabel4
@@ -593,7 +593,7 @@ namespace Diet_note
             this.Jirlabel4.AutoSize = true;
             this.Jirlabel4.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Jirlabel4.ForeColor = System.Drawing.Color.Brown;
-            this.Jirlabel4.Location = new System.Drawing.Point(41, 0);
+            this.Jirlabel4.Location = new System.Drawing.Point(41, -1);
             this.Jirlabel4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Jirlabel4.Name = "Jirlabel4";
             this.Jirlabel4.Size = new System.Drawing.Size(20, 21);
@@ -604,10 +604,10 @@ namespace Diet_note
             // Jirpanel3
             // 
             this.Jirpanel3.Controls.Add(this.Jirlabel3);
-            this.Jirpanel3.Location = new System.Drawing.Point(531, 171);
+            this.Jirpanel3.Location = new System.Drawing.Point(531, 173);
             this.Jirpanel3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Jirpanel3.Name = "Jirpanel3";
-            this.Jirpanel3.Size = new System.Drawing.Size(100, 25);
+            this.Jirpanel3.Size = new System.Drawing.Size(100, 23);
             this.Jirpanel3.TabIndex = 20;
             // 
             // Jirlabel3
@@ -616,7 +616,7 @@ namespace Diet_note
             this.Jirlabel3.AutoSize = true;
             this.Jirlabel3.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Jirlabel3.ForeColor = System.Drawing.Color.Brown;
-            this.Jirlabel3.Location = new System.Drawing.Point(41, 0);
+            this.Jirlabel3.Location = new System.Drawing.Point(41, -1);
             this.Jirlabel3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Jirlabel3.Name = "Jirlabel3";
             this.Jirlabel3.Size = new System.Drawing.Size(20, 21);
@@ -627,7 +627,7 @@ namespace Diet_note
             // Jirpanel2
             // 
             this.Jirpanel2.Controls.Add(this.Jirlabel2);
-            this.Jirpanel2.Location = new System.Drawing.Point(531, 134);
+            this.Jirpanel2.Location = new System.Drawing.Point(531, 136);
             this.Jirpanel2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Jirpanel2.Name = "Jirpanel2";
             this.Jirpanel2.Size = new System.Drawing.Size(100, 23);
@@ -650,10 +650,10 @@ namespace Diet_note
             // Jirpanel1
             // 
             this.Jirpanel1.Controls.Add(this.Jirlabel1);
-            this.Jirpanel1.Location = new System.Drawing.Point(531, 97);
+            this.Jirpanel1.Location = new System.Drawing.Point(531, 99);
             this.Jirpanel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Jirpanel1.Name = "Jirpanel1";
-            this.Jirpanel1.Size = new System.Drawing.Size(100, 25);
+            this.Jirpanel1.Size = new System.Drawing.Size(100, 23);
             this.Jirpanel1.TabIndex = 18;
             // 
             // Jirlabel1
@@ -662,7 +662,7 @@ namespace Diet_note
             this.Jirlabel1.AutoSize = true;
             this.Jirlabel1.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Jirlabel1.ForeColor = System.Drawing.Color.Brown;
-            this.Jirlabel1.Location = new System.Drawing.Point(41, 0);
+            this.Jirlabel1.Location = new System.Drawing.Point(41, -1);
             this.Jirlabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Jirlabel1.Name = "Jirlabel1";
             this.Jirlabel1.Size = new System.Drawing.Size(20, 21);
@@ -673,7 +673,7 @@ namespace Diet_note
             // AllJirpanel
             // 
             this.AllJirpanel.Controls.Add(this.AllJirlabel);
-            this.AllJirpanel.Location = new System.Drawing.Point(789, 207);
+            this.AllJirpanel.Location = new System.Drawing.Point(815, 207);
             this.AllJirpanel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.AllJirpanel.Name = "AllJirpanel";
             this.AllJirpanel.Size = new System.Drawing.Size(49, 30);
@@ -695,7 +695,7 @@ namespace Diet_note
             // AllBelpanel
             // 
             this.AllBelpanel.Controls.Add(this.AllBellabel);
-            this.AllBelpanel.Location = new System.Drawing.Point(789, 170);
+            this.AllBelpanel.Location = new System.Drawing.Point(815, 170);
             this.AllBelpanel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.AllBelpanel.Name = "AllBelpanel";
             this.AllBelpanel.Size = new System.Drawing.Size(49, 30);
@@ -717,7 +717,7 @@ namespace Diet_note
             // AllUglpanel
             // 
             this.AllUglpanel.Controls.Add(this.AllUgllabel);
-            this.AllUglpanel.Location = new System.Drawing.Point(789, 133);
+            this.AllUglpanel.Location = new System.Drawing.Point(815, 133);
             this.AllUglpanel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.AllUglpanel.Name = "AllUglpanel";
             this.AllUglpanel.Size = new System.Drawing.Size(49, 30);
@@ -750,7 +750,7 @@ namespace Diet_note
             this.UglText.AutoSize = true;
             this.UglText.Font = new System.Drawing.Font("Impact", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.UglText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.UglText.Location = new System.Drawing.Point(0, 5);
+            this.UglText.Location = new System.Drawing.Point(10, 5);
             this.UglText.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.UglText.Name = "UglText";
             this.UglText.Size = new System.Drawing.Size(86, 22);
@@ -802,7 +802,7 @@ namespace Diet_note
             // Allpanel
             // 
             this.Allpanel.Controls.Add(this.Alllabel);
-            this.Allpanel.Location = new System.Drawing.Point(789, 60);
+            this.Allpanel.Location = new System.Drawing.Point(815, 60);
             this.Allpanel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Allpanel.Name = "Allpanel";
             this.Allpanel.Size = new System.Drawing.Size(49, 30);
@@ -813,7 +813,7 @@ namespace Diet_note
             this.Alllabel.AutoSize = true;
             this.Alllabel.Font = new System.Drawing.Font("Impact", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Alllabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.Alllabel.Location = new System.Drawing.Point(0, 5);
+            this.Alllabel.Location = new System.Drawing.Point(2, 5);
             this.Alllabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Alllabel.Name = "Alllabel";
             this.Alllabel.Size = new System.Drawing.Size(43, 22);
@@ -850,10 +850,10 @@ namespace Diet_note
             this.Eatbutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.Eatbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Eatbutton.Font = new System.Drawing.Font("Segoe Script", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Eatbutton.Location = new System.Drawing.Point(288, 343);
+            this.Eatbutton.Location = new System.Drawing.Point(355, 342);
             this.Eatbutton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Eatbutton.Name = "Eatbutton";
-            this.Eatbutton.Size = new System.Drawing.Size(220, 35);
+            this.Eatbutton.Size = new System.Drawing.Size(181, 35);
             this.Eatbutton.TabIndex = 32;
             this.Eatbutton.Text = "Покушац!";
             this.Eatbutton.UseVisualStyleBackColor = false;
@@ -868,10 +868,10 @@ namespace Diet_note
             this.Historybutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.Historybutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Historybutton.Font = new System.Drawing.Font("Segoe Script", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Historybutton.Location = new System.Drawing.Point(531, 343);
+            this.Historybutton.Location = new System.Drawing.Point(689, 342);
             this.Historybutton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Historybutton.Name = "Historybutton";
-            this.Historybutton.Size = new System.Drawing.Size(220, 36);
+            this.Historybutton.Size = new System.Drawing.Size(175, 36);
             this.Historybutton.TabIndex = 39;
             this.Historybutton.Text = "История";
             this.Historybutton.UseVisualStyleBackColor = false;
@@ -1082,10 +1082,10 @@ namespace Diet_note
             // Calpanel6
             // 
             this.Calpanel6.Controls.Add(this.Callabel6);
-            this.Calpanel6.Location = new System.Drawing.Point(651, 280);
+            this.Calpanel6.Location = new System.Drawing.Point(651, 283);
             this.Calpanel6.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Calpanel6.Name = "Calpanel6";
-            this.Calpanel6.Size = new System.Drawing.Size(100, 26);
+            this.Calpanel6.Size = new System.Drawing.Size(100, 23);
             this.Calpanel6.TabIndex = 58;
             // 
             // Callabel6
@@ -1094,7 +1094,7 @@ namespace Diet_note
             this.Callabel6.AutoSize = true;
             this.Callabel6.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Callabel6.ForeColor = System.Drawing.Color.Brown;
-            this.Callabel6.Location = new System.Drawing.Point(-1, 1);
+            this.Callabel6.Location = new System.Drawing.Point(38, 0);
             this.Callabel6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Callabel6.Name = "Callabel6";
             this.Callabel6.Size = new System.Drawing.Size(20, 21);
@@ -1105,10 +1105,10 @@ namespace Diet_note
             // Calpanel5
             // 
             this.Calpanel5.Controls.Add(this.Callabel5);
-            this.Calpanel5.Location = new System.Drawing.Point(651, 245);
+            this.Calpanel5.Location = new System.Drawing.Point(651, 246);
             this.Calpanel5.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Calpanel5.Name = "Calpanel5";
-            this.Calpanel5.Size = new System.Drawing.Size(100, 24);
+            this.Calpanel5.Size = new System.Drawing.Size(100, 23);
             this.Calpanel5.TabIndex = 57;
             // 
             // Callabel5
@@ -1117,7 +1117,7 @@ namespace Diet_note
             this.Callabel5.AutoSize = true;
             this.Callabel5.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Callabel5.ForeColor = System.Drawing.Color.Brown;
-            this.Callabel5.Location = new System.Drawing.Point(-1, 0);
+            this.Callabel5.Location = new System.Drawing.Point(38, 0);
             this.Callabel5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Callabel5.Name = "Callabel5";
             this.Callabel5.Size = new System.Drawing.Size(20, 21);
@@ -1128,10 +1128,10 @@ namespace Diet_note
             // Calpanel4
             // 
             this.Calpanel4.Controls.Add(this.Callabel4);
-            this.Calpanel4.Location = new System.Drawing.Point(651, 208);
+            this.Calpanel4.Location = new System.Drawing.Point(651, 210);
             this.Calpanel4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Calpanel4.Name = "Calpanel4";
-            this.Calpanel4.Size = new System.Drawing.Size(100, 25);
+            this.Calpanel4.Size = new System.Drawing.Size(100, 23);
             this.Calpanel4.TabIndex = 56;
             // 
             // Callabel4
@@ -1140,7 +1140,7 @@ namespace Diet_note
             this.Callabel4.AutoSize = true;
             this.Callabel4.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Callabel4.ForeColor = System.Drawing.Color.Brown;
-            this.Callabel4.Location = new System.Drawing.Point(-1, 3);
+            this.Callabel4.Location = new System.Drawing.Point(38, -1);
             this.Callabel4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Callabel4.Name = "Callabel4";
             this.Callabel4.Size = new System.Drawing.Size(20, 21);
@@ -1151,10 +1151,10 @@ namespace Diet_note
             // Calpanel3
             // 
             this.Calpanel3.Controls.Add(this.Callabel3);
-            this.Calpanel3.Location = new System.Drawing.Point(651, 171);
+            this.Calpanel3.Location = new System.Drawing.Point(651, 173);
             this.Calpanel3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Calpanel3.Name = "Calpanel3";
-            this.Calpanel3.Size = new System.Drawing.Size(100, 25);
+            this.Calpanel3.Size = new System.Drawing.Size(100, 23);
             this.Calpanel3.TabIndex = 55;
             // 
             // Callabel3
@@ -1163,7 +1163,7 @@ namespace Diet_note
             this.Callabel3.AutoSize = true;
             this.Callabel3.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Callabel3.ForeColor = System.Drawing.Color.Brown;
-            this.Callabel3.Location = new System.Drawing.Point(-1, 2);
+            this.Callabel3.Location = new System.Drawing.Point(38, 0);
             this.Callabel3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Callabel3.Name = "Callabel3";
             this.Callabel3.Size = new System.Drawing.Size(20, 21);
@@ -1174,7 +1174,7 @@ namespace Diet_note
             // Calpanel2
             // 
             this.Calpanel2.Controls.Add(this.Callabel2);
-            this.Calpanel2.Location = new System.Drawing.Point(651, 134);
+            this.Calpanel2.Location = new System.Drawing.Point(651, 136);
             this.Calpanel2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Calpanel2.Name = "Calpanel2";
             this.Calpanel2.Size = new System.Drawing.Size(100, 23);
@@ -1186,7 +1186,7 @@ namespace Diet_note
             this.Callabel2.AutoSize = true;
             this.Callabel2.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Callabel2.ForeColor = System.Drawing.Color.Brown;
-            this.Callabel2.Location = new System.Drawing.Point(-1, -1);
+            this.Callabel2.Location = new System.Drawing.Point(38, -1);
             this.Callabel2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Callabel2.Name = "Callabel2";
             this.Callabel2.Size = new System.Drawing.Size(20, 21);
@@ -1197,10 +1197,10 @@ namespace Diet_note
             // Calpanel1
             // 
             this.Calpanel1.Controls.Add(this.Callabel1);
-            this.Calpanel1.Location = new System.Drawing.Point(651, 97);
+            this.Calpanel1.Location = new System.Drawing.Point(651, 99);
             this.Calpanel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Calpanel1.Name = "Calpanel1";
-            this.Calpanel1.Size = new System.Drawing.Size(100, 25);
+            this.Calpanel1.Size = new System.Drawing.Size(100, 23);
             this.Calpanel1.TabIndex = 53;
             // 
             // Callabel1
@@ -1209,7 +1209,7 @@ namespace Diet_note
             this.Callabel1.AutoSize = true;
             this.Callabel1.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Callabel1.ForeColor = System.Drawing.Color.Brown;
-            this.Callabel1.Location = new System.Drawing.Point(-1, 0);
+            this.Callabel1.Location = new System.Drawing.Point(38, -1);
             this.Callabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Callabel1.Name = "Callabel1";
             this.Callabel1.Size = new System.Drawing.Size(20, 21);
@@ -1220,7 +1220,7 @@ namespace Diet_note
             // AllCalPanel
             // 
             this.AllCalPanel.Controls.Add(this.AllCallabel);
-            this.AllCalPanel.Location = new System.Drawing.Point(789, 248);
+            this.AllCalPanel.Location = new System.Drawing.Point(815, 248);
             this.AllCalPanel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.AllCalPanel.Name = "AllCalPanel";
             this.AllCalPanel.Size = new System.Drawing.Size(49, 27);
@@ -1231,7 +1231,7 @@ namespace Diet_note
             this.AllCallabel.AutoSize = true;
             this.AllCallabel.Font = new System.Drawing.Font("Segoe UI Black", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.AllCallabel.ForeColor = System.Drawing.Color.Black;
-            this.AllCallabel.Location = new System.Drawing.Point(9, 0);
+            this.AllCallabel.Location = new System.Drawing.Point(9, -2);
             this.AllCallabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.AllCallabel.Name = "AllCallabel";
             this.AllCallabel.Size = new System.Drawing.Size(26, 30);
@@ -1487,7 +1487,7 @@ namespace Diet_note
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.ClientSize = new System.Drawing.Size(885, 391);
+            this.ClientSize = new System.Drawing.Size(884, 391);
             this.Controls.Add(this.MultiBox6);
             this.Controls.Add(this.MultiBox5);
             this.Controls.Add(this.MultiBox4);

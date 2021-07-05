@@ -61,7 +61,7 @@ namespace Diet_note
                 MessageBox.Show("Покушайте хотя бы один раз!");
                 return;
             }
-            
+            Point temppoint = Location;
            Size = new Size(276, 267);
             Top = 250;
             Left = 500;
@@ -121,6 +121,7 @@ namespace Diet_note
             void Closeclick(object button, EventArgs click)
             {
                 Size = new Size(890, 430);
+                Location = temppoint;
                 historypanel.Dispose();
 
             }
@@ -546,7 +547,7 @@ namespace Diet_note
         }
         #endregion
 
-        #region Add Fodd
+        #region Add Food
         private void AddEatpictureBox1_Click(object sender, EventArgs e)
         {
             EatBox1.Focus();
@@ -666,14 +667,11 @@ namespace Diet_note
                 Cursor = Cursors.Hand,
                 Font = new Font("Segoe Script", 8F, FontStyle.Bold, GraphicsUnit.Point),
                 Margin = new Padding(0),
-
-
-
             };
             UserFoodPan.Controls.Add(Addbutton);
             Addbutton.FlatAppearance.BorderColor = Color.Blue;
-            Addbutton.FlatAppearance.MouseDownBackColor = Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            Addbutton.FlatAppearance.MouseOverBackColor = Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            Addbutton.FlatAppearance.MouseDownBackColor = Color.FromArgb(0, 64, 0);
+            Addbutton.FlatAppearance.MouseOverBackColor = Color.FromArgb(0, 192, 0);
 
 
 
@@ -690,8 +688,8 @@ namespace Diet_note
             };
             UserFoodPan.Controls.Add(UpdateBut);
             UpdateBut.FlatAppearance.BorderColor = Color.Blue;
-            UpdateBut.FlatAppearance.MouseDownBackColor = Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            UpdateBut.FlatAppearance.MouseOverBackColor = Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            UpdateBut.FlatAppearance.MouseDownBackColor = Color.FromArgb(0, 64, 0);
+            UpdateBut.FlatAppearance.MouseOverBackColor = Color.FromArgb(0, 192, 0);
 
 
 
@@ -705,12 +703,11 @@ namespace Diet_note
                 Cursor = Cursors.Hand,
                 Font = new Font("Segoe Script", 8F, FontStyle.Bold, GraphicsUnit.Point),
                 Margin = new Padding(0),
-
             };
             UserFoodPan.Controls.Add(DeleteUserBut);
             DeleteUserBut.FlatAppearance.BorderColor = Color.Blue;
-            DeleteUserBut.FlatAppearance.MouseDownBackColor = Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            DeleteUserBut.FlatAppearance.MouseOverBackColor = Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            DeleteUserBut.FlatAppearance.MouseDownBackColor = Color.FromArgb(0, 64, 0);
+            DeleteUserBut.FlatAppearance.MouseOverBackColor = Color.FromArgb(0, 192, 0);
 
 
             Button CancelBut = new Button
@@ -723,13 +720,11 @@ namespace Diet_note
                 Cursor = Cursors.Hand,
                 Font = new Font("Segoe Script", 8F, FontStyle.Bold, GraphicsUnit.Point),
                 Margin = new Padding(0),
-
-
             };
             UserFoodPan.Controls.Add(CancelBut);
             CancelBut.FlatAppearance.BorderColor = Color.Blue;
-            CancelBut.FlatAppearance.MouseDownBackColor = Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            CancelBut.FlatAppearance.MouseOverBackColor = Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            CancelBut.FlatAppearance.MouseDownBackColor = Color.FromArgb(0, 64, 0);
+            CancelBut.FlatAppearance.MouseOverBackColor = Color.FromArgb(0, 192, 0);
 
             #region Cancel Button
             CancelBut.Click += CancelButClick;
@@ -754,7 +749,7 @@ namespace Diet_note
 
             }
             #endregion
-            #region Add Click
+            #region Add Button
             Addbutton.Click += AddClick;
             void AddClick(object but, EventArgs click)
             {
@@ -774,7 +769,7 @@ namespace Diet_note
                 {
                     Size = new Size(635, 95),
                     BackColor = Color.Aquamarine,
-                    Location = new Point(11, 380),
+                    Location = new Point(120, 382),
                     Name = "adduserpanel"
 
 
@@ -919,6 +914,18 @@ namespace Diet_note
                 {
                     if (namebox.Text != "" && carbohydbox.Text != "" && proteinbox.Text != "" && fatsbox.Text != "" && calloriesbox.Text != "" && numbereat.Text != "")
                     {
+                        using(var db = new Aplicatincontext())
+                        {
+                            User[] users = db.Users.ToArray();
+                            for(int i = 0;i<users.Length;i++)
+                            {
+                                if(users[i].Name == namebox.Text)
+                                {
+                                    MessageBox.Show("Пользователь с таким именем уже существует!");
+                                    return;
+                                }
+                            }
+                        }
                         try
                         {
                             User newuser = new User { Name = namebox.Text };
@@ -973,7 +980,7 @@ namespace Diet_note
 
             }
             #endregion
-            #region UpdateUser
+            #region UpdateUser Button
 
             UpdateBut.Click += UpdateButClick;
             void UpdateButClick(object but, EventArgs click)
@@ -998,7 +1005,7 @@ namespace Diet_note
                 {
                     Size = new Size(635, 95),
                     BackColor = Color.CornflowerBlue,
-                    Location = new Point(11, 380),
+                    Location = new Point(120, 382),
                     Name = "upduserpanel"
 
                 };
@@ -1195,7 +1202,7 @@ namespace Diet_note
                 #endregion
             }
             #endregion
-            #region Delete But
+            #region Delete Button
 
             DeleteUserBut.Click += DeleteUserButClick;
             void DeleteUserButClick(object but, EventArgs click)
@@ -1256,8 +1263,8 @@ namespace Diet_note
             };
             UserFoodPan.Controls.Add(AddFoodBut);
             AddFoodBut.FlatAppearance.BorderColor = Color.Blue;
-            AddFoodBut.FlatAppearance.MouseDownBackColor = Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            AddFoodBut.FlatAppearance.MouseOverBackColor = Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            AddFoodBut.FlatAppearance.MouseDownBackColor = Color.FromArgb(0, 64, 0);
+            AddFoodBut.FlatAppearance.MouseOverBackColor = Color.FromArgb(0, 192, 0);
 
 
 
@@ -1274,8 +1281,8 @@ namespace Diet_note
             };
             UserFoodPan.Controls.Add(UpdateFoodBut);
             UpdateFoodBut.FlatAppearance.BorderColor = Color.Blue;
-            UpdateFoodBut.FlatAppearance.MouseDownBackColor = Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            UpdateFoodBut.FlatAppearance.MouseOverBackColor = Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            UpdateFoodBut.FlatAppearance.MouseDownBackColor = Color.FromArgb(0, 64, 0);
+            UpdateFoodBut.FlatAppearance.MouseOverBackColor = Color.FromArgb(0, 192, 0);
 
 
 
@@ -1293,8 +1300,8 @@ namespace Diet_note
             };
             UserFoodPan.Controls.Add(DeleteFoodBut);
             DeleteFoodBut.FlatAppearance.BorderColor = Color.Blue;
-            DeleteFoodBut.FlatAppearance.MouseDownBackColor = Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            DeleteFoodBut.FlatAppearance.MouseOverBackColor = Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            DeleteFoodBut.FlatAppearance.MouseDownBackColor = Color.FromArgb(0, 64, 0);
+            DeleteFoodBut.FlatAppearance.MouseOverBackColor = Color.FromArgb(0, 192, 0);
 
 
             Button CancelBut = new Button
@@ -1312,10 +1319,10 @@ namespace Diet_note
             };
             UserFoodPan.Controls.Add(CancelBut);
             CancelBut.FlatAppearance.BorderColor = Color.Blue;
-            CancelBut.FlatAppearance.MouseDownBackColor = Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            CancelBut.FlatAppearance.MouseOverBackColor = Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            CancelBut.FlatAppearance.MouseDownBackColor = Color.FromArgb(0, 64, 0);
+            CancelBut.FlatAppearance.MouseOverBackColor = Color.FromArgb(0, 192, 0);
 
-            #region Add Food Click
+            #region Add Food Button
 
             AddFoodBut.Click += AddFoodButClick;
             void AddFoodButClick(object but, EventArgs click)
@@ -1339,7 +1346,7 @@ namespace Diet_note
                 {
                     Size = new Size(635, 95),
                     BackColor = Color.GreenYellow,
-                    Location = new Point(11, 380),
+                    Location = new Point(120, 382),
                     Name = "addfoodpanel"
 
 
@@ -1539,7 +1546,7 @@ namespace Diet_note
                 {
                     Size = new Size(635, 95),
                     BackColor = Color.PaleVioletRed,
-                    Location = new Point(11, 380),
+                    Location = new Point(120, 382),
                     Name = "updfoodpanel"
                 };
                 Controls.Add(updfoodpanel);
@@ -1744,7 +1751,7 @@ namespace Diet_note
 
             }
             #endregion
-            #region Delete Food Click
+            #region Delete Food Button
 
             DeleteFoodBut.Click += DeleteFoodButClick;
             void DeleteFoodButClick(object but, EventArgs click)
@@ -1767,7 +1774,7 @@ namespace Diet_note
                 {
                     Size = new Size(635, 95),
                     BackColor = Color.Turquoise,
-                    Location = new Point(11, 380),
+                    Location = new Point(120, 382),
                     Name = "delfoodpanel"
                 };
                 Controls.Add(delfoodpanel);
@@ -2414,7 +2421,8 @@ namespace Diet_note
             AllCallabel.Text = (Convert.ToDecimal(Callabel1.Text) + Convert.ToDecimal(Callabel2.Text) + Convert.ToDecimal(Callabel3.Text) + Convert.ToDecimal(Callabel4.Text) + Convert.ToDecimal(Callabel5.Text) + Convert.ToDecimal(Callabel6.Text)).ToString();
 
         }
-       
+
+      
     }
     #endregion
 }
