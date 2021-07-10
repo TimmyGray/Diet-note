@@ -9,7 +9,12 @@ namespace Diet_note
     class History
     {
         int countofeat;
-        public int Id { get; set; } 
+        // id;
+        public int Id { get; }
+        //{
+        //    get {return id; }
+        //   // set { if (value <= 0) throw new ArgumentException();id=value; } 
+        //} 
         public DateTime Date { get; set; }
         public int Countofeat
         {

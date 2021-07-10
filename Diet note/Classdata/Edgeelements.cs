@@ -10,15 +10,70 @@ namespace Diet_note
 {
     class Edgeelements
     {
-      public int Id { get; set; }
-       public string Carbohydrates { get; set; }
-      public string Proteins { get; set; }
-      public string Fats { get; set; }
-       public string Calloriesedge { get; set; }
-       public int Numbereats { get; set; }
-        [ForeignKey("UserId")]
-        public int UserId { get; set; }
-        public User user  { get; set; }
+        int id;
+        string carbohydrates;
+        string proteins;
+        string fats;
+        string calloriesedge;
+        int numbereats;
+        public int Id
+      {
+            get { return id; }
+            set{id = Checked(value); }
+      }
+        
+      public string Carbohydrates
+      {
+            get { return carbohydrates; }
+            set {carbohydrates=Checked(value); }
+      }
+     
+      public string Proteins
+        {
+            get { return proteins; }
+            set { proteins = Checked(value); }
+        }
+        
+      public string Fats 
+        {
+            get { return fats; }
+            set { fats = Checked(value); }
+        }
+        
+      public string Calloriesedge
+        {
+            get { return calloriesedge; }
+            set { calloriesedge = Checked(value); }
+        }
+
        
+      public int Numbereats
+        {
+            get { return numbereats; }
+            set { if (value == 0) numbereats = value;else numbereats = Checked(value); }
+        }
+        [ForeignKey("UserId")]
+      public int UserId { get; set; }
+      public User user  { get; set; }
+        int Checked(int value)
+        {
+            if (value <= 0)
+                throw new ArgumentException("Неправильное значение");
+            return value;
+        }
+        string Checked(string value)
+        {
+            if (decimal.TryParse(value, out decimal result))
+            {
+                if (result < 0)
+                {
+                    throw new ArgumentException("Отрицательное значение");
+                }
+                return value;
+            }
+            else
+                throw new Exception("Неправильное значение");
+                
+        }
     }
 }

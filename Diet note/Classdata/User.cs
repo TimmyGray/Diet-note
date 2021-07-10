@@ -10,7 +10,12 @@ namespace Diet_note
 {
     class User
     {
-        public int Id { get; set; }
+        int id;
+        public int Id
+        {
+            get { return id; }
+            set { if (value <= 0) throw new ArgumentException();id = value; }
+        }
         public string Name { get; set; }
         
         public Edgeelements Edges { get; set; }
