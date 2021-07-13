@@ -6,27 +6,48 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Diet_note
 {
-    class History
+    class History:CheckClass
     {
         int countofeat;
-        // id;
-        public int Id { get; }
-        //{
-        //    get {return id; }
-        //   // set { if (value <= 0) throw new ArgumentException();id=value; } 
-        //} 
+        int id;
+        string carbohydrates;
+        string proteins;
+        string fats;
+        string callories;
+
+        public int Id
+        {
+            get { return id; }
+            set { id = Checked(value); }
+        }
         public DateTime Date { get; set; }
         public int Countofeat
         {
             get { return countofeat; }
-            set { if (value >= 0) { countofeat = value; } else throw new ArgumentException("Число не может быть отрицательным"); }
+            set { if (value == 0)countofeat = value;countofeat = Checked(value); }
         }
-        public string CarboHydrates { get; set; }
-        public string Proteins { get; set; }
-        public string Fats { get; set; }
-        public string Callories { get; set; }
+        public string CarboHydrates
+        {
+            get {return carbohydrates; }
+            set {carbohydrates = Checked(value); }
+        }
+        public string Proteins
+        {
+            get {return proteins; }
+            set {proteins = Checked(value); }
+        }
+        public string Fats
+        {
+            get { return fats; }
+            set {fats=Checked(value); } 
+        }
+        public string Callories
+        {
+            get { return callories; }
+            set {callories=Checked(value); }
+        }
         public string Foodname { get; set; }
-        public bool firsttime { get; set; }
+        public bool Firsttime { get; set; }
 
 
         public int UserId { get; set; }

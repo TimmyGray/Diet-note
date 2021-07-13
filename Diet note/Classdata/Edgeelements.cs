@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Diet_note
 {
-    class Edgeelements
+    class Edgeelements:CheckClass
     {
         int id;
         string carbohydrates;
@@ -20,33 +20,27 @@ namespace Diet_note
       {
             get { return id; }
             set{id = Checked(value); }
-      }
-        
+      } 
       public string Carbohydrates
       {
             get { return carbohydrates; }
             set {carbohydrates=Checked(value); }
       }
-     
       public string Proteins
         {
             get { return proteins; }
             set { proteins = Checked(value); }
-        }
-        
+        }   
       public string Fats 
         {
             get { return fats; }
             set { fats = Checked(value); }
-        }
-        
+        }      
       public string Calloriesedge
         {
             get { return calloriesedge; }
             set { calloriesedge = Checked(value); }
-        }
-
-       
+        }  
       public int Numbereats
         {
             get { return numbereats; }
@@ -55,25 +49,7 @@ namespace Diet_note
         [ForeignKey("UserId")]
       public int UserId { get; set; }
       public User user  { get; set; }
-        int Checked(int value)
-        {
-            if (value <= 0)
-                throw new ArgumentException("Неправильное значение");
-            return value;
-        }
-        string Checked(string value)
-        {
-            if (decimal.TryParse(value, out decimal result))
-            {
-                if (result < 0)
-                {
-                    throw new ArgumentException("Отрицательное значение");
-                }
-                return value;
-            }
-            else
-                throw new Exception("Неправильное значение");
-                
-        }
+       
+        
     }
 }

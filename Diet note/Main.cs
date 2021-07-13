@@ -56,7 +56,7 @@ namespace Diet_note
                 return;
             }
             User seluser = (User)NamelistBox.SelectedItem;
-            if (seluser.Histories[0].firsttime)
+            if (seluser.Histories[0].Firsttime)
             {
                 MessageBox.Show("Покушайте хотя бы один раз!");
                 return;
@@ -272,10 +272,10 @@ namespace Diet_note
                     User seluser = (User)NamelistBox.SelectedItem;
 
 
-                    if (DateTime.Now.Date != seluser.Histories.Last().Date && seluser.Histories.Last().firsttime == false)
+                    if (DateTime.Now.Date != seluser.Histories.Last().Date && seluser.Histories.Last().Firsttime == false)
                     {
 
-                        History newhistory = new History { Date = DateTime.Now.Date, Countofeat = 1, UserId = seluser.Id, firsttime = false };
+                        History newhistory = new History { Date = DateTime.Now.Date, Countofeat = 1, UserId = seluser.Id, Firsttime = false };
                         if (Convert.ToDecimal(AllUgllabel.Text) > Convert.ToDecimal(seluser.Edges.Carbohydrates))
                         {
                             MessageBox.Show("Вы превысили суточное потребление углеводов!");
@@ -354,7 +354,7 @@ namespace Diet_note
                     {
                         History newhistory = new History { UserId = seluser.Id, Date = DateTime.Now.Date };
 
-                        if (!seluser.Histories.Last().firsttime)
+                        if (!seluser.Histories.Last().Firsttime)
                         {
                             newhistory.Countofeat = seluser.Histories.Last().Countofeat + 1;
                             if (newhistory.Countofeat > seluser.Edges.Numbereats)
@@ -434,15 +434,15 @@ namespace Diet_note
                         }
                         using (var db = new Aplicatincontext())
                         {
-                            if (!seluser.Histories.Last().firsttime)
+                            if (!seluser.Histories.Last().Firsttime)
                             {
                                 var checkid = db.Histories.ToList();
                                 newhistory.Id = checkid.Last().Id + 1;
                             }
-                            if (seluser.Histories.Last().firsttime)
+                            if (seluser.Histories.Last().Firsttime)
                             {
                                 newhistory.Countofeat = 1;
-                                newhistory.firsttime = false;
+                                newhistory.Firsttime = false;
                                 newhistory.Id = seluser.Histories[0].Id;
                                 seluser.Histories[0] = newhistory;
                                 db.Histories.Update(newhistory);
@@ -930,7 +930,7 @@ namespace Diet_note
                         {
                             User newuser = new User { Name = namebox.Text };
                             Edgeelements edgeelements = new Edgeelements { Calloriesedge = calloriesbox.Text, Carbohydrates = (carbohydbox.Text), Fats = (fatsbox.Text), Proteins = (proteinbox.Text), Numbereats = Convert.ToInt32(numbereat.Text), user = newuser };
-                            History newhistory = new History { UserId = newuser.Id, user = newuser, CarboHydrates = "0", Proteins = "0", Fats = "0", Callories = "0", Countofeat = 0, firsttime = true };
+                            History newhistory = new History { UserId = newuser.Id, user = newuser, CarboHydrates = "0", Proteins = "0", Fats = "0", Callories = "0", Countofeat = 0, Firsttime = true };
                             MessageBox.Show("Пользователь успешно добавлен");
 
                             NamelistBox.Items.Add(newuser);
