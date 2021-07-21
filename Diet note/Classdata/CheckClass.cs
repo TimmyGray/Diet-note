@@ -23,7 +23,7 @@ namespace Diet_note
         protected virtual int Checked(int value)
         {
             if (value <= 0)
-                throw new ArgumentException("Неправильное значение");
+                throw new ArgumentException("Должно быть положительное значеие");
             return value;
         }
 

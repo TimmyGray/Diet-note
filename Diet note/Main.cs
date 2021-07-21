@@ -347,6 +347,13 @@ namespace Diet_note
                             db.SaveChanges();
                         }
                         seluser.Histories.Add(newhistory);
+                        EdgeCarboHydLabel.Text = (Convert.ToDecimal(seluser.Edges.Carbohydrates) - Convert.ToDecimal(seluser.Histories.Last().CarboHydrates)).ToString();
+                        EdgeProtLabel.Text = (Convert.ToDecimal(seluser.Edges.Proteins) - Convert.ToDecimal(seluser.Histories.Last().Proteins)).ToString();
+                        EdgeFatsLabel.Text = (Convert.ToDecimal(seluser.Edges.Fats) - Convert.ToDecimal(seluser.Histories.Last().Fats)).ToString();
+                        EdgeCalloriesLabel.Text = (Convert.ToDecimal(seluser.Edges.Calloriesedge) - Convert.ToDecimal(seluser.Histories.Last().Callories)).ToString();
+                        EdgeEatCountLabel.Text = seluser.Edges.Numbereats.ToString();
+                        EatCountLabel.Text = seluser.Histories.Last().Countofeat.ToString();
+
                         MessageBox.Show("Ням - Ням!");
 
                     }
@@ -447,6 +454,13 @@ namespace Diet_note
                                 seluser.Histories[0] = newhistory;
                                 db.Histories.Update(newhistory);
                                 db.SaveChanges();
+                                EdgeCarboHydLabel.Text = (Convert.ToDecimal(seluser.Edges.Carbohydrates) - Convert.ToDecimal(AllUgllabel.Text)).ToString();
+                                EdgeProtLabel.Text = (Convert.ToDecimal(seluser.Edges.Proteins) - Convert.ToDecimal(AllBellabel.Text)).ToString();
+                                EdgeFatsLabel.Text = (Convert.ToDecimal(seluser.Edges.Fats) - Convert.ToDecimal(AllJirlabel.Text)).ToString();
+                                EdgeCalloriesLabel.Text = (Convert.ToDecimal(seluser.Edges.Calloriesedge) - Convert.ToDecimal(AllCallabel.Text)).ToString();
+                                EdgeEatCountLabel.Text = seluser.Edges.Numbereats.ToString();
+                                EatCountLabel.Text = seluser.Histories.Last().Countofeat.ToString();
+
                                 MessageBox.Show("Ням - Ням!");
                                 return;
 
@@ -456,6 +470,12 @@ namespace Diet_note
                             db.SaveChanges();
                         }
                         seluser.Histories.Add(newhistory);
+                        EdgeCarboHydLabel.Text = (Convert.ToDecimal(seluser.Edges.Carbohydrates) - Convert.ToDecimal(seluser.Histories.Last().CarboHydrates)).ToString();
+                        EdgeProtLabel.Text = (Convert.ToDecimal(seluser.Edges.Proteins) - Convert.ToDecimal(seluser.Histories.Last().Proteins)).ToString();
+                        EdgeFatsLabel.Text = (Convert.ToDecimal(seluser.Edges.Fats) - Convert.ToDecimal(seluser.Histories.Last().Fats)).ToString();
+                        EdgeCalloriesLabel.Text = (Convert.ToDecimal(seluser.Edges.Calloriesedge) - Convert.ToDecimal(seluser.Histories.Last().Callories)).ToString();
+                        EdgeEatCountLabel.Text = seluser.Edges.Numbereats.ToString();
+                        EatCountLabel.Text = seluser.Histories.Last().Countofeat.ToString();
                         MessageBox.Show("Ням - Ням!");
                     }
 
@@ -945,9 +965,9 @@ namespace Diet_note
 
 
                         }
-                        catch (Exception)
+                        catch (Exception e)
                         {
-                            MessageBox.Show("Неправильное значение");
+                            MessageBox.Show(e.Message);
                         }
 
                     }
@@ -1193,9 +1213,6 @@ namespace Diet_note
                         MessageBox.Show("Заполните все поля!");
 
                     }
-                    
-
-
                 }
 
                 upduserbut.Click += new EventHandler(Clickbut);
@@ -1207,22 +1224,30 @@ namespace Diet_note
             DeleteUserBut.Click += DeleteUserButClick;
             void DeleteUserButClick(object but, EventArgs click)
             {
+
                 DeleteUserBut.Enabled = true;
                 Addbutton.Enabled = true;
                 UpdateBut.Enabled = true;
                 NamelistBox.Enabled = true;
                 if (NamelistBox.SelectedItem != null)
                 {
-                    User seluser = (User)NamelistBox.SelectedItem;
-                    using (var db = new Aplicatincontext())
+                    DialogResult result = MessageBox.Show(this, "Are You shure?", "Delete user", MessageBoxButtons.YesNo);
+                    if (result == DialogResult.Yes)
                     {
-                        db.Histories.RemoveRange(seluser.Histories);
-                        db.Edges.Remove(seluser.Edges);
-                        db.Users.Remove(seluser);
-
-                        db.SaveChanges();
+                        User seluser = (User)NamelistBox.SelectedItem;
+                        using (var db = new Aplicatincontext())
+                        {
+                            db.Histories.RemoveRange(seluser.Histories);
+                            db.Edges.Remove(seluser.Edges);
+                            db.Users.Remove(seluser);
+                            db.SaveChanges();
+                        }
+                        NamelistBox.Items.Remove(seluser);
                     }
-                    NamelistBox.Items.Remove(seluser);
+                    else
+                    {
+                        return;
+                    }
                 }
                 else { MessageBox.Show("Выберите пользователя!"); }
                 return;
@@ -2032,6 +2057,7 @@ namespace Diet_note
             Bellabel6.Text = "0";
             Jirlabel6.Text = "0";
             Callabel6.Text = "0";
+            EatCountLabel.Text = "0";
             MultiBox1.Text = "1";
             MultiBox2.Text = "1";
             MultiBox3.Text = "1";
@@ -2421,8 +2447,36 @@ namespace Diet_note
             AllCallabel.Text = (Convert.ToDecimal(Callabel1.Text) + Convert.ToDecimal(Callabel2.Text) + Convert.ToDecimal(Callabel3.Text) + Convert.ToDecimal(Callabel4.Text) + Convert.ToDecimal(Callabel5.Text) + Convert.ToDecimal(Callabel6.Text)).ToString();
 
         }
+        private void NamelistBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (NamelistBox.SelectedItem != null)
+            {
+                User seluser = (User)(NamelistBox.SelectedItem);
+                EdgeCarboHydLabel.Text = (Convert.ToDecimal(seluser.Edges.Carbohydrates) - Convert.ToDecimal(seluser.Histories.Last().CarboHydrates)).ToString();
+                EdgeProtLabel.Text = (Convert.ToDecimal(seluser.Edges.Proteins) - Convert.ToDecimal(seluser.Histories.Last().Proteins)).ToString();
+                EdgeFatsLabel.Text = (Convert.ToDecimal(seluser.Edges.Fats) - Convert.ToDecimal(seluser.Histories.Last().Fats)).ToString();
+                EdgeCalloriesLabel.Text = (Convert.ToDecimal(seluser.Edges.Calloriesedge) - Convert.ToDecimal(seluser.Histories.Last().Callories)).ToString();
+                EdgeEatCountLabel.Text = seluser.Edges.Numbereats.ToString();
+                EatCountLabel.Text = seluser.Histories.Last().Countofeat.ToString();
+            }
+        }
+        #endregion
 
-      
+        private void NamelistBox_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (NamelistBox.SelectedItem == null)
+            {
+                EdgeCalloriesLabel.Text = "0";
+                EdgeCarboHydLabel.Text = "0";
+                EdgeProtLabel.Text = "0";
+                EdgeFatsLabel.Text = "0";
+                EdgeEatCountLabel.Text = "0";
+                EatCountLabel.Text = "0";
+            }
+
+
+        }
     }
-    #endregion
+    
+
 }

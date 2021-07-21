@@ -24,7 +24,7 @@ namespace Diet_note
         public int Countofeat
         {
             get { return countofeat; }
-            set { if (value == 0)countofeat = value;countofeat = Checked(value); }
+            set { if (value == 0)countofeat = value;else countofeat = Checked(value); }
         }
         public string CarboHydrates
         {

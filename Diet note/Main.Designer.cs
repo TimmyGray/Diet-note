@@ -76,6 +76,7 @@ namespace Diet_note
             this.AllBellabel = new System.Windows.Forms.Label();
             this.AllUglpanel = new System.Windows.Forms.Panel();
             this.AllUgllabel = new System.Windows.Forms.Label();
+            this.EdgeCarboHydLabel = new System.Windows.Forms.Label();
             this.Uglpanel = new System.Windows.Forms.Panel();
             this.UglText = new System.Windows.Forms.Label();
             this.Belpanel = new System.Windows.Forms.Panel();
@@ -140,6 +141,18 @@ namespace Diet_note
             this.MultiBox4 = new System.Windows.Forms.TextBox();
             this.MultiBox5 = new System.Windows.Forms.TextBox();
             this.MultiBox6 = new System.Windows.Forms.TextBox();
+            this.EatCountPanel = new System.Windows.Forms.Panel();
+            this.EatCountLabel = new System.Windows.Forms.Label();
+            this.EdgeCarboHydPanel = new System.Windows.Forms.Panel();
+            this.EdgeProtPanel = new System.Windows.Forms.Panel();
+            this.EdgeProtLabel = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.EdgeFatsPanel = new System.Windows.Forms.Panel();
+            this.EdgeFatsLabel = new System.Windows.Forms.Label();
+            this.EdgeCalloriesPanel = new System.Windows.Forms.Panel();
+            this.EdgeCalloriesLabel = new System.Windows.Forms.Label();
+            this.EdgeEatCountPanel = new System.Windows.Forms.Panel();
+            this.EdgeEatCountLabel = new System.Windows.Forms.Label();
             this.Uglpanel1.SuspendLayout();
             this.Uglpanel2.SuspendLayout();
             this.Uglpanel3.SuspendLayout();
@@ -186,7 +199,6 @@ namespace Diet_note
             this.Calpanel2.SuspendLayout();
             this.Calpanel1.SuspendLayout();
             this.AllCalPanel.SuspendLayout();
-            this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Multipicture5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Multipicture1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Multipicture2)).BeginInit();
@@ -194,13 +206,19 @@ namespace Diet_note
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Multipicture4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Multipicture6)).BeginInit();
+            this.EatCountPanel.SuspendLayout();
+            this.EdgeCarboHydPanel.SuspendLayout();
+            this.EdgeProtPanel.SuspendLayout();
+            this.EdgeFatsPanel.SuspendLayout();
+            this.EdgeCalloriesPanel.SuspendLayout();
+            this.EdgeEatCountPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // EatBox2
             // 
             this.EatBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.EatBox2.FormattingEnabled = true;
-            this.EatBox2.Location = new System.Drawing.Point(22, 136);
+            this.EatBox2.Location = new System.Drawing.Point(22, 140);
             this.EatBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.EatBox2.Name = "EatBox2";
             this.EatBox2.Size = new System.Drawing.Size(142, 23);
@@ -212,7 +230,7 @@ namespace Diet_note
             // 
             this.EatBox3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.EatBox3.FormattingEnabled = true;
-            this.EatBox3.Location = new System.Drawing.Point(22, 173);
+            this.EatBox3.Location = new System.Drawing.Point(22, 180);
             this.EatBox3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.EatBox3.Name = "EatBox3";
             this.EatBox3.Size = new System.Drawing.Size(142, 23);
@@ -224,7 +242,7 @@ namespace Diet_note
             // 
             this.EatBox4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.EatBox4.FormattingEnabled = true;
-            this.EatBox4.Location = new System.Drawing.Point(22, 210);
+            this.EatBox4.Location = new System.Drawing.Point(22, 260);
             this.EatBox4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.EatBox4.Name = "EatBox4";
             this.EatBox4.Size = new System.Drawing.Size(142, 23);
@@ -236,7 +254,7 @@ namespace Diet_note
             // 
             this.EatBox5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.EatBox5.FormattingEnabled = true;
-            this.EatBox5.Location = new System.Drawing.Point(22, 246);
+            this.EatBox5.Location = new System.Drawing.Point(22, 220);
             this.EatBox5.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.EatBox5.Name = "EatBox5";
             this.EatBox5.Size = new System.Drawing.Size(142, 23);
@@ -248,7 +266,7 @@ namespace Diet_note
             // 
             this.EatBox6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.EatBox6.FormattingEnabled = true;
-            this.EatBox6.Location = new System.Drawing.Point(22, 283);
+            this.EatBox6.Location = new System.Drawing.Point(22, 300);
             this.EatBox6.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.EatBox6.Name = "EatBox6";
             this.EatBox6.Size = new System.Drawing.Size(142, 23);
@@ -259,7 +277,7 @@ namespace Diet_note
             // Uglpanel1
             // 
             this.Uglpanel1.Controls.Add(this.Ugllabel1);
-            this.Uglpanel1.Location = new System.Drawing.Point(288, 99);
+            this.Uglpanel1.Location = new System.Drawing.Point(288, 100);
             this.Uglpanel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Uglpanel1.Name = "Uglpanel1";
             this.Uglpanel1.Size = new System.Drawing.Size(100, 23);
@@ -282,7 +300,7 @@ namespace Diet_note
             // Uglpanel2
             // 
             this.Uglpanel2.Controls.Add(this.Ugllabel2);
-            this.Uglpanel2.Location = new System.Drawing.Point(288, 136);
+            this.Uglpanel2.Location = new System.Drawing.Point(288, 140);
             this.Uglpanel2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Uglpanel2.Name = "Uglpanel2";
             this.Uglpanel2.Size = new System.Drawing.Size(100, 23);
@@ -305,7 +323,7 @@ namespace Diet_note
             // Uglpanel3
             // 
             this.Uglpanel3.Controls.Add(this.Ugllabel3);
-            this.Uglpanel3.Location = new System.Drawing.Point(288, 173);
+            this.Uglpanel3.Location = new System.Drawing.Point(288, 180);
             this.Uglpanel3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Uglpanel3.Name = "Uglpanel3";
             this.Uglpanel3.Size = new System.Drawing.Size(100, 23);
@@ -328,7 +346,7 @@ namespace Diet_note
             // Uglpanel4
             // 
             this.Uglpanel4.Controls.Add(this.Ugllabel4);
-            this.Uglpanel4.Location = new System.Drawing.Point(288, 210);
+            this.Uglpanel4.Location = new System.Drawing.Point(288, 220);
             this.Uglpanel4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Uglpanel4.Name = "Uglpanel4";
             this.Uglpanel4.Size = new System.Drawing.Size(100, 23);
@@ -351,7 +369,7 @@ namespace Diet_note
             // Uglpanel5
             // 
             this.Uglpanel5.Controls.Add(this.Ugllabel5);
-            this.Uglpanel5.Location = new System.Drawing.Point(288, 246);
+            this.Uglpanel5.Location = new System.Drawing.Point(288, 260);
             this.Uglpanel5.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Uglpanel5.Name = "Uglpanel5";
             this.Uglpanel5.Size = new System.Drawing.Size(100, 23);
@@ -374,7 +392,7 @@ namespace Diet_note
             // Uglpanel6
             // 
             this.Uglpanel6.Controls.Add(this.Ugllabel6);
-            this.Uglpanel6.Location = new System.Drawing.Point(288, 283);
+            this.Uglpanel6.Location = new System.Drawing.Point(288, 300);
             this.Uglpanel6.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Uglpanel6.Name = "Uglpanel6";
             this.Uglpanel6.Size = new System.Drawing.Size(100, 23);
@@ -397,7 +415,7 @@ namespace Diet_note
             // Belpanel6
             // 
             this.Belpanel6.Controls.Add(this.Bellabel6);
-            this.Belpanel6.Location = new System.Drawing.Point(408, 283);
+            this.Belpanel6.Location = new System.Drawing.Point(408, 300);
             this.Belpanel6.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Belpanel6.Name = "Belpanel6";
             this.Belpanel6.Size = new System.Drawing.Size(100, 23);
@@ -420,7 +438,7 @@ namespace Diet_note
             // Belpanel5
             // 
             this.Belpanel5.Controls.Add(this.Bellabel5);
-            this.Belpanel5.Location = new System.Drawing.Point(408, 246);
+            this.Belpanel5.Location = new System.Drawing.Point(408, 260);
             this.Belpanel5.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Belpanel5.Name = "Belpanel5";
             this.Belpanel5.Size = new System.Drawing.Size(100, 23);
@@ -443,7 +461,7 @@ namespace Diet_note
             // Belpanel4
             // 
             this.Belpanel4.Controls.Add(this.Bellabel4);
-            this.Belpanel4.Location = new System.Drawing.Point(408, 210);
+            this.Belpanel4.Location = new System.Drawing.Point(408, 220);
             this.Belpanel4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Belpanel4.Name = "Belpanel4";
             this.Belpanel4.Size = new System.Drawing.Size(100, 23);
@@ -466,7 +484,7 @@ namespace Diet_note
             // Belpanel3
             // 
             this.Belpanel3.Controls.Add(this.Bellabel3);
-            this.Belpanel3.Location = new System.Drawing.Point(408, 173);
+            this.Belpanel3.Location = new System.Drawing.Point(408, 180);
             this.Belpanel3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Belpanel3.Name = "Belpanel3";
             this.Belpanel3.Size = new System.Drawing.Size(100, 23);
@@ -489,7 +507,7 @@ namespace Diet_note
             // Belpanel2
             // 
             this.Belpanel2.Controls.Add(this.Bellabel2);
-            this.Belpanel2.Location = new System.Drawing.Point(408, 136);
+            this.Belpanel2.Location = new System.Drawing.Point(408, 140);
             this.Belpanel2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Belpanel2.Name = "Belpanel2";
             this.Belpanel2.Size = new System.Drawing.Size(100, 23);
@@ -512,7 +530,7 @@ namespace Diet_note
             // Belpanel1
             // 
             this.Belpanel1.Controls.Add(this.Bellabel1);
-            this.Belpanel1.Location = new System.Drawing.Point(408, 99);
+            this.Belpanel1.Location = new System.Drawing.Point(408, 100);
             this.Belpanel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Belpanel1.Name = "Belpanel1";
             this.Belpanel1.Size = new System.Drawing.Size(100, 23);
@@ -535,7 +553,7 @@ namespace Diet_note
             // Jirpanel6
             // 
             this.Jirpanel6.Controls.Add(this.Jirlabel6);
-            this.Jirpanel6.Location = new System.Drawing.Point(531, 283);
+            this.Jirpanel6.Location = new System.Drawing.Point(531, 300);
             this.Jirpanel6.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Jirpanel6.Name = "Jirpanel6";
             this.Jirpanel6.Size = new System.Drawing.Size(100, 23);
@@ -558,7 +576,7 @@ namespace Diet_note
             // Jirpanel5
             // 
             this.Jirpanel5.Controls.Add(this.Jirlabel5);
-            this.Jirpanel5.Location = new System.Drawing.Point(531, 246);
+            this.Jirpanel5.Location = new System.Drawing.Point(531, 260);
             this.Jirpanel5.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Jirpanel5.Name = "Jirpanel5";
             this.Jirpanel5.Size = new System.Drawing.Size(100, 23);
@@ -581,7 +599,7 @@ namespace Diet_note
             // Jirpanel4
             // 
             this.Jirpanel4.Controls.Add(this.Jirlabel4);
-            this.Jirpanel4.Location = new System.Drawing.Point(531, 210);
+            this.Jirpanel4.Location = new System.Drawing.Point(531, 220);
             this.Jirpanel4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Jirpanel4.Name = "Jirpanel4";
             this.Jirpanel4.Size = new System.Drawing.Size(100, 23);
@@ -604,7 +622,7 @@ namespace Diet_note
             // Jirpanel3
             // 
             this.Jirpanel3.Controls.Add(this.Jirlabel3);
-            this.Jirpanel3.Location = new System.Drawing.Point(531, 173);
+            this.Jirpanel3.Location = new System.Drawing.Point(531, 180);
             this.Jirpanel3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Jirpanel3.Name = "Jirpanel3";
             this.Jirpanel3.Size = new System.Drawing.Size(100, 23);
@@ -627,7 +645,7 @@ namespace Diet_note
             // Jirpanel2
             // 
             this.Jirpanel2.Controls.Add(this.Jirlabel2);
-            this.Jirpanel2.Location = new System.Drawing.Point(531, 136);
+            this.Jirpanel2.Location = new System.Drawing.Point(531, 140);
             this.Jirpanel2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Jirpanel2.Name = "Jirpanel2";
             this.Jirpanel2.Size = new System.Drawing.Size(100, 23);
@@ -650,7 +668,7 @@ namespace Diet_note
             // Jirpanel1
             // 
             this.Jirpanel1.Controls.Add(this.Jirlabel1);
-            this.Jirpanel1.Location = new System.Drawing.Point(531, 99);
+            this.Jirpanel1.Location = new System.Drawing.Point(531, 100);
             this.Jirpanel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Jirpanel1.Name = "Jirpanel1";
             this.Jirpanel1.Size = new System.Drawing.Size(100, 23);
@@ -673,68 +691,81 @@ namespace Diet_note
             // AllJirpanel
             // 
             this.AllJirpanel.Controls.Add(this.AllJirlabel);
-            this.AllJirpanel.Location = new System.Drawing.Point(815, 207);
+            this.AllJirpanel.Location = new System.Drawing.Point(759, 193);
             this.AllJirpanel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.AllJirpanel.Name = "AllJirpanel";
-            this.AllJirpanel.Size = new System.Drawing.Size(49, 30);
+            this.AllJirpanel.Size = new System.Drawing.Size(50, 30);
             this.AllJirpanel.TabIndex = 26;
             // 
             // AllJirlabel
             // 
             this.AllJirlabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AllJirlabel.AutoSize = true;
-            this.AllJirlabel.Font = new System.Drawing.Font("Segoe UI Black", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.AllJirlabel.Font = new System.Drawing.Font("Segoe UI Black", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.AllJirlabel.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.AllJirlabel.Location = new System.Drawing.Point(9, 0);
+            this.AllJirlabel.Location = new System.Drawing.Point(5, 0);
             this.AllJirlabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.AllJirlabel.Name = "AllJirlabel";
-            this.AllJirlabel.Size = new System.Drawing.Size(26, 30);
+            this.AllJirlabel.Size = new System.Drawing.Size(23, 25);
             this.AllJirlabel.TabIndex = 31;
             this.AllJirlabel.Text = "0";
             // 
             // AllBelpanel
             // 
             this.AllBelpanel.Controls.Add(this.AllBellabel);
-            this.AllBelpanel.Location = new System.Drawing.Point(815, 170);
+            this.AllBelpanel.Location = new System.Drawing.Point(759, 153);
             this.AllBelpanel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.AllBelpanel.Name = "AllBelpanel";
-            this.AllBelpanel.Size = new System.Drawing.Size(49, 30);
+            this.AllBelpanel.Size = new System.Drawing.Size(50, 30);
             this.AllBelpanel.TabIndex = 25;
             // 
             // AllBellabel
             // 
             this.AllBellabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AllBellabel.AutoSize = true;
-            this.AllBellabel.Font = new System.Drawing.Font("Segoe UI Black", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.AllBellabel.Font = new System.Drawing.Font("Segoe UI Black", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.AllBellabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.AllBellabel.Location = new System.Drawing.Point(9, 0);
+            this.AllBellabel.Location = new System.Drawing.Point(5, 0);
             this.AllBellabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.AllBellabel.Name = "AllBellabel";
-            this.AllBellabel.Size = new System.Drawing.Size(26, 30);
+            this.AllBellabel.Size = new System.Drawing.Size(23, 25);
             this.AllBellabel.TabIndex = 32;
             this.AllBellabel.Text = "0";
             // 
             // AllUglpanel
             // 
             this.AllUglpanel.Controls.Add(this.AllUgllabel);
-            this.AllUglpanel.Location = new System.Drawing.Point(815, 133);
+            this.AllUglpanel.Location = new System.Drawing.Point(759, 113);
             this.AllUglpanel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.AllUglpanel.Name = "AllUglpanel";
-            this.AllUglpanel.Size = new System.Drawing.Size(49, 30);
+            this.AllUglpanel.Size = new System.Drawing.Size(50, 30);
             this.AllUglpanel.TabIndex = 24;
             // 
             // AllUgllabel
             // 
             this.AllUgllabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AllUgllabel.AutoSize = true;
-            this.AllUgllabel.Font = new System.Drawing.Font("Segoe UI Black", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.AllUgllabel.Font = new System.Drawing.Font("Segoe UI Black", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.AllUgllabel.ForeColor = System.Drawing.Color.Blue;
-            this.AllUgllabel.Location = new System.Drawing.Point(8, 0);
+            this.AllUgllabel.Location = new System.Drawing.Point(5, 0);
             this.AllUgllabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.AllUgllabel.Name = "AllUgllabel";
-            this.AllUgllabel.Size = new System.Drawing.Size(26, 30);
+            this.AllUgllabel.Size = new System.Drawing.Size(23, 25);
             this.AllUgllabel.TabIndex = 31;
             this.AllUgllabel.Text = "0";
+            // 
+            // EdgeCarboHydLabel
+            // 
+            this.EdgeCarboHydLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.EdgeCarboHydLabel.AutoSize = true;
+            this.EdgeCarboHydLabel.Font = new System.Drawing.Font("Segoe UI Black", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.EdgeCarboHydLabel.ForeColor = System.Drawing.Color.Red;
+            this.EdgeCarboHydLabel.Location = new System.Drawing.Point(5, 0);
+            this.EdgeCarboHydLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.EdgeCarboHydLabel.Name = "EdgeCarboHydLabel";
+            this.EdgeCarboHydLabel.Size = new System.Drawing.Size(23, 25);
+            this.EdgeCarboHydLabel.TabIndex = 32;
+            this.EdgeCarboHydLabel.Text = "0";
             // 
             // Uglpanel
             // 
@@ -802,7 +833,7 @@ namespace Diet_note
             // Allpanel
             // 
             this.Allpanel.Controls.Add(this.Alllabel);
-            this.Allpanel.Location = new System.Drawing.Point(815, 60);
+            this.Allpanel.Location = new System.Drawing.Point(780, 60);
             this.Allpanel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Allpanel.Name = "Allpanel";
             this.Allpanel.Size = new System.Drawing.Size(49, 30);
@@ -813,7 +844,7 @@ namespace Diet_note
             this.Alllabel.AutoSize = true;
             this.Alllabel.Font = new System.Drawing.Font("Impact", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Alllabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.Alllabel.Location = new System.Drawing.Point(2, 5);
+            this.Alllabel.Location = new System.Drawing.Point(4, 5);
             this.Alllabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Alllabel.Name = "Alllabel";
             this.Alllabel.Size = new System.Drawing.Size(43, 22);
@@ -881,7 +912,7 @@ namespace Diet_note
             // 
             this.EatBox1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.EatBox1.FormattingEnabled = true;
-            this.EatBox1.Location = new System.Drawing.Point(22, 99);
+            this.EatBox1.Location = new System.Drawing.Point(22, 100);
             this.EatBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.EatBox1.Name = "EatBox1";
             this.EatBox1.Size = new System.Drawing.Size(142, 23);
@@ -901,15 +932,17 @@ namespace Diet_note
             this.NamelistBox.Size = new System.Drawing.Size(196, 35);
             this.NamelistBox.Sorted = true;
             this.NamelistBox.TabIndex = 52;
+            this.NamelistBox.SelectedIndexChanged += new System.EventHandler(this.NamelistBox_SelectedIndexChanged);
+            this.NamelistBox.SelectedValueChanged += new System.EventHandler(this.NamelistBox_SelectedValueChanged);
             // 
             // AddEatpictureBox6
             // 
             this.AddEatpictureBox6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.AddEatpictureBox6.Image = global::Diet_note.Properties.Resources.Без_имени2;
-            this.AddEatpictureBox6.Location = new System.Drawing.Point(253, 283);
+            this.AddEatpictureBox6.Location = new System.Drawing.Point(250, 300);
             this.AddEatpictureBox6.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.AddEatpictureBox6.Name = "AddEatpictureBox6";
-            this.AddEatpictureBox6.Size = new System.Drawing.Size(18, 23);
+            this.AddEatpictureBox6.Size = new System.Drawing.Size(20, 20);
             this.AddEatpictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.AddEatpictureBox6.TabIndex = 51;
             this.AddEatpictureBox6.TabStop = false;
@@ -919,10 +952,10 @@ namespace Diet_note
             // 
             this.AddEatpictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.AddEatpictureBox5.Image = global::Diet_note.Properties.Resources.Без_имени2;
-            this.AddEatpictureBox5.Location = new System.Drawing.Point(253, 246);
+            this.AddEatpictureBox5.Location = new System.Drawing.Point(250, 260);
             this.AddEatpictureBox5.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.AddEatpictureBox5.Name = "AddEatpictureBox5";
-            this.AddEatpictureBox5.Size = new System.Drawing.Size(18, 23);
+            this.AddEatpictureBox5.Size = new System.Drawing.Size(20, 20);
             this.AddEatpictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.AddEatpictureBox5.TabIndex = 50;
             this.AddEatpictureBox5.TabStop = false;
@@ -932,10 +965,10 @@ namespace Diet_note
             // 
             this.AddEatpictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.AddEatpictureBox4.Image = global::Diet_note.Properties.Resources.Без_имени2;
-            this.AddEatpictureBox4.Location = new System.Drawing.Point(253, 210);
+            this.AddEatpictureBox4.Location = new System.Drawing.Point(250, 220);
             this.AddEatpictureBox4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.AddEatpictureBox4.Name = "AddEatpictureBox4";
-            this.AddEatpictureBox4.Size = new System.Drawing.Size(18, 23);
+            this.AddEatpictureBox4.Size = new System.Drawing.Size(20, 20);
             this.AddEatpictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.AddEatpictureBox4.TabIndex = 49;
             this.AddEatpictureBox4.TabStop = false;
@@ -945,10 +978,10 @@ namespace Diet_note
             // 
             this.AddEatpictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.AddEatpictureBox3.Image = global::Diet_note.Properties.Resources.Без_имени2;
-            this.AddEatpictureBox3.Location = new System.Drawing.Point(253, 173);
+            this.AddEatpictureBox3.Location = new System.Drawing.Point(250, 180);
             this.AddEatpictureBox3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.AddEatpictureBox3.Name = "AddEatpictureBox3";
-            this.AddEatpictureBox3.Size = new System.Drawing.Size(18, 23);
+            this.AddEatpictureBox3.Size = new System.Drawing.Size(20, 20);
             this.AddEatpictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.AddEatpictureBox3.TabIndex = 48;
             this.AddEatpictureBox3.TabStop = false;
@@ -958,10 +991,10 @@ namespace Diet_note
             // 
             this.AddEatpictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.AddEatpictureBox2.Image = global::Diet_note.Properties.Resources.Без_имени2;
-            this.AddEatpictureBox2.Location = new System.Drawing.Point(253, 138);
+            this.AddEatpictureBox2.Location = new System.Drawing.Point(250, 140);
             this.AddEatpictureBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.AddEatpictureBox2.Name = "AddEatpictureBox2";
-            this.AddEatpictureBox2.Size = new System.Drawing.Size(18, 21);
+            this.AddEatpictureBox2.Size = new System.Drawing.Size(20, 20);
             this.AddEatpictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.AddEatpictureBox2.TabIndex = 47;
             this.AddEatpictureBox2.TabStop = false;
@@ -971,10 +1004,10 @@ namespace Diet_note
             // 
             this.AddEatpictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.AddEatpictureBox1.Image = global::Diet_note.Properties.Resources.Без_имени2;
-            this.AddEatpictureBox1.Location = new System.Drawing.Point(253, 99);
+            this.AddEatpictureBox1.Location = new System.Drawing.Point(250, 100);
             this.AddEatpictureBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.AddEatpictureBox1.Name = "AddEatpictureBox1";
-            this.AddEatpictureBox1.Size = new System.Drawing.Size(18, 23);
+            this.AddEatpictureBox1.Size = new System.Drawing.Size(20, 20);
             this.AddEatpictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.AddEatpictureBox1.TabIndex = 46;
             this.AddEatpictureBox1.TabStop = false;
@@ -984,10 +1017,10 @@ namespace Diet_note
             // 
             this.ClearEatpictureBox6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ClearEatpictureBox6.Image = global::Diet_note.Properties.Resources.Без_имени;
-            this.ClearEatpictureBox6.Location = new System.Drawing.Point(229, 283);
+            this.ClearEatpictureBox6.Location = new System.Drawing.Point(225, 300);
             this.ClearEatpictureBox6.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ClearEatpictureBox6.Name = "ClearEatpictureBox6";
-            this.ClearEatpictureBox6.Size = new System.Drawing.Size(13, 23);
+            this.ClearEatpictureBox6.Size = new System.Drawing.Size(20, 20);
             this.ClearEatpictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ClearEatpictureBox6.TabIndex = 45;
             this.ClearEatpictureBox6.TabStop = false;
@@ -997,10 +1030,10 @@ namespace Diet_note
             // 
             this.ClearEatpictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ClearEatpictureBox5.Image = global::Diet_note.Properties.Resources.Без_имени;
-            this.ClearEatpictureBox5.Location = new System.Drawing.Point(229, 246);
+            this.ClearEatpictureBox5.Location = new System.Drawing.Point(225, 260);
             this.ClearEatpictureBox5.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ClearEatpictureBox5.Name = "ClearEatpictureBox5";
-            this.ClearEatpictureBox5.Size = new System.Drawing.Size(13, 23);
+            this.ClearEatpictureBox5.Size = new System.Drawing.Size(20, 20);
             this.ClearEatpictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ClearEatpictureBox5.TabIndex = 44;
             this.ClearEatpictureBox5.TabStop = false;
@@ -1010,10 +1043,10 @@ namespace Diet_note
             // 
             this.ClearEatpictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ClearEatpictureBox4.Image = global::Diet_note.Properties.Resources.Без_имени;
-            this.ClearEatpictureBox4.Location = new System.Drawing.Point(229, 210);
+            this.ClearEatpictureBox4.Location = new System.Drawing.Point(225, 220);
             this.ClearEatpictureBox4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ClearEatpictureBox4.Name = "ClearEatpictureBox4";
-            this.ClearEatpictureBox4.Size = new System.Drawing.Size(13, 23);
+            this.ClearEatpictureBox4.Size = new System.Drawing.Size(20, 20);
             this.ClearEatpictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ClearEatpictureBox4.TabIndex = 43;
             this.ClearEatpictureBox4.TabStop = false;
@@ -1023,10 +1056,10 @@ namespace Diet_note
             // 
             this.ClearEatpictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ClearEatpictureBox2.Image = global::Diet_note.Properties.Resources.Без_имени;
-            this.ClearEatpictureBox2.Location = new System.Drawing.Point(229, 138);
+            this.ClearEatpictureBox2.Location = new System.Drawing.Point(225, 140);
             this.ClearEatpictureBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ClearEatpictureBox2.Name = "ClearEatpictureBox2";
-            this.ClearEatpictureBox2.Size = new System.Drawing.Size(13, 21);
+            this.ClearEatpictureBox2.Size = new System.Drawing.Size(20, 20);
             this.ClearEatpictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ClearEatpictureBox2.TabIndex = 42;
             this.ClearEatpictureBox2.TabStop = false;
@@ -1036,10 +1069,10 @@ namespace Diet_note
             // 
             this.ClearEatpictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ClearEatpictureBox3.Image = global::Diet_note.Properties.Resources.Без_имени;
-            this.ClearEatpictureBox3.Location = new System.Drawing.Point(229, 173);
+            this.ClearEatpictureBox3.Location = new System.Drawing.Point(225, 180);
             this.ClearEatpictureBox3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ClearEatpictureBox3.Name = "ClearEatpictureBox3";
-            this.ClearEatpictureBox3.Size = new System.Drawing.Size(13, 23);
+            this.ClearEatpictureBox3.Size = new System.Drawing.Size(20, 20);
             this.ClearEatpictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ClearEatpictureBox3.TabIndex = 41;
             this.ClearEatpictureBox3.TabStop = false;
@@ -1049,10 +1082,10 @@ namespace Diet_note
             // 
             this.ClearEatpictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ClearEatpictureBox1.Image = global::Diet_note.Properties.Resources.Без_имени;
-            this.ClearEatpictureBox1.Location = new System.Drawing.Point(229, 99);
+            this.ClearEatpictureBox1.Location = new System.Drawing.Point(225, 100);
             this.ClearEatpictureBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ClearEatpictureBox1.Name = "ClearEatpictureBox1";
-            this.ClearEatpictureBox1.Size = new System.Drawing.Size(13, 23);
+            this.ClearEatpictureBox1.Size = new System.Drawing.Size(20, 20);
             this.ClearEatpictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ClearEatpictureBox1.TabIndex = 40;
             this.ClearEatpictureBox1.TabStop = false;
@@ -1082,7 +1115,7 @@ namespace Diet_note
             // Calpanel6
             // 
             this.Calpanel6.Controls.Add(this.Callabel6);
-            this.Calpanel6.Location = new System.Drawing.Point(651, 283);
+            this.Calpanel6.Location = new System.Drawing.Point(651, 300);
             this.Calpanel6.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Calpanel6.Name = "Calpanel6";
             this.Calpanel6.Size = new System.Drawing.Size(100, 23);
@@ -1105,7 +1138,7 @@ namespace Diet_note
             // Calpanel5
             // 
             this.Calpanel5.Controls.Add(this.Callabel5);
-            this.Calpanel5.Location = new System.Drawing.Point(651, 246);
+            this.Calpanel5.Location = new System.Drawing.Point(651, 260);
             this.Calpanel5.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Calpanel5.Name = "Calpanel5";
             this.Calpanel5.Size = new System.Drawing.Size(100, 23);
@@ -1128,7 +1161,7 @@ namespace Diet_note
             // Calpanel4
             // 
             this.Calpanel4.Controls.Add(this.Callabel4);
-            this.Calpanel4.Location = new System.Drawing.Point(651, 210);
+            this.Calpanel4.Location = new System.Drawing.Point(651, 220);
             this.Calpanel4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Calpanel4.Name = "Calpanel4";
             this.Calpanel4.Size = new System.Drawing.Size(100, 23);
@@ -1151,7 +1184,7 @@ namespace Diet_note
             // Calpanel3
             // 
             this.Calpanel3.Controls.Add(this.Callabel3);
-            this.Calpanel3.Location = new System.Drawing.Point(651, 173);
+            this.Calpanel3.Location = new System.Drawing.Point(651, 180);
             this.Calpanel3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Calpanel3.Name = "Calpanel3";
             this.Calpanel3.Size = new System.Drawing.Size(100, 23);
@@ -1174,7 +1207,7 @@ namespace Diet_note
             // Calpanel2
             // 
             this.Calpanel2.Controls.Add(this.Callabel2);
-            this.Calpanel2.Location = new System.Drawing.Point(651, 136);
+            this.Calpanel2.Location = new System.Drawing.Point(651, 140);
             this.Calpanel2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Calpanel2.Name = "Calpanel2";
             this.Calpanel2.Size = new System.Drawing.Size(100, 23);
@@ -1197,7 +1230,7 @@ namespace Diet_note
             // Calpanel1
             // 
             this.Calpanel1.Controls.Add(this.Callabel1);
-            this.Calpanel1.Location = new System.Drawing.Point(651, 99);
+            this.Calpanel1.Location = new System.Drawing.Point(651, 100);
             this.Calpanel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Calpanel1.Name = "Calpanel1";
             this.Calpanel1.Size = new System.Drawing.Size(100, 23);
@@ -1220,21 +1253,21 @@ namespace Diet_note
             // AllCalPanel
             // 
             this.AllCalPanel.Controls.Add(this.AllCallabel);
-            this.AllCalPanel.Location = new System.Drawing.Point(815, 248);
+            this.AllCalPanel.Location = new System.Drawing.Point(759, 233);
             this.AllCalPanel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.AllCalPanel.Name = "AllCalPanel";
-            this.AllCalPanel.Size = new System.Drawing.Size(49, 27);
+            this.AllCalPanel.Size = new System.Drawing.Size(50, 30);
             this.AllCalPanel.TabIndex = 32;
             // 
             // AllCallabel
             // 
             this.AllCallabel.AutoSize = true;
-            this.AllCallabel.Font = new System.Drawing.Font("Segoe UI Black", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.AllCallabel.Font = new System.Drawing.Font("Segoe UI Black", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.AllCallabel.ForeColor = System.Drawing.Color.Black;
-            this.AllCallabel.Location = new System.Drawing.Point(9, -2);
+            this.AllCallabel.Location = new System.Drawing.Point(5, 0);
             this.AllCallabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.AllCallabel.Name = "AllCallabel";
-            this.AllCallabel.Size = new System.Drawing.Size(26, 30);
+            this.AllCallabel.Size = new System.Drawing.Size(23, 25);
             this.AllCallabel.TabIndex = 32;
             this.AllCallabel.Text = "0";
             // 
@@ -1295,47 +1328,46 @@ namespace Diet_note
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(202, 99);
+            this.panel1.Location = new System.Drawing.Point(200, 100);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(20, 23);
+            this.panel1.Size = new System.Drawing.Size(20, 20);
             this.panel1.TabIndex = 68;
             // 
             // panel3
             // 
-            this.panel3.Location = new System.Drawing.Point(202, 138);
+            this.panel3.Location = new System.Drawing.Point(200, 140);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(20, 21);
             this.panel3.TabIndex = 69;
             // 
             // panel4
             // 
-            this.panel4.Location = new System.Drawing.Point(202, 173);
+            this.panel4.Location = new System.Drawing.Point(200, 180);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(20, 23);
+            this.panel4.Size = new System.Drawing.Size(20, 20);
             this.panel4.TabIndex = 70;
             // 
             // panel5
             // 
-            this.panel5.Location = new System.Drawing.Point(202, 210);
+            this.panel5.Location = new System.Drawing.Point(200, 220);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(20, 23);
+            this.panel5.Size = new System.Drawing.Size(20, 20);
             this.panel5.TabIndex = 71;
             // 
             // panel6
             // 
-            this.panel6.Controls.Add(this.Multipicture5);
-            this.panel6.Location = new System.Drawing.Point(202, 246);
+            this.panel6.Location = new System.Drawing.Point(200, 260);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(20, 23);
+            this.panel6.Size = new System.Drawing.Size(20, 20);
             this.panel6.TabIndex = 72;
             // 
             // Multipicture5
             // 
             this.Multipicture5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Multipicture5.Image = global::Diet_note.Properties.Resources.pen;
-            this.Multipicture5.Location = new System.Drawing.Point(0, 0);
+            this.Multipicture5.Location = new System.Drawing.Point(200, 260);
             this.Multipicture5.Name = "Multipicture5";
-            this.Multipicture5.Size = new System.Drawing.Size(20, 23);
+            this.Multipicture5.Size = new System.Drawing.Size(20, 20);
             this.Multipicture5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Multipicture5.TabIndex = 0;
             this.Multipicture5.TabStop = false;
@@ -1343,18 +1375,18 @@ namespace Diet_note
             // 
             // panel7
             // 
-            this.panel7.Location = new System.Drawing.Point(202, 283);
+            this.panel7.Location = new System.Drawing.Point(200, 300);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(20, 23);
+            this.panel7.Size = new System.Drawing.Size(20, 20);
             this.panel7.TabIndex = 73;
             // 
             // Multipicture1
             // 
             this.Multipicture1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Multipicture1.Image = global::Diet_note.Properties.Resources.pen;
-            this.Multipicture1.Location = new System.Drawing.Point(202, 99);
+            this.Multipicture1.Location = new System.Drawing.Point(200, 100);
             this.Multipicture1.Name = "Multipicture1";
-            this.Multipicture1.Size = new System.Drawing.Size(20, 23);
+            this.Multipicture1.Size = new System.Drawing.Size(20, 20);
             this.Multipicture1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Multipicture1.TabIndex = 74;
             this.Multipicture1.TabStop = false;
@@ -1364,9 +1396,9 @@ namespace Diet_note
             // 
             this.Multipicture2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Multipicture2.Image = global::Diet_note.Properties.Resources.pen;
-            this.Multipicture2.Location = new System.Drawing.Point(202, 138);
+            this.Multipicture2.Location = new System.Drawing.Point(200, 140);
             this.Multipicture2.Name = "Multipicture2";
-            this.Multipicture2.Size = new System.Drawing.Size(20, 21);
+            this.Multipicture2.Size = new System.Drawing.Size(20, 20);
             this.Multipicture2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Multipicture2.TabIndex = 75;
             this.Multipicture2.TabStop = false;
@@ -1376,9 +1408,9 @@ namespace Diet_note
             // 
             this.Multipicture3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Multipicture3.Image = global::Diet_note.Properties.Resources.pen;
-            this.Multipicture3.Location = new System.Drawing.Point(202, 173);
+            this.Multipicture3.Location = new System.Drawing.Point(200, 180);
             this.Multipicture3.Name = "Multipicture3";
-            this.Multipicture3.Size = new System.Drawing.Size(20, 22);
+            this.Multipicture3.Size = new System.Drawing.Size(20, 20);
             this.Multipicture3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Multipicture3.TabIndex = 76;
             this.Multipicture3.TabStop = false;
@@ -1386,9 +1418,9 @@ namespace Diet_note
             // 
             // pictureBox4
             // 
-            this.pictureBox4.Location = new System.Drawing.Point(202, 210);
+            this.pictureBox4.Location = new System.Drawing.Point(200, 220);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(20, 23);
+            this.pictureBox4.Size = new System.Drawing.Size(20, 20);
             this.pictureBox4.TabIndex = 77;
             this.pictureBox4.TabStop = false;
             // 
@@ -1396,9 +1428,9 @@ namespace Diet_note
             // 
             this.Multipicture4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Multipicture4.Image = global::Diet_note.Properties.Resources.pen;
-            this.Multipicture4.Location = new System.Drawing.Point(202, 210);
+            this.Multipicture4.Location = new System.Drawing.Point(200, 220);
             this.Multipicture4.Name = "Multipicture4";
-            this.Multipicture4.Size = new System.Drawing.Size(20, 23);
+            this.Multipicture4.Size = new System.Drawing.Size(20, 20);
             this.Multipicture4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Multipicture4.TabIndex = 78;
             this.Multipicture4.TabStop = false;
@@ -1408,9 +1440,9 @@ namespace Diet_note
             // 
             this.Multipicture6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Multipicture6.Image = global::Diet_note.Properties.Resources.pen;
-            this.Multipicture6.Location = new System.Drawing.Point(202, 283);
+            this.Multipicture6.Location = new System.Drawing.Point(200, 300);
             this.Multipicture6.Name = "Multipicture6";
-            this.Multipicture6.Size = new System.Drawing.Size(20, 23);
+            this.Multipicture6.Size = new System.Drawing.Size(20, 20);
             this.Multipicture6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Multipicture6.TabIndex = 79;
             this.Multipicture6.TabStop = false;
@@ -1431,7 +1463,7 @@ namespace Diet_note
             // 
             this.MultiBox2.Enabled = false;
             this.MultiBox2.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.MultiBox2.Location = new System.Drawing.Point(171, 137);
+            this.MultiBox2.Location = new System.Drawing.Point(171, 140);
             this.MultiBox2.Name = "MultiBox2";
             this.MultiBox2.Size = new System.Drawing.Size(23, 22);
             this.MultiBox2.TabIndex = 81;
@@ -1442,7 +1474,7 @@ namespace Diet_note
             // 
             this.MultiBox3.Enabled = false;
             this.MultiBox3.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.MultiBox3.Location = new System.Drawing.Point(171, 173);
+            this.MultiBox3.Location = new System.Drawing.Point(171, 180);
             this.MultiBox3.Name = "MultiBox3";
             this.MultiBox3.Size = new System.Drawing.Size(23, 22);
             this.MultiBox3.TabIndex = 82;
@@ -1453,7 +1485,7 @@ namespace Diet_note
             // 
             this.MultiBox4.Enabled = false;
             this.MultiBox4.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.MultiBox4.Location = new System.Drawing.Point(171, 210);
+            this.MultiBox4.Location = new System.Drawing.Point(171, 220);
             this.MultiBox4.Name = "MultiBox4";
             this.MultiBox4.Size = new System.Drawing.Size(23, 22);
             this.MultiBox4.TabIndex = 83;
@@ -1464,7 +1496,7 @@ namespace Diet_note
             // 
             this.MultiBox5.Enabled = false;
             this.MultiBox5.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.MultiBox5.Location = new System.Drawing.Point(171, 246);
+            this.MultiBox5.Location = new System.Drawing.Point(171, 260);
             this.MultiBox5.Name = "MultiBox5";
             this.MultiBox5.Size = new System.Drawing.Size(23, 22);
             this.MultiBox5.TabIndex = 84;
@@ -1475,12 +1507,141 @@ namespace Diet_note
             // 
             this.MultiBox6.Enabled = false;
             this.MultiBox6.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.MultiBox6.Location = new System.Drawing.Point(171, 284);
+            this.MultiBox6.Location = new System.Drawing.Point(171, 300);
             this.MultiBox6.Name = "MultiBox6";
             this.MultiBox6.Size = new System.Drawing.Size(23, 22);
             this.MultiBox6.TabIndex = 85;
             this.MultiBox6.Text = "1";
             this.MultiBox6.TextChanged += new System.EventHandler(this.MultiBox6_TextChanged);
+            // 
+            // EatCountPanel
+            // 
+            this.EatCountPanel.Controls.Add(this.EatCountLabel);
+            this.EatCountPanel.Location = new System.Drawing.Point(759, 273);
+            this.EatCountPanel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.EatCountPanel.Name = "EatCountPanel";
+            this.EatCountPanel.Size = new System.Drawing.Size(50, 30);
+            this.EatCountPanel.TabIndex = 86;
+            // 
+            // EatCountLabel
+            // 
+            this.EatCountLabel.AutoSize = true;
+            this.EatCountLabel.Font = new System.Drawing.Font("Segoe UI Black", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.EatCountLabel.ForeColor = System.Drawing.Color.BlueViolet;
+            this.EatCountLabel.Location = new System.Drawing.Point(5, 0);
+            this.EatCountLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.EatCountLabel.Name = "EatCountLabel";
+            this.EatCountLabel.Size = new System.Drawing.Size(23, 25);
+            this.EatCountLabel.TabIndex = 32;
+            this.EatCountLabel.Text = "0";
+            // 
+            // EdgeCarboHydPanel
+            // 
+            this.EdgeCarboHydPanel.Controls.Add(this.EdgeCarboHydLabel);
+            this.EdgeCarboHydPanel.Location = new System.Drawing.Point(816, 113);
+            this.EdgeCarboHydPanel.Name = "EdgeCarboHydPanel";
+            this.EdgeCarboHydPanel.Size = new System.Drawing.Size(50, 30);
+            this.EdgeCarboHydPanel.TabIndex = 87;
+            // 
+            // EdgeProtPanel
+            // 
+            this.EdgeProtPanel.Controls.Add(this.EdgeProtLabel);
+            this.EdgeProtPanel.Controls.Add(this.label3);
+            this.EdgeProtPanel.Location = new System.Drawing.Point(816, 153);
+            this.EdgeProtPanel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.EdgeProtPanel.Name = "EdgeProtPanel";
+            this.EdgeProtPanel.Size = new System.Drawing.Size(50, 30);
+            this.EdgeProtPanel.TabIndex = 88;
+            // 
+            // EdgeProtLabel
+            // 
+            this.EdgeProtLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.EdgeProtLabel.AutoSize = true;
+            this.EdgeProtLabel.Font = new System.Drawing.Font("Segoe UI Black", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.EdgeProtLabel.ForeColor = System.Drawing.Color.Red;
+            this.EdgeProtLabel.Location = new System.Drawing.Point(5, 0);
+            this.EdgeProtLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.EdgeProtLabel.Name = "EdgeProtLabel";
+            this.EdgeProtLabel.Size = new System.Drawing.Size(23, 25);
+            this.EdgeProtLabel.TabIndex = 33;
+            this.EdgeProtLabel.Text = "0";
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Black", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.Color.Blue;
+            this.label3.Location = new System.Drawing.Point(-63, -35);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(26, 30);
+            this.label3.TabIndex = 32;
+            this.label3.Text = "0";
+            // 
+            // EdgeFatsPanel
+            // 
+            this.EdgeFatsPanel.Controls.Add(this.EdgeFatsLabel);
+            this.EdgeFatsPanel.Location = new System.Drawing.Point(816, 193);
+            this.EdgeFatsPanel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.EdgeFatsPanel.Name = "EdgeFatsPanel";
+            this.EdgeFatsPanel.Size = new System.Drawing.Size(50, 30);
+            this.EdgeFatsPanel.TabIndex = 89;
+            // 
+            // EdgeFatsLabel
+            // 
+            this.EdgeFatsLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.EdgeFatsLabel.AutoSize = true;
+            this.EdgeFatsLabel.Font = new System.Drawing.Font("Segoe UI Black", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.EdgeFatsLabel.ForeColor = System.Drawing.Color.Red;
+            this.EdgeFatsLabel.Location = new System.Drawing.Point(5, 0);
+            this.EdgeFatsLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.EdgeFatsLabel.Name = "EdgeFatsLabel";
+            this.EdgeFatsLabel.Size = new System.Drawing.Size(23, 25);
+            this.EdgeFatsLabel.TabIndex = 33;
+            this.EdgeFatsLabel.Text = "0";
+            // 
+            // EdgeCalloriesPanel
+            // 
+            this.EdgeCalloriesPanel.Controls.Add(this.EdgeCalloriesLabel);
+            this.EdgeCalloriesPanel.Location = new System.Drawing.Point(816, 233);
+            this.EdgeCalloriesPanel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.EdgeCalloriesPanel.Name = "EdgeCalloriesPanel";
+            this.EdgeCalloriesPanel.Size = new System.Drawing.Size(50, 30);
+            this.EdgeCalloriesPanel.TabIndex = 90;
+            // 
+            // EdgeCalloriesLabel
+            // 
+            this.EdgeCalloriesLabel.AutoSize = true;
+            this.EdgeCalloriesLabel.Font = new System.Drawing.Font("Segoe UI Black", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.EdgeCalloriesLabel.ForeColor = System.Drawing.Color.Red;
+            this.EdgeCalloriesLabel.Location = new System.Drawing.Point(5, 0);
+            this.EdgeCalloriesLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.EdgeCalloriesLabel.Name = "EdgeCalloriesLabel";
+            this.EdgeCalloriesLabel.Size = new System.Drawing.Size(23, 25);
+            this.EdgeCalloriesLabel.TabIndex = 33;
+            this.EdgeCalloriesLabel.Text = "0";
+            // 
+            // EdgeEatCountPanel
+            // 
+            this.EdgeEatCountPanel.Controls.Add(this.EdgeEatCountLabel);
+            this.EdgeEatCountPanel.Location = new System.Drawing.Point(816, 273);
+            this.EdgeEatCountPanel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.EdgeEatCountPanel.Name = "EdgeEatCountPanel";
+            this.EdgeEatCountPanel.Size = new System.Drawing.Size(50, 30);
+            this.EdgeEatCountPanel.TabIndex = 91;
+            // 
+            // EdgeEatCountLabel
+            // 
+            this.EdgeEatCountLabel.AutoSize = true;
+            this.EdgeEatCountLabel.Font = new System.Drawing.Font("Segoe UI Black", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.EdgeEatCountLabel.ForeColor = System.Drawing.Color.Red;
+            this.EdgeEatCountLabel.Location = new System.Drawing.Point(5, 0);
+            this.EdgeEatCountLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.EdgeEatCountLabel.Name = "EdgeEatCountLabel";
+            this.EdgeEatCountLabel.Size = new System.Drawing.Size(23, 25);
+            this.EdgeEatCountLabel.TabIndex = 92;
+            this.EdgeEatCountLabel.Text = "0";
             // 
             // Main
             // 
@@ -1488,6 +1649,13 @@ namespace Diet_note
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(884, 391);
+            this.Controls.Add(this.Multipicture5);
+            this.Controls.Add(this.EdgeEatCountPanel);
+            this.Controls.Add(this.EdgeCalloriesPanel);
+            this.Controls.Add(this.EdgeFatsPanel);
+            this.Controls.Add(this.EdgeProtPanel);
+            this.Controls.Add(this.EdgeCarboHydPanel);
+            this.Controls.Add(this.EatCountPanel);
             this.Controls.Add(this.MultiBox6);
             this.Controls.Add(this.MultiBox5);
             this.Controls.Add(this.MultiBox4);
@@ -1648,7 +1816,6 @@ namespace Diet_note
             this.Calpanel1.PerformLayout();
             this.AllCalPanel.ResumeLayout(false);
             this.AllCalPanel.PerformLayout();
-            this.panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Multipicture5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Multipicture1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Multipicture2)).EndInit();
@@ -1656,6 +1823,18 @@ namespace Diet_note
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Multipicture4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Multipicture6)).EndInit();
+            this.EatCountPanel.ResumeLayout(false);
+            this.EatCountPanel.PerformLayout();
+            this.EdgeCarboHydPanel.ResumeLayout(false);
+            this.EdgeCarboHydPanel.PerformLayout();
+            this.EdgeProtPanel.ResumeLayout(false);
+            this.EdgeProtPanel.PerformLayout();
+            this.EdgeFatsPanel.ResumeLayout(false);
+            this.EdgeFatsPanel.PerformLayout();
+            this.EdgeCalloriesPanel.ResumeLayout(false);
+            this.EdgeCalloriesPanel.PerformLayout();
+            this.EdgeEatCountPanel.ResumeLayout(false);
+            this.EdgeEatCountPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1773,5 +1952,18 @@ namespace Diet_note
         private System.Windows.Forms.TextBox MultiBox5;
         private System.Windows.Forms.TextBox MultiBox6;
         private System.Windows.Forms.PictureBox Multipicture6;
+        private System.Windows.Forms.Panel EatCountPanel;
+        private System.Windows.Forms.Label EatCountLabel;
+        private System.Windows.Forms.Label EdgeCarboHydLabel;
+        private System.Windows.Forms.Panel EdgeCarboHydPanel;
+        private System.Windows.Forms.Panel EdgeProtPanel;
+        private System.Windows.Forms.Label EdgeProtLabel;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel EdgeFatsPanel;
+        private System.Windows.Forms.Label EdgeFatsLabel;
+        private System.Windows.Forms.Panel EdgeCalloriesPanel;
+        private System.Windows.Forms.Label EdgeCalloriesLabel;
+        private System.Windows.Forms.Panel EdgeEatCountPanel;
+        private System.Windows.Forms.Label EdgeEatCountLabel;
     }
 }
